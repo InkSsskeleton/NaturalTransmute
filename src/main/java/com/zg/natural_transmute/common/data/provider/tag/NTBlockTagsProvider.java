@@ -59,6 +59,9 @@ public class NTBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_STAIRS).add(NTBlocks.END_ALSOPHILA_FAMILY.get(5).get());
         this.tag(BlockTags.WOODEN_FENCES).add(NTBlocks.END_ALSOPHILA_FAMILY.get(6).get());
         this.tag(BlockTags.WOODEN_SLABS).add(NTBlocks.END_ALSOPHILA_FAMILY.getLast().get());
+        this.tag(BlockTags.STAIRS).add(NTBlocks.BLUE_NETHER_BRICK_STAIRS.get());
+        this.tag(BlockTags.SLABS).add(NTBlocks.BLUE_NETHER_BRICK_STAIRS.get());
+        this.tag(BlockTags.WALLS).add(NTBlocks.BLUE_NETHER_BRICK_WALL.get());
         this.tag(NTBlockTags.PEAT_MOSS_PLACEABLE).add(Blocks.STONE, Blocks.DIRT, Blocks.MUD, Blocks.CLAY);
         this.tag(NTBlockTags.END_ALSOPHILA_LOGS).add(NTBlocks.STRIPPED_END_ALSOPHILA_WOOD.get(),
                 NTBlocks.STRIPPED_END_ALSOPHILA_LOG.get(), NTBlocks.END_ALSOPHILA_WOOD.get(), NTBlocks.END_ALSOPHILA_LOG.get());

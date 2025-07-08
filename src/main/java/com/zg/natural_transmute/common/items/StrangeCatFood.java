@@ -4,6 +4,7 @@ import com.zg.natural_transmute.common.components.CatFoods;
 import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -21,7 +22,9 @@ public class StrangeCatFood extends Item {
     private final @Nullable ResourceKey<CatVariant> variant;
 
     public StrangeCatFood(@Nullable ResourceKey<CatVariant> variant) {
-        super(new Item.Properties().component(NTDataComponents.CAT_FOODS, new CatFoods(variant)));
+        super(new Item.Properties()
+                .component(NTDataComponents.CAT_FOODS, new CatFoods(variant))
+                .component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
         this.variant = variant;
     }
 

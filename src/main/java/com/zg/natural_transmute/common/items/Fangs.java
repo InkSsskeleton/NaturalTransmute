@@ -1,8 +1,10 @@
 package com.zg.natural_transmute.common.items;
 
+import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class Fangs extends Item {
 
     public Fangs() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

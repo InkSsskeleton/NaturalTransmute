@@ -31,15 +31,12 @@ public class NTItemTagProvider extends ItemTagsProvider {
         this.copy(NTBlockTags.END_ALSOPHILA_SAPLING_PLACEABLE,
                 NTItemTags.END_ALSOPHILA_SAPLING_PLACEABLE);
         this.tag(Tags.Items.TOOLS_BOW).add(NTItems.WHALE_BONE_BOW.get());
+        this.tag(Tags.Items.FOODS_COOKED_MEAT).add(NTItems.COOKED_DUCK.get());
         this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(NTItems.WHALE_BONE_BOW.get());
         this.tag(ItemTags.BOW_ENCHANTABLE).add(NTItems.WHALE_BONE_BOW.get());
         this.tag(ItemTags.ARROWS).add(NTItems.BREEZE_ARROW.get());
         this.tag(NTItemTags.GRASS).add(Items.SHORT_GRASS,
                 Items.TALL_GRASS, Items.FERN, Items.LARGE_FERN);
-        this.tag(NTItemTags.COOKED_MEAT).add(
-                Items.COOKED_BEEF, Items.COOKED_CHICKEN, Items.COOKED_MUTTON,
-                Items.COOKED_PORKCHOP, Items.COOKED_RABBIT, NTItems.COOKED_DUCK.get());
-        this.tag(NTItemTags.COOKED_FISH).add(Items.COOKED_COD, Items.COOKED_SALMON);
         this.tag(NTItemTags.FRUIT).add(Items.APPLE, Items.MELON_SLICE, Items.SUGAR_CANE,
                 Items.CHORUS_FRUIT, Items.SWEET_BERRIES, Items.GLOW_BERRIES);
         this.tag(NTItemTags.VEGETABLE).add(Items.CARROT, Items.POTATO, Items.POISONOUS_POTATO,
@@ -47,7 +44,7 @@ public class NTItemTagProvider extends ItemTagsProvider {
         NTCommonUtils.getKnownItems().forEach(item -> {
             ItemStack stack = item.getDefaultInstance();
             if (stack.has(NTDataComponents.ASSOCIATED_BIOMES)) {
-                this.tag(NTItemTags.FU_XIANG).add(item);
+                this.tag(NTItemTags.METAPHYSICA).add(item);
             }
 
             if (stack.has(NTDataComponents.CAT_FOODS)) {

@@ -1,9 +1,11 @@
 package com.zg.natural_transmute.common.items;
 
 import com.zg.natural_transmute.common.entities.projectile.RefrigeratedRocketEntity;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -18,7 +20,7 @@ import net.minecraft.world.phys.Vec3;
 public class RefrigeratedRocket extends FireworkRocketItem {
 
     public RefrigeratedRocket() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

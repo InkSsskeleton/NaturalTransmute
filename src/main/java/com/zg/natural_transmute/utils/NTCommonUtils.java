@@ -19,6 +19,10 @@ public class NTCommonUtils {
         return NTBlocks.BLOCKS.getEntries().stream().map(DeferredHolder::get);
     }
 
+    public static Stream<Item> getKnownItemStream() {
+        return NTItems.ITEMS.getEntries().stream().map(DeferredHolder::get);
+    }
+
     public static Iterable<Block> getKnownBlocks() {
         return NTBlocks.BLOCKS.getEntries().stream().map(DeferredHolder::get).collect(Collectors.toList());
     }

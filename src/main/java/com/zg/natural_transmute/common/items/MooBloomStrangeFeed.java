@@ -1,9 +1,11 @@
 package com.zg.natural_transmute.common.items;
 
 import com.zg.natural_transmute.common.entities.animal.MooBloom;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import com.zg.natural_transmute.registry.NTEntityTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
 public class MooBloomStrangeFeed extends Item {
 
     public MooBloomStrangeFeed() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

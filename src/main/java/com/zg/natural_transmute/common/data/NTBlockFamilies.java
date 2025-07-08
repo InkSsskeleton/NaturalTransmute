@@ -3,6 +3,7 @@ package com.zg.natural_transmute.common.data;
 import com.google.common.collect.Maps;
 import com.zg.natural_transmute.registry.NTBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.BlockFamilies;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
 
@@ -11,7 +12,7 @@ import java.util.stream.Stream;
 
 public class NTBlockFamilies {
 
-    private static final Map<Block, BlockFamily> MAP = Maps.newHashMap();
+    public static final Map<Block, BlockFamily> MAP = Maps.newHashMap();
 
     public static final BlockFamily END_ALSOPHILA_PLANKS =
             familyBuilder(NTBlocks.END_ALSOPHILA_PLANKS.get())
@@ -24,9 +25,17 @@ public class NTBlockFamilies {
                     .fence(NTBlocks.END_ALSOPHILA_FAMILY.get(6).get())
                     .slab(NTBlocks.END_ALSOPHILA_FAMILY.getLast().get()).getFamily();
 
+    public static final BlockFamily BLUE_NETHER_BRICKS =
+            familyBuilder(NTBlocks.BLUE_NETHER_BRICKS.get())
+                    .slab(NTBlocks.BLUE_NETHER_BRICK_SLAB.get())
+                    .stairs(NTBlocks.BLUE_NETHER_BRICK_STAIRS.get())
+                    .wall(NTBlocks.BLUE_NETHER_BRICK_WALL.get())
+                    .getFamily();
+
     private static BlockFamily.Builder familyBuilder(Block baseBlock) {
         BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
         BlockFamily blockFamily = MAP.put(baseBlock, builder.getFamily());
+        BlockFamilies.MAP.put(baseBlock, builder.getFamily());
         if (blockFamily != null) {
             throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(baseBlock));
         } else {

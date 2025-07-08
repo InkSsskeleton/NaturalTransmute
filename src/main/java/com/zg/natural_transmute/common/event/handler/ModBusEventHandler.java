@@ -112,6 +112,10 @@ public class ModBusEventHandler {
                     entity == null || entity.getUseItem() != stack ? 0.0F : (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F));
             ItemProperties.register(NTItems.WHALE_BONE_BOW.get(), NaturalTransmute.prefix("pulling"), ((stack, level, entity, seed) ->
                     entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F));
+            ItemProperties.register(NTItems.PETARD.get(), NaturalTransmute.prefix("ignited"), ((stack, level, entity, seed) -> {
+                Boolean ignited = stack.get(NTDataComponents.PETARD_IGNITED.get());
+                return ignited != null && ignited ? 1.0F : 0.0F;
+            }));
         });
     }
 

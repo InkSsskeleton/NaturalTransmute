@@ -9,10 +9,8 @@ public class NTItemTags {
 
     public static final TagKey<Item> FRUIT = create("fruit");
     public static final TagKey<Item> GRASS = create("grass");
-    public static final TagKey<Item> FU_XIANG = create("fu_xiang");
+    public static final TagKey<Item> METAPHYSICA = create("metaphysica");
     public static final TagKey<Item> VEGETABLE = create("vegetable");
-    public static final TagKey<Item> COOKED_MEAT = create("cooked_meat");
-    public static final TagKey<Item> COOKED_FISH = create("cooked_fish");
     public static final TagKey<Item> END_ALSOPHILA_LOGS = create("end_alsophila_logs");
     public static final TagKey<Item> END_ALSOPHILA_SAPLING_PLACEABLE = create("end_alsophila_sapling_placeable");
 

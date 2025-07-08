@@ -2,6 +2,7 @@ package com.zg.natural_transmute.utils;
 
 import com.zg.natural_transmute.common.blocks.base.*;
 import com.zg.natural_transmute.common.blocks.modified.AxeStrippableBlock;
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import com.zg.natural_transmute.registry.NTBlocks;
 import com.zg.natural_transmute.registry.NTItems;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -36,14 +37,14 @@ public class NTBlockRegUtils {
     }
 
     public static DeferredHolder<Block, Block> wood(String name, Supplier<Block> block, MapColor mapColor, float strength) {
-        return register(name, () -> new AxeStrippableBlock(block, BlockBehaviour.Properties
-                .of().mapColor(mapColor).instrument(NoteBlockInstrument.BASS)
+        return register(name, () -> new AxeStrippableBlock(block, NTBlockProperties.get()
+                .useSimpleBlockItem().mapColor(mapColor).instrument(NoteBlockInstrument.BASS)
                 .strength(strength).sound(SoundType.WOOD).ignitedByLava()));
     }
 
     public static DeferredHolder<Block, Block> wood(String name, MapColor mapColor, float strength) {
-        return register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties
-                .of().mapColor(mapColor).instrument(NoteBlockInstrument.BASS)
+        return register(name, () -> new RotatedPillarBlock(NTBlockProperties.get()
+                .useSimpleBlockItem().mapColor(mapColor).instrument(NoteBlockInstrument.BASS)
                 .strength(strength).sound(SoundType.WOOD).ignitedByLava()));
     }
 
@@ -52,15 +53,15 @@ public class NTBlockRegUtils {
                 BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> pressurePlate(String name, Supplier<T> base, BlockBehaviour.Properties properties, BlockSetType blockSetType) {
-        return register(name, () -> new PressurePlateBlockWithBase(base.get(), properties, blockSetType));
+    public static <T extends Block> DeferredHolder<Block, Block> pressurePlate(String name, Supplier<T> base, NTBlockProperties properties, BlockSetType blockSetType) {
+        return register(name, () -> new PressurePlateBlockWithBase(base.get(), properties.useSimpleBlockItem(), blockSetType));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> fenceGate(String name, Supplier<T> base, BlockBehaviour.Properties properties, WoodType woodType) {
-        return register(name, () -> new FenceGateBlockWithBase(base.get(), properties, woodType));
+    public static <T extends Block> DeferredHolder<Block, Block> fenceGate(String name, Supplier<T> base, NTBlockProperties properties, WoodType woodType) {
+        return register(name, () -> new FenceGateBlockWithBase(base.get(), properties.useSimpleBlockItem(), woodType));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> trapdoor(String name, Supplier<T> base, BlockBehaviour.Properties properties, BlockSetType blockSetType) {
+    public static <T extends Block> DeferredHolder<Block, Block> trapdoor(String name, Supplier<T> base, NTBlockProperties properties, BlockSetType blockSetType) {
         return register(name, () -> new TrapDoorBlockWithBase(base.get(), properties, blockSetType));
     }
 
@@ -69,11 +70,11 @@ public class NTBlockRegUtils {
         return register(name, () -> new ButtonBlockWithBase(base.get(), properties, blockSetType, sensitive ? 30 : 20));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> stair(String name, Supplier<T> block, BlockBehaviour.Properties properties) {
-        return register(name, () -> new StairBlockWithBase(block.get().defaultBlockState(), properties));
+    public static <T extends Block> DeferredHolder<Block, Block> stair(String name, Supplier<T> block, NTBlockProperties properties) {
+        return register(name, () -> new StairBlockWithBase(block.get().defaultBlockState(), properties.useSimpleBlockItem()));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> fence(String name, Supplier<T> base, BlockBehaviour.Properties properties) {
+    public static <T extends Block> DeferredHolder<Block, Block> fence(String name, Supplier<T> base, NTBlockProperties properties) {
         return register(name, () -> new FenceBlockWithBase(base.get(), properties));
     }
 
@@ -81,11 +82,11 @@ public class NTBlockRegUtils {
         return register(name, () -> new DoorBlockWithBase(base.get(), properties, blockSetType));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> slab(String name, Supplier<T> base, BlockBehaviour.Properties properties) {
-        return register(name, () -> new SlabBlockWithBase(base.get(), properties));
+    public static <T extends Block> DeferredHolder<Block, Block> slab(String name, Supplier<T> base, NTBlockProperties properties) {
+        return register(name, () -> new SlabBlockWithBase(base.get(), properties.useSimpleBlockItem()));
     }
 
-    public static <T extends Block> DeferredHolder<Block, Block> wall(String name, Supplier<T> base, BlockBehaviour.Properties properties) {
+    public static <T extends Block> DeferredHolder<Block, Block> wall(String name, Supplier<T> base, NTBlockProperties properties) {
         return register(name, () -> new WallBlockWithBase(base.get(), properties));
     }
 

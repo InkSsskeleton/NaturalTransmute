@@ -3,17 +3,21 @@ package com.zg.natural_transmute.common.data.provider;
 import com.google.gson.JsonObject;
 import com.zg.natural_transmute.NaturalTransmute;
 import com.zg.natural_transmute.registry.NTBlocks;
+import com.zg.natural_transmute.registry.NTEnchantments;
 import com.zg.natural_transmute.registry.NTEntityTypes;
 import com.zg.natural_transmute.registry.NTItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -39,7 +43,6 @@ public class NTLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        this.add("itemGroup." + NaturalTransmute.MOD_ID, "Natural Transmute", "自然通路");
         this.addBlock(NTBlocks.TURQUOISE, "绿松石");
         this.addBlock(NTBlocks.BUTTERCUP, "毛茛");
         this.addBlock(NTBlocks.CORUNDUM, "刚玉");
@@ -65,6 +68,9 @@ public class NTLanguageProvider extends LanguageProvider {
         this.addBlock(NTBlocks.GATHERING_PLATFORM, "聚相台");
         this.addBlock(NTBlocks.HARMONIOUS_CHANGE_STOVE, "谐变炉");
         this.addBlock(NTBlocks.BLUE_NETHER_BRICKS, "蓝色下界砖块");
+        this.addBlock(NTBlocks.BLUE_NETHER_BRICK_SLAB, "蓝色下界砖块台阶");
+        this.addBlock(NTBlocks.BLUE_NETHER_BRICK_STAIRS, "蓝色下界砖块楼梯");
+        this.addBlock(NTBlocks.BLUE_NETHER_BRICK_WALL, "蓝色下界砖块墙");
         this.addBlock(NTBlocks.HETEROGENEOUS_STONE_ORE, "异相石矿石");
         this.addBlock(NTBlocks.DEEPSLATE_HETEROGENEOUS_STONE_ORE, "深层异相石矿石");
         this.addBlock(NTBlocks.ACTIVATED_TUBE_CORAL_BLOCK, "活性的管珊瑚块");
@@ -139,9 +145,10 @@ public class NTLanguageProvider extends LanguageProvider {
         this.addItem(NTItems.MOOSHROOM_STRANGE_FEED, "哞菇奇异饲料");
         this.addItem(NTItems.MOO_BLOOM_STRANGE_FEED, "哞花奇异饲料");
         this.addItem(NTItems.MOO_BLOOM_SPAWN_EGG, "哞花刷怪蛋");
-        this.addItem(NTItems.REED, "芦苇");
         this.addItem(NTItems.PAPYRUS, "纸莎草");
+        this.addItem(NTItems.PETARD, "炸药筒");
         this.addItem(NTItems.PITAYA, "火龙果");
+        this.addItem(NTItems.REED, "芦苇");
         this.addItem(NTItems.RED_BERYL, "红绿柱石");
         this.addItem(NTItems.REFRIGERATED_ROCKET, "制冷火箭");
         this.addItem(NTItems.SCULK_BONE, "幽匿骨头");
@@ -162,8 +169,8 @@ public class NTLanguageProvider extends LanguageProvider {
         this.addItem(NTItems.VODKA, "伏特加");
         this.addItem(NTItems.HARMONIOUS_CHANGE_LAVA_BUCKET, "谐变熔浆桶");
         this.addItem(NTItems.ETERNAL_HARMONIOUS_CHANGE_LAVA_BUCKET, "永恒谐变熔浆桶");
-        this.addItem(NTItems.CAT_FOOD_BLACK, "黑猫奇异猫粮");
         this.addItem(NTItems.CAT_FOOD_BRITISH_SHORTHAIR, "英国短毛猫奇异猫粮");
+        this.addItem(NTItems.CAT_FOOD_BLACK, "黑猫奇异猫粮");
         this.addItem(NTItems.CAT_FOOD_CALICO, "花猫奇异猫粮");
         this.addItem(NTItems.CAT_FOOD_JELLIE, "Jellie奇异猫粮");
         this.addItem(NTItems.CAT_FOOD_PERSIAN, "波斯猫奇异猫粮");
@@ -198,47 +205,49 @@ public class NTLanguageProvider extends LanguageProvider {
         this.addItem(NTItems.SCULK_BONE_HOE, "幽匿石锄");
         this.addItem(NTItems.WHALE_BONE_BOW, "鲸骨弓");
         this.addItem(NTItems.KATANA, "太刀");
-        this.addItem(NTItems.H_BADLANDS, "Withered", "枯槁缚相");
-        this.addItem(NTItems.H_BASALT_DELTAS, "Melting", "熔裂缚相");
-        this.addItem(NTItems.H_BEACH, "Sea Bore", "涌潮缚相");
-        this.addItem(NTItems.H_BIRCH_FOREST, "Green Leaf", "苍叶缚相");
-        this.addItem(NTItems.H_CHERRY_GROVE, "Lush Cherry Blossom", "繁樱缚相");
-        this.addItem(NTItems.H_CRIMSON_FOREST, "Red Fungus", "赤菌缚相");
-        this.addItem(NTItems.H_DARK_FOREST, "Deep Forest", "深林缚相");
-        this.addItem(NTItems.H_DEEPSLATE, "Deep Slate", "深岩缚相");
-        this.addItem(NTItems.H_DEEP_DARK, "Echo", "回音缚相");
-        this.addItem(NTItems.H_DESERT, "Hot-Dry", "燥热缚相");
-        this.addItem(NTItems.H_DRIPSTONE_CAVES, "Years", "岁月缚相");
-        this.addItem(NTItems.H_END, "The End", "终末缚相");
-        this.addItem(NTItems.H_END_HIGHLANDS, "Dragon Fight", "龙诀缚相");
-        this.addItem(NTItems.H_FLOWER_FOREST, "Colorful", "缤纷缚相");
-        this.addItem(NTItems.H_FOREST, "Greenery", "树海缚相");
-        this.addItem(NTItems.H_FROZEN_OCEAN, "Green with Cool", "冷翠缚相");
-        this.addItem(NTItems.H_GIANT_TREE_TAIGA, "Giant", "巨人缚相");
-        this.addItem(NTItems.H_ICE_SPIKES, "Extremely Cold", "极寒缚相");
-        this.addItem(NTItems.H_JUNGLE, "Rainwood", "雨木缚相");
-        this.addItem(NTItems.H_LUSH_CAVE, "Secret Garden", "秘园缚相");
-        this.addItem(NTItems.H_MANGROVE_SWAMP, "Frogs Croaking", "蛙鸣缚相");
-        this.addItem(NTItems.H_MEADOW, "Harmony", "和声缚相");
-        this.addItem(NTItems.H_MOUNTAINS, "Mountains Blessing", "峦祈缚相");
-        this.addItem(NTItems.H_MUSHROOM, "Fungus Stories", "菌语缚相");
-        this.addItem(NTItems.H_NETHER, "Nether", "地狱缚相");
-        this.addItem(NTItems.H_OCEAN, "Vast", "浩瀚缚相");
-        this.addItem(NTItems.H_PLAINS, "", "厚载缚相");
-        this.addItem(NTItems.H_RIVER, "Rushing", "奔流缚相");
-        this.addItem(NTItems.H_SAVANNA, "Wilderness", "荒野缚相");
-        this.addItem(NTItems.H_SNOWY_SLOPES, "Piercingly Cold", "凛峰缚相");
-        this.addItem(NTItems.H_SNOWY_TUNDRA, "Holiness", "霜洁缚相");
-        this.addItem(NTItems.H_SOUL_SAND_VALLEY, "Soul Lock", "锁魂缚相");
-        this.addItem(NTItems.H_STONE_SHORE, "", "沧碣缚相");
-        this.addItem(NTItems.H_SWAMP, "Silt Pool", "淤潭缚相");
-        this.addItem(NTItems.H_TAIGA, "Winter Forest", "冬林缚相");
-        this.addItem(NTItems.H_WARM_OCEAN, "Gorgeous", "斑斓缚相");
-        this.addItem(NTItems.H_WARPED_FOREST, "", "影染缚相");
-        this.addItem(NTItems.H_WIND, "Wind", "浩风缚相");
-        this.addItem(NTItems.H_WOODED_BADLANDS, "Nature Wakes", "复苏缚相");
-        this.addEntityType(NTEntityTypes.DUCK, "Duck", "鸭");
-        this.addEntityType(NTEntityTypes.LAVA_AXOLOTL, "Lava Axolotl", "熔岩美西螈");
+        this.addItem(NTItems.H_BADLANDS, "枯槁缚相");
+        this.addItem(NTItems.H_BASALT_DELTAS, "熔裂缚相");
+        this.addItem(NTItems.H_BEACH, "涌潮缚相");
+        this.addItem(NTItems.H_BIRCH_FOREST, "苍叶缚相");
+        this.addItem(NTItems.H_CHERRY_GROVE, "繁樱缚相");
+        this.addItem(NTItems.H_CRIMSON_FOREST, "赤菌缚相");
+        this.addItem(NTItems.H_DARK_FOREST, "深林缚相");
+        this.addItem(NTItems.H_DEEPSLATE, "深岩缚相");
+        this.addItem(NTItems.H_DEEP_DARK, "回音缚相");
+        this.addItem(NTItems.H_DESERT, "燥热缚相");
+        this.addItem(NTItems.H_DRIPSTONE_CAVES, "岁月缚相");
+        this.addItem(NTItems.H_END, "终末缚相");
+        this.addItem(NTItems.H_END_HIGHLANDS, "龙诀缚相");
+        this.addItem(NTItems.H_FLOWER_FOREST, "缤纷缚相");
+        this.addItem(NTItems.H_FOREST, "树海缚相");
+        this.addItem(NTItems.H_FROZEN_OCEAN, "冷翠缚相");
+        this.addItem(NTItems.H_OLD_GROWTH_TAIGA, "巨人缚相");
+        this.addItem(NTItems.H_ICE_SPIKES, "极寒缚相");
+        this.addItem(NTItems.H_JUNGLE, "雨木缚相");
+        this.addItem(NTItems.H_LUSH_CAVE, "秘园缚相");
+        this.addItem(NTItems.H_MANGROVE_SWAMP, "蛙鸣缚相");
+        this.addItem(NTItems.H_MEADOW, "和声缚相");
+        this.addItem(NTItems.H_MOUNTAINS, "峦祈缚相");
+        this.addItem(NTItems.H_MUSHROOM, "菌语缚相");
+        this.addItem(NTItems.H_NETHER, "地狱缚相");
+        this.addItem(NTItems.H_OCEAN, "浩瀚缚相");
+        this.addItem(NTItems.H_PLAINS, "厚载缚相");
+        this.addItem(NTItems.H_RIVER, "奔流缚相");
+        this.addItem(NTItems.H_SAVANNA, "荒野缚相");
+        this.addItem(NTItems.H_SNOWY_SLOPES, "凛峰缚相");
+        this.addItem(NTItems.H_SNOWY_PLAINS, "霜洁缚相");
+        this.addItem(NTItems.H_SOUL_SAND_VALLEY, "锁魂缚相");
+        this.addItem(NTItems.H_STONE_SHORE, "沧碣缚相");
+        this.addItem(NTItems.H_SWAMP, "淤潭缚相");
+        this.addItem(NTItems.H_TAIGA, "冬林缚相");
+        this.addItem(NTItems.H_WARM_OCEAN, "斑斓缚相");
+        this.addItem(NTItems.H_WARPED_FOREST, "影染缚相");
+        this.addItem(NTItems.H_WINDSWEPT, "浩风缚相");
+        this.addItem(NTItems.H_WOODED_BADLANDS, "复苏缚相");
+        this.addEnchantment(NTEnchantments.HEROIC, "英勇");
+        this.addEntityType(NTEntityTypes.DUCK, "鸭");
+        this.addEntityType(NTEntityTypes.LAVA_AXOLOTL, "熔岩美西螈");
+        this.add("itemGroup." + NaturalTransmute.MOD_ID, "Natural Transmute", "自然通路");
     }
 
     @Override
@@ -289,11 +298,21 @@ public class NTLanguageProvider extends LanguageProvider {
 
     private void addItem(DeferredHolder<Item, Item> key, String cn) {
         String path = BuiltInRegistries.ITEM.getKey(key.get()).getPath();
+        if (path.startsWith("h_")) {
+            path = path.replaceFirst("h_", StringUtils.EMPTY);
+        }
+
         this.add(key.get().getDescriptionId(), this.getEnglishName(path), cn);
     }
 
-    private void addEntityType(Supplier<? extends EntityType<?>> key, String en, String cn) {
-        this.add(key.get().getDescriptionId(), en, cn);
+    public void addEntityType(Supplier<? extends EntityType<?>> key, String cn) {
+        String path = BuiltInRegistries.ENTITY_TYPE.getKey(key.get()).getPath();
+        this.add(key.get().getDescriptionId(), this.getEnglishName(path), cn);
+    }
+
+    public void addEnchantment(ResourceKey<Enchantment> key, String cn) {
+        String en = this.getEnglishName(key.location().getPath());
+        this.add("enchantment." + key.location().toLanguageKey(), en, cn);
     }
 
     private void addTooltips(String key, String en, String cn) {

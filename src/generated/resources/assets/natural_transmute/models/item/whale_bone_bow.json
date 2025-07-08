@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "natural_transmute:item/nt_bow",
   "overrides": [
     {
       "model": "natural_transmute:item/whale_bone_bow_pulling_0",

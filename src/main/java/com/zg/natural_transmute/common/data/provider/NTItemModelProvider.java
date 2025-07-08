@@ -1,18 +1,18 @@
 package com.zg.natural_transmute.common.data.provider;
 
 import com.zg.natural_transmute.NaturalTransmute;
-import com.zg.natural_transmute.common.blocks.base.ISimpleBlockItem;
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import com.zg.natural_transmute.registry.NTBlocks;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import com.zg.natural_transmute.registry.NTItems;
 import com.zg.natural_transmute.utils.NTCommonUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
@@ -31,47 +31,23 @@ public class NTItemModelProvider extends ItemModelProvider {
         this.simpleItem(NTItems.BLUEBERRIES.get());
         this.simpleItem(NTItems.WARPED_WART.get());
         this.bowItem(NTItems.WHALE_BONE_BOW.get());
-        this.simpleBlockItem(NTBlocks.TURQUOISE.get());
-        this.simpleBlockItem(NTBlocks.CORUNDUM.get());
-        this.simpleBlockItem(NTBlocks.AMBER_BLOCK.get());
-        this.simpleBlockItem(NTBlocks.AZURE_FROGLIGHT.get());
-        this.simpleBlockItem(NTBlocks.CAVE_EARTH.get());
-        this.simpleBlockItem(NTBlocks.DEATH_EARTH.get());
-        this.simpleBlockItem(NTBlocks.GRASSLAND_EARTH.get());
-        this.simpleBlockItem(NTBlocks.OCEAN_EARTH.get());
-        this.simpleBlockItem(NTBlocks.PEAT_MOSS.get());
-        this.simpleBlockItem(NTBlocks.PLANTAIN_STEM.get());
         this.simpleBlockItem(NTBlocks.PLANTAIN_LEAVES.get());
-        this.simpleBlockItem(NTBlocks.ALGAL_END_STONE.get());
-        this.simpleBlockItem(NTBlocks.BLUE_NETHER_BRICKS.get());
         this.simpleBlockItem(NTBlocks.END_ALSOPHILA_LEAVES.get());
         this.simpleBlockItem(NTBlocks.END_ALSOPHILA_PLANKS.get());
-        this.simpleBlockItem(NTBlocks.END_ALSOPHILA_LOG.get());
-        this.simpleBlockItem(NTBlocks.END_ALSOPHILA_WOOD.get());
-        this.simpleBlockItem(NTBlocks.STRIPPED_END_ALSOPHILA_LOG.get());
-        this.simpleBlockItem(NTBlocks.STRIPPED_END_ALSOPHILA_WOOD.get());
-        this.simpleBlockItem(NTBlocks.HETEROGENEOUS_STONE_ORE.get());
-        this.simpleBlockItem(NTBlocks.DEEPSLATE_HETEROGENEOUS_STONE_ORE.get());
         this.simpleBlockItemWithParent(NTBlocks.BUTTERCUP.get());
-        this.withExistingParent(this.name(NTBlocks.PLANTAIN_SAPLING.get()), this.mcLoc("item/generated"))
-                .texture("layer0", this.modLoc("block/" + this.name(NTBlocks.PLANTAIN_SAPLING.get())));
-        this.withExistingParent(this.name(NTBlocks.END_ALSOPHILA_SAPLING.get()), this.mcLoc("item/generated"))
-                .texture("layer0", this.modLoc("block/" + this.name(NTBlocks.END_ALSOPHILA_SAPLING.get())));
-        NTCommonUtils.getKnownBlockStream().filter(block -> block instanceof DoorBlock)
-                .forEach(block -> this.basicItem(block.asItem()));
-        NTCommonUtils.getKnownBlockStream().filter(block -> block instanceof StairBlock
-                || block instanceof ISimpleBlockItem).forEach(this::simpleBlockItem);
-        for (Item item : NTCommonUtils.getKnownItems()) {
-            String path = BuiltInRegistries.ITEM.getKey(item).getPath();
-            if (item instanceof DeferredSpawnEggItem) {
-                this.withExistingParent(path, this.mcLoc("item/template_spawn_egg"));
-            } else if (item instanceof TieredItem) {
-                this.withExistingParent(path, this.mcLoc("item/handheld"))
-                        .texture("layer0", this.modLoc("item/" + path));
-            } else if (!(item instanceof BlockItem)) {
-                this.simpleItem(item);
-            }
-        }
+        this.withExistingParent(this.blockName(NTBlocks.PLANTAIN_SAPLING.get()), this.mcLoc("item/generated"))
+                .texture("layer0", this.modLoc("block/" + this.blockName(NTBlocks.PLANTAIN_SAPLING.get())));
+        this.withExistingParent(this.blockName(NTBlocks.END_ALSOPHILA_SAPLING.get()), this.mcLoc("item/generated"))
+                .texture("layer0", this.modLoc("block/" + this.blockName(NTBlocks.END_ALSOPHILA_SAPLING.get())));
+        NTCommonUtils.getKnownBlockStream().filter(block -> block.properties() instanceof NTBlockProperties properties
+                && properties.useSimpleBlockItem && !(block instanceof DoorBlock)).forEach(this::simpleBlockItem);
+        NTCommonUtils.getKnownBlockStream().filter(block -> block instanceof DoorBlock).forEach(block -> this.basicItem(block.asItem()));
+        NTCommonUtils.getKnownItemStream().filter(item -> item instanceof TieredItem).forEach(item ->
+                this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
+                        .texture("layer0", this.modLoc("item/" + this.itemName(item))));
+        NTCommonUtils.getKnownItemStream().filter(item -> item instanceof DeferredSpawnEggItem).forEach(item ->
+                this.withExistingParent(this.itemName(item), this.mcLoc("item/template_spawn_egg")));
+        NTCommonUtils.getKnownItemStream().filter(item -> item.components().has(NTDataComponents.SIMPLE_MODEL.get())).forEach(this::simpleItem);
     }
 
     private void simpleItem(Item item) {
@@ -80,8 +56,8 @@ public class NTItemModelProvider extends ItemModelProvider {
                 .texture("layer0", this.modLoc("item/" + path));
     }
 
-    private void simpleBlockItem(Block block) {
-        this.withExistingParent(this.name(block), this.modLoc("block/" + this.name(block)));
+    public ItemModelBuilder simpleBlockItem(Block block) {
+        return this.withExistingParent(this.blockName(block), this.modLoc("block/" + this.blockName(block)));
     }
 
     private void bowItem(Item item) {
@@ -102,11 +78,15 @@ public class NTItemModelProvider extends ItemModelProvider {
     }
 
     private void simpleBlockItemWithParent(Block block) {
-        this.withExistingParent(this.name(block), this.mcLoc("item/generated"))
-                .texture("layer0", this.modLoc("block/" + this.name(block)));
+        this.withExistingParent(this.blockName(block), this.mcLoc("item/generated"))
+                .texture("layer0", this.modLoc("block/" + this.blockName(block)));
     }
 
-    private String name(Block block) {
+    private String itemName(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item).getPath();
+    }
+
+    private String blockName(Block block) {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 

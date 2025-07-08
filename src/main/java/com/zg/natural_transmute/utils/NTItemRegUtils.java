@@ -6,6 +6,7 @@ import com.zg.natural_transmute.common.items.StrangeDogFood;
 import com.zg.natural_transmute.registry.NTDataComponents;
 import com.zg.natural_transmute.registry.NTItems;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.Unit;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.CatVariant;
@@ -25,7 +26,7 @@ import java.util.function.Supplier;
 public class NTItemRegUtils {
 
     public static DeferredHolder<Item, Item> normal(String name) {
-        return NTItems.ITEMS.register(name, () -> new Item(new Item.Properties()));
+        return NTItems.ITEMS.register(name, () -> new Item(new Item.Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE)));
     }
 
     public static DeferredHolder<Item, Item> alias(String name, DeferredHolder<Block, Block> block, Item.Properties properties) {
@@ -46,7 +47,8 @@ public class NTItemRegUtils {
 
     public static DeferredHolder<Item, Item> fx(String name, List<ResourceKey<Biome>> biomes) {
         return NTItems.ITEMS.register(name, () -> new Item(new Item.Properties()
-                .component(NTDataComponents.ASSOCIATED_BIOMES.get(), new AssociatedBiomes(biomes))));
+                .component(NTDataComponents.ASSOCIATED_BIOMES.get(), new AssociatedBiomes(biomes))
+                .component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE)));
     }
 
     public static DeferredHolder<Item, Item> food(String name, int nutrition, float saturation) {

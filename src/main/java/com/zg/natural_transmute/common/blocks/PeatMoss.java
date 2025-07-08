@@ -1,5 +1,6 @@
 package com.zg.natural_transmute.common.blocks;
 
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import com.zg.natural_transmute.common.data.tags.NTBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class PeatMoss extends CarpetBlock {
 
     public PeatMoss() {
-        super(Properties.ofFullCopy(Blocks.MOSS_CARPET));
+        super(NTBlockProperties.ofFullCopy(Blocks.MOSS_CARPET).useSimpleBlockItem());
     }
 
     @Override

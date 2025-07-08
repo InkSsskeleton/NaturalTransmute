@@ -2,6 +2,7 @@ package com.zg.natural_transmute.common.data.provider;
 
 import com.zg.natural_transmute.NaturalTransmute;
 import com.zg.natural_transmute.common.blocks.base.*;
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import com.zg.natural_transmute.common.blocks.state.properties.HCStovePart;
 import com.zg.natural_transmute.common.blocks.HarmoniousChangeStove;
 import com.zg.natural_transmute.common.blocks.Papyrus;
@@ -40,15 +41,6 @@ public class NTBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.simpleBlock(NTBlocks.TURQUOISE.get());
-        this.simpleBlock(NTBlocks.CAVE_EARTH.get());
-        this.simpleBlock(NTBlocks.DEATH_EARTH.get());
-        this.simpleBlock(NTBlocks.GRASSLAND_EARTH.get());
-        this.simpleBlock(NTBlocks.OCEAN_EARTH.get());
-        this.simpleBlock(NTBlocks.ALGAL_END_STONE.get());
-        this.simpleBlock(NTBlocks.BLUE_NETHER_BRICKS.get());
-        this.simpleBlock(NTBlocks.HETEROGENEOUS_STONE_ORE.get());
-        this.simpleBlock(NTBlocks.DEEPSLATE_HETEROGENEOUS_STONE_ORE.get());
         this.simpleBlockWithRenderType(NTBlocks.AMBER_BLOCK.get(), TRANSLUCENT);
         this.simpleBlockWithRenderType(NTBlocks.PLANTAIN_LEAVES.get(), CUTOUT_MIPPED);
         this.simpleBlockWithRenderType(NTBlocks.END_ALSOPHILA_LEAVES.get(), CUTOUT_MIPPED);
@@ -138,12 +130,14 @@ public class NTBlockStateProvider extends BlockStateProvider {
                 this.simpleBlockItem(wallBlock, this.models().wallInventory(this.name(wallBlock), texture));
             } else if (block instanceof FlowerPotBlock flowerPotBlock) {
                 this.registerPottedPlantStates(flowerPotBlock, flowerPotBlock.getPotted());
+            } else if (block.properties() instanceof NTBlockProperties properties && properties.isSimpleModelBlock) {
+                this.simpleBlock(block);
             }
         }
     }
 
     private void simpleBlockWithRenderType(Block block, ResourceLocation type) {
-        simpleBlock(block, models().cubeAll(this.name(block), this.blockTexture(block)).renderType(type));
+        this.simpleBlock(block, models().cubeAll(this.name(block), this.blockTexture(block)).renderType(type));
     }
 
     private void registerCoralBlockStates(Block currentBlock, Block originalBlock) {
@@ -167,7 +161,7 @@ public class NTBlockStateProvider extends BlockStateProvider {
 
     private void registerCropStates(Block block, IntegerProperty property) {
         VariantBlockStateBuilder builder = this.getVariantBuilder(block);
-        for (int stage : property.getPossibleValues()) {
+        for (Integer stage : property.getPossibleValues()) {
             String name = this.name(block) + "_stage" + stage;
             ResourceLocation texture = this.modLoc("block/" + name);
             ModelFile modelFile = this.models().crop(name, texture).renderType(CUTOUT);

@@ -1,8 +1,10 @@
 package com.zg.natural_transmute.common.items;
 
+import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
@@ -20,7 +22,7 @@ import net.minecraft.world.level.Level;
 public class HoneyWine extends Item {
 
     public HoneyWine() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

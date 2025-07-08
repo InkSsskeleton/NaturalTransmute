@@ -1,5 +1,6 @@
 package com.zg.natural_transmute.common.blocks;
 
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -19,7 +20,7 @@ public class AlgalEndStone extends Block {
     public static final BooleanProperty WITHERED = BooleanProperty.create("withered");
 
     public AlgalEndStone() {
-        super(Properties.ofFullCopy(Blocks.END_STONE));
+        super(NTBlockProperties.ofFullCopy(Blocks.END_STONE).isSimpleModelBlock().useSimpleBlockItem());
         this.registerDefaultState(this.stateDefinition.any().setValue(WITHERED, Boolean.TRUE));
     }
 

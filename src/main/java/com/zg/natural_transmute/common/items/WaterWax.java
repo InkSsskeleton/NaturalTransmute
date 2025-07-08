@@ -7,10 +7,12 @@ import com.zg.natural_transmute.common.blocks.ActivatedCoralBlock;
 import com.zg.natural_transmute.common.blocks.ActivatedCoralFan;
 import com.zg.natural_transmute.common.blocks.ActivatedCoralPlant;
 import com.zg.natural_transmute.common.blocks.ActivatedCoralWallFan;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import com.zg.natural_transmute.utils.NTCommonUtils;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoneycombItem;
@@ -31,7 +33,7 @@ public class WaterWax extends HoneycombItem {
     public static final Supplier<BiMap<Block, Block>> CAN_USE_WATER_WAX = Suppliers.memoize(WaterWax::putCoralAndDeadCoral);
 
     public WaterWax() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "natural_transmute:block/blue_nether_bricks",
+    "side": "natural_transmute:block/blue_nether_bricks",
+    "top": "natural_transmute:block/blue_nether_bricks"
+  }
+}

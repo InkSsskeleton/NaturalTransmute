@@ -5,6 +5,7 @@ import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +21,9 @@ public class StrangeDogFood extends Item {
     private final ResourceKey<WolfVariant> variant;
 
     public StrangeDogFood(ResourceKey<WolfVariant> variant) {
-        super(new Item.Properties().component(NTDataComponents.DOG_FOODS, new DogFoods(variant)));
+        super(new Item.Properties()
+                .component(NTDataComponents.DOG_FOODS, new DogFoods(variant))
+                .component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
         this.variant = variant;
     }
 

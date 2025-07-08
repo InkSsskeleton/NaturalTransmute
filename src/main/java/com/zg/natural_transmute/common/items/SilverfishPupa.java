@@ -1,11 +1,13 @@
 package com.zg.natural_transmute.common.items;
 
 import com.zg.natural_transmute.common.entities.projectile.SilverfishPupaEntity;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +20,7 @@ import net.minecraft.world.level.Level;
 public class SilverfishPupa extends Item implements ProjectileItem {
 
     public SilverfishPupa() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

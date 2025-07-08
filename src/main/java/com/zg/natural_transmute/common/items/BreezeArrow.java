@@ -1,8 +1,10 @@
 package com.zg.natural_transmute.common.items;
 
 import com.zg.natural_transmute.common.entities.projectile.BreezeArrowEntity;
+import com.zg.natural_transmute.registry.NTDataComponents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
+import net.minecraft.util.Unit;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -15,7 +17,7 @@ import javax.annotation.Nullable;
 public class BreezeArrow extends ArrowItem {
 
     public BreezeArrow() {
-        super(new Properties());
+        super(new Properties().component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE));
     }
 
     @Override

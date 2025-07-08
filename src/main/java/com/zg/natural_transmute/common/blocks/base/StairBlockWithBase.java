@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class StairBlockWithBase extends StairBlock implements IHasBaseBlock {
+public class StairBlockWithBase extends StairBlock {
 
     private final Block base;
 
@@ -13,7 +13,6 @@ public class StairBlockWithBase extends StairBlock implements IHasBaseBlock {
         this.base = base.getBlock();
     }
 
-    @Override
     public Block getBase() {
         return this.base;
     }

@@ -2,6 +2,7 @@ package com.zg.natural_transmute.common.blocks;
 
 import com.mojang.serialization.MapCodec;
 import com.zg.natural_transmute.common.blocks.entity.AmberBlockBlockEntity;
+import com.zg.natural_transmute.common.blocks.state.NTBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Containers;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 public class AmberBlock extends HalfTransparentBlock implements EntityBlock {
 
     public AmberBlock() {
-        super(Properties.ofFullCopy(Blocks.STONE).noOcclusion().lightLevel(l -> 4));
+        super(NTBlockProperties.ofFullCopy(Blocks.STONE).useSimpleBlockItem().noOcclusion().lightLevel(l -> 4));
     }
 
     @Override
