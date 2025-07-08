@@ -1,0 +1,35 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:andesite_slab"
+      },
+      {
+        "item": "minecraft:andesite"
+      },
+      {
+        "item": "minecraft:andesite_wall"
+      },
+      {
+        "item": "minecraft:polished_andesite"
+      },
+      {
+        "item": "minecraft:andesite_stairs"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_mountains_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_meadow_metaphysica"
+    }
+  ],
+  "new": "minecraft:diorite",
+  "old": "minecraft:andesite"
+}

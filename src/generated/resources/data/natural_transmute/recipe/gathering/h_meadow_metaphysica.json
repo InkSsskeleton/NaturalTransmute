@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:h_mountains_metaphysica"
+  },
+  "gathering_time": 320,
+  "input1": {
+    "item": "minecraft:grass_block"
+  },
+  "input2": {
+    "tag": "minecraft:flowers"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_meadow_metaphysica"
+  }
+}

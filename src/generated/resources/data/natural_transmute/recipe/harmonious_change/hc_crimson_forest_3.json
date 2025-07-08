@@ -1,0 +1,28 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:glowstone"
+      },
+      {
+        "item": "minecraft:magma_block"
+      }
+    ],
+    {
+      "item": "minecraft:weeping_vines"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_crimson_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:shroomlight"
+    }
+  ],
+  "time": 160
+}

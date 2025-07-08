@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [
+    {
+      "count": 1,
+      "id": "minecraft:oak_leaves"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:barrier"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_swamp_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:oak_leaves"
+    }
+  ],
+  "time": 160
+}

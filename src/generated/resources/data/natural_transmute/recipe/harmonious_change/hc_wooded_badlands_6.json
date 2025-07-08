@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_wooded_badlands_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:carrot"
+    }
+  ],
+  "time": 160
+}

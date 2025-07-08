@@ -1,0 +1,35 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:granite_slab"
+      },
+      {
+        "item": "minecraft:granite_stairs"
+      },
+      {
+        "item": "minecraft:polished_granite"
+      },
+      {
+        "item": "minecraft:granite_wall"
+      },
+      {
+        "item": "minecraft:granite"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_mountains_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_meadow_metaphysica"
+    }
+  ],
+  "new": "minecraft:andesite",
+  "old": "minecraft:granite"
+}

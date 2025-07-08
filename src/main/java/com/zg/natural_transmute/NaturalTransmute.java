@@ -20,7 +20,7 @@ public class NaturalTransmute {
         NTFluidTypes.FLUID_TYPES.register(modEventBus);
         NTMobEffects.MOB_EFFECTS.register(modEventBus);
         NTRecipes.RECIPE_TYPES.register(modEventBus);
-        NTRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+        NTRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         NTEntityTypes.ENTITY_TYPES.register(modEventBus);
         NTTriggerTypes.TRIGGER_TYPES.register(modEventBus);
         NTAttachmentTypes.ATTACHMENT_TYPES.register(modEventBus);

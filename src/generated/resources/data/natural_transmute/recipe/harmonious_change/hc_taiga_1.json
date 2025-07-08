@@ -1,0 +1,30 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [
+    {
+      "count": 1,
+      "id": "minecraft:spruce_sapling"
+    }
+  ],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:dead_bush"
+      },
+      {
+        "item": "minecraft:barrier"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_taiga_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:spruce_sapling"
+    }
+  ],
+  "time": 160
+}

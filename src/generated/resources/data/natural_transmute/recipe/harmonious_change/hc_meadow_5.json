@@ -1,0 +1,26 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:short_grass"
+    },
+    {
+      "item": "minecraft:light_gray_dye"
+    },
+    {
+      "item": "minecraft:light_gray_dye"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_meadow_metaphysica"
+  },
+  "results": [
+    {
+      "count": 3,
+      "id": "minecraft:azure_bluet"
+    }
+  ],
+  "time": 160
+}

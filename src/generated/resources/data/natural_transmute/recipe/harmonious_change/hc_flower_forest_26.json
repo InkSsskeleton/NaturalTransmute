@@ -1,0 +1,26 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "natural_transmute:buttercup"
+    },
+    {
+      "item": "natural_transmute:buttercup"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_flower_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:moo_bloom_strange_feed"
+    }
+  ],
+  "time": 160
+}

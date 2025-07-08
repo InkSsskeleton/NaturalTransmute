@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:glass"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_nether_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:quartz"
+    }
+  ],
+  "time": 160
+}

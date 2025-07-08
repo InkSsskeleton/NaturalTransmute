@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_river_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:sand"
+    }
+  ],
+  "time": 160
+}

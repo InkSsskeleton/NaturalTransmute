@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": [
+    {
+      "item": "minecraft:acacia_sapling"
+    },
+    {
+      "item": "minecraft:acacia_leaves"
+    },
+    {
+      "item": "minecraft:acacia_log"
+    }
+  ],
+  "input2": [
+    {
+      "item": "minecraft:acacia_sapling"
+    },
+    {
+      "item": "minecraft:acacia_leaves"
+    },
+    {
+      "item": "minecraft:acacia_log"
+    }
+  ],
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_savanna_metaphysica"
+  }
+}

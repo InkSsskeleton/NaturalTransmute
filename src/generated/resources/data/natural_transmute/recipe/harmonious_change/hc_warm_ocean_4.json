@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:turtle_scute"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_warm_ocean_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:nautilus_shell"
+    }
+  ],
+  "time": 160
+}

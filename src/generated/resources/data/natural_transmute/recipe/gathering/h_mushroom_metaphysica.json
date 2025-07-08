@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": {
+    "item": "minecraft:mycelium"
+  },
+  "input2": {
+    "item": "minecraft:mycelium"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_mushroom_metaphysica"
+  }
+}

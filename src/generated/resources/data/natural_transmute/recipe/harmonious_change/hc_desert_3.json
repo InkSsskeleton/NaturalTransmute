@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:sandstone"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_desert_metaphysica"
+  },
+  "results": [
+    {
+      "count": 4,
+      "id": "minecraft:sandstone"
+    }
+  ],
+  "time": 160
+}

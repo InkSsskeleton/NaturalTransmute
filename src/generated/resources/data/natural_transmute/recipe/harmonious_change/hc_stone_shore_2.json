@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "c:raw_materials"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_stone_shore_metaphysica"
+  },
+  "results": [
+    {
+      "count": 8,
+      "id": "minecraft:prismarine_crystals"
+    }
+  ],
+  "time": 160
+}

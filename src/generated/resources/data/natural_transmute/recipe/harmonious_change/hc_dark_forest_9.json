@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:red_mushroom"
+    },
+    {
+      "tag": "minecraft:planks"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_dark_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:red_mushroom_block"
+    }
+  ],
+  "time": 160
+}

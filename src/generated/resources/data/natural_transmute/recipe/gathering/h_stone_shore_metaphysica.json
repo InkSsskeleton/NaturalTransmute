@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:h_ocean_metaphysica"
+  },
+  "gathering_time": 320,
+  "input1": {
+    "item": "minecraft:seagrass"
+  },
+  "input2": {
+    "item": "minecraft:gravel"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_stone_shore_metaphysica"
+  }
+}

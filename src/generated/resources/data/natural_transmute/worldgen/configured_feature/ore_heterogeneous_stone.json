@@ -6,13 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "natural_transmute:heterogeneous_stone_ore",
-          "Properties": {
-            "facing": "north",
-            "half": "lower",
-            "lit": "false",
-            "stove_part": "main"
-          }
+          "Name": "natural_transmute:heterogeneous_stone_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

@@ -1,0 +1,26 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:stone_slab"
+      },
+      {
+        "item": "minecraft:stone"
+      },
+      {
+        "item": "minecraft:stone_stairs"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_warm_ocean_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_dripstone_caves_metaphysica"
+    }
+  ],
+  "new": "minecraft:mossy_cobblestone",
+  "old": "minecraft:stone"
+}

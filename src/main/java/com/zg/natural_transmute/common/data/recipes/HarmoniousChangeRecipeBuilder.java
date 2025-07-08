@@ -1,17 +1,21 @@
 package com.zg.natural_transmute.common.data.recipes;
 
 import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeRecipe;
-import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeSerializer;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.NonNullList;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedHashMap;
@@ -19,39 +23,95 @@ import java.util.Map;
 
 public class HarmoniousChangeRecipeBuilder implements RecipeBuilder {
 
-    public final Ingredient input1;
-    public final Ingredient input2;
-    public final Ingredient input3;
-    public final Ingredient fuXiang;
-    public final Ingredient results;
-    public final int amount;
-    public final int time;
-    protected final boolean shouldConsume;
-    protected final HarmoniousChangeSerializer.Factory<?> factory;
-    protected final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
+    public final NonNullList<Ingredient> ingredients = NonNullList.create();
+    public final NonNullList<ItemStack> excepts = NonNullList.create();
+    public final NonNullList<ItemStack> results = NonNullList.create();
+    public final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
+    public final Ingredient metaphysica;
+    public int time = 160;
+    public boolean consume = true;
+    public String name = StringUtils.EMPTY;
 
-    public HarmoniousChangeRecipeBuilder(
-            Ingredient input1, Ingredient input2, Ingredient input3,
-            Ingredient fuXiang, Ingredient results,
-            int amount, int time, boolean shouldConsume,
-            HarmoniousChangeSerializer.Factory<?> factory) {
-        this.input1 = input1;
-        this.input2 = input2;
-        this.input3 = input3;
-        this.fuXiang = fuXiang;
-        this.results = results;
-        this.amount = amount;
-        this.time = time;
-        this.shouldConsume = shouldConsume;
-        this.factory = factory;
+    private HarmoniousChangeRecipeBuilder(ItemLike... metaphysica) {
+        this.metaphysica = Ingredient.of(metaphysica);
     }
 
-    public static HarmoniousChangeRecipeBuilder addRecipe(
-            Ingredient input1, Ingredient input2, Ingredient input3, Ingredient fuXiang,
-            Ingredient result, int amount, int time, boolean shouldConsume) {
-        return new HarmoniousChangeRecipeBuilder(
-                input1, input2, input3, fuXiang, result, amount,
-                time, shouldConsume, HarmoniousChangeRecipe::new);
+    public static HarmoniousChangeRecipeBuilder addRecipe(ItemLike... metaphysica) {
+        return new HarmoniousChangeRecipeBuilder(metaphysica);
+    }
+
+    public HarmoniousChangeRecipeBuilder requires(TagKey<Item> tag) {
+        return this.requires(Ingredient.of(tag));
+    }
+
+    public HarmoniousChangeRecipeBuilder requires(ItemLike item) {
+        return this.requires(item, 1);
+    }
+
+    public HarmoniousChangeRecipeBuilder requires(ItemLike item, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            this.requires(Ingredient.of(item));
+        }
+
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder requires(Ingredient ingredient) {
+        return this.requires(ingredient, 1);
+    }
+
+    public HarmoniousChangeRecipeBuilder requires(Ingredient ingredient, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            this.ingredients.add(ingredient);
+        }
+
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder excepts(ItemLike itemLike) {
+        ItemStack itemStack = new ItemStack(itemLike);
+        if (!itemStack.isEmpty()) {
+            this.excepts.add(itemStack);
+        }
+
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder results(ItemStack itemStack) {
+        if (!itemStack.isEmpty()) {
+            this.results.add(itemStack);
+        }
+
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder results(ItemLike itemLike) {
+        return this.results(itemLike, 1);
+    }
+
+    public HarmoniousChangeRecipeBuilder results(ItemLike itemLike, int count) {
+        ItemStack itemStack = new ItemStack(itemLike);
+        if (!itemStack.isEmpty()) {
+            itemStack.setCount(count);
+            this.results.add(itemStack);
+        }
+
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder time(int time) {
+        this.time = time;
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder consume(boolean consume) {
+        this.consume = consume;
+        return this;
+    }
+
+    public HarmoniousChangeRecipeBuilder name(String name) {
+        this.name = name;
+        return this;
     }
 
     @Override
@@ -62,34 +122,24 @@ public class HarmoniousChangeRecipeBuilder implements RecipeBuilder {
 
     @Override
     public RecipeBuilder group(@Nullable String groupName) {
-        return null;
+        return this;
     }
 
     @Override
     public Item getResult() {
-        return this.results.getItems()[0].getItem();
+        return this.results.getFirst().getItem();
     }
 
     @Override
     public void save(RecipeOutput recipeOutput, ResourceLocation id) {
-        this.ensureValid(id);
+        if (this.criteria.isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + id);
         Advancement.Builder builder = recipeOutput.advancement()
                 .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
                 .rewards(AdvancementRewards.Builder.recipe(id))
                 .requirements(AdvancementRequirements.Strategy.OR);
         this.criteria.forEach(builder::addCriterion);
-        HarmoniousChangeRecipe recipe = this.factory.create(
-                this.input1, this.input2, this.input3, this.fuXiang,
-                this.results, this.amount, this.time, this.shouldConsume);
-        ResourceLocation r1 = id.withPrefix("harmonious_change/");
-        ResourceLocation r2 = id.withPrefix("recipes/harmonious_change/");
-        recipeOutput.accept(r1, recipe, builder.build(r2));
-    }
-
-    private void ensureValid(ResourceLocation id) {
-        if (this.criteria.isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + id);
-        }
+        HarmoniousChangeRecipe recipe = new HarmoniousChangeRecipe(this.ingredients, this.excepts, this.results, this.metaphysica, this.time, this.consume);
+        recipeOutput.accept(id.withPrefix("harmonious_change/"), recipe, builder.build(id.withPrefix("recipes/harmonious_change/")));
     }
 
 }

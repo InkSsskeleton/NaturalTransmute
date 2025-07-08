@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:nautilus_shell"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_stone_shore_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:goose_barnacle"
+    }
+  ],
+  "time": 160
+}

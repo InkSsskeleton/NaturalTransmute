@@ -1,0 +1,26 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:snout_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:blackstone"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_nether_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:snout_armor_trim_smithing_template"
+    }
+  ],
+  "time": 160
+}

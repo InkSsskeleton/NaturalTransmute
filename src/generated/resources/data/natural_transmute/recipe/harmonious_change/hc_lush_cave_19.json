@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "minecraft:coals"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_lush_cave_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:amber"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:chiseled_stone_bricks"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_stone_shore_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:cracked_stone_bricks"
+    }
+  ],
+  "time": 160
+}

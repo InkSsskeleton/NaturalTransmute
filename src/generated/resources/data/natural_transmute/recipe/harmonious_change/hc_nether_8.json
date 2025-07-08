@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:wind_charge"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_nether_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:fire_charge"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "minecraft:snow_block"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_snowy_slopes_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:powder_snow_bucket"
+    }
+  ],
+  "time": 160
+}

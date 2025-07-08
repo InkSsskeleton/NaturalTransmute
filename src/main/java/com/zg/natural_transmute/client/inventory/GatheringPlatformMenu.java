@@ -65,7 +65,7 @@ public class GatheringPlatformMenu extends AbstractSimpleMenu {
 
                 slot.onQuickCraft(sourceStack, copyOfSourceStack);
             } else if (index < 36) {
-                if (sourceStack.is(NTItems.HETEROGENEOUS_STONE) || sourceStack.is(NTItemTags.FU_XIANG)) {
+                if (sourceStack.is(NTItems.HETEROGENEOUS_STONE) || sourceStack.is(NTItemTags.METAPHYSICA)) {
                     if (!this.moveItemStackTo(sourceStack, 38, 39, Boolean.FALSE)) {
                         return ItemStack.EMPTY;
                     }

@@ -1,68 +1,83 @@
 package com.zg.natural_transmute.common.items.crafting;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
-public class HarmoniousChangeSerializer<T extends HarmoniousChangeRecipe> implements RecipeSerializer<T> {
+public class HarmoniousChangeSerializer implements RecipeSerializer<HarmoniousChangeRecipe> {
 
-    private final Factory<T> factory;
-    private final MapCodec<T> codec;
-    private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
+    private static final MapCodec<HarmoniousChangeRecipe> CODEC =
+            RecordCodecBuilder.mapCodec(instance -> instance.group(
+                    Ingredient.CODEC.listOf(1, 3).fieldOf("ingredients")
+                            .flatXmap(list -> {
+                                Ingredient[] ingredients = list.toArray(Ingredient[]::new);
+                                return DataResult.success(NonNullList.of(Ingredient.EMPTY, ingredients));
+                                }, DataResult::success)
+                            .forGetter(HarmoniousChangeRecipe::getIngredients),
+                    ItemStack.STRICT_CODEC.listOf().fieldOf("excepts")
+                            .flatXmap(list -> {
+                                ItemStack[] itemStacks = list.toArray(ItemStack[]::new);
+                                return DataResult.success(NonNullList.of(ItemStack.EMPTY, itemStacks));
+                                }, DataResult::success)
+                            .forGetter(HarmoniousChangeRecipe::getExcepts),
+                    ItemStack.STRICT_CODEC.listOf(1, 3).fieldOf("results")
+                            .flatXmap(list -> {
+                                ItemStack[] itemStacks = list.toArray(ItemStack[]::new);
+                                return DataResult.success(NonNullList.of(ItemStack.EMPTY, itemStacks));
+                            }, DataResult::success)
+                            .forGetter(HarmoniousChangeRecipe::getResults),
+                    Ingredient.CODEC_NONEMPTY.fieldOf("metaphysicas").forGetter(HarmoniousChangeRecipe::getMetaphysicas),
+                    Codec.INT.fieldOf("time").forGetter(HarmoniousChangeRecipe::getTime),
+                    Codec.BOOL.fieldOf("consume").forGetter(HarmoniousChangeRecipe::isConsume)
+            ).apply(instance, HarmoniousChangeRecipe::new));
 
-    public HarmoniousChangeSerializer(Factory<T> factory) {
-        this.factory = factory;
-        this.codec = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Ingredient.CODEC.fieldOf("input1").forGetter(recipe -> recipe.input1),
-                Ingredient.CODEC.fieldOf("input2").forGetter(recipe -> recipe.input2),
-                Ingredient.CODEC.fieldOf("input3").forGetter(recipe -> recipe.input3),
-                Ingredient.CODEC.fieldOf("fu_xiang").forGetter(recipe -> recipe.fuXiang),
-                Ingredient.CODEC_NONEMPTY.fieldOf("results").forGetter(recipe -> recipe.results),
-                Codec.INT.fieldOf("amount").forGetter(recipe -> recipe.amount),
-                Codec.INT.fieldOf("time").forGetter(recipe -> recipe.time),
-                Codec.BOOL.fieldOf("should_consume").orElse(true)
-                        .forGetter(recipe -> recipe.shouldConsume)
-        ).apply(instance, factory::create));
-        this.streamCodec = StreamCodec.of(this::toNetwork, this::fromNetwork);
-    }
-
-    public T fromNetwork(RegistryFriendlyByteBuf buffer) {
-        Ingredient input1 = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        Ingredient input2 = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        Ingredient input3 = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        Ingredient fuXiang = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        Ingredient results = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        return this.factory.create(input1, input2, input3, fuXiang, results,
-                buffer.readVarInt(), buffer.readVarInt(), buffer.readBoolean());
-    }
-
-    public void toNetwork(RegistryFriendlyByteBuf buffer, T recipe) {
-        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.input1);
-        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.input2);
-        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.input3);
-        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.fuXiang);
-        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.results);
-        buffer.writeVarInt(recipe.amount);
-        buffer.writeVarInt(recipe.time);
-        buffer.writeBoolean(recipe.shouldConsume);
+    @Override
+    public MapCodec<HarmoniousChangeRecipe> codec() {
+        return CODEC;
     }
 
     @Override
-    public MapCodec<T> codec() {
-        return this.codec;
+    public StreamCodec<RegistryFriendlyByteBuf, HarmoniousChangeRecipe> streamCodec() {
+        return StreamCodec.of(this::toNetwork, this::fromNetwork);
     }
 
-    @Override
-    public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
-        return this.streamCodec;
+    private HarmoniousChangeRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
+        NonNullList<Ingredient> ingredients = NonNullList.withSize(buffer.readVarInt(), Ingredient.EMPTY);
+        NonNullList<ItemStack> excepts = NonNullList.withSize(buffer.readVarInt(), ItemStack.EMPTY);
+        NonNullList<ItemStack> results = NonNullList.withSize(buffer.readVarInt(), ItemStack.EMPTY);
+        ingredients.replaceAll(ingredient -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
+        excepts.replaceAll(itemStack -> ItemStack.STREAM_CODEC.decode(buffer));
+        results.replaceAll(itemStack -> ItemStack.STREAM_CODEC.decode(buffer));
+        Ingredient metaphysica = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+        return new HarmoniousChangeRecipe(ingredients, excepts, results,
+                metaphysica, buffer.readVarInt(), buffer.readBoolean());
     }
 
-    public interface Factory<T extends HarmoniousChangeRecipe> {
-        T create(Ingredient input1, Ingredient input2, Ingredient input3, Ingredient fuXiang, Ingredient results, int amount, int time, boolean shouldConsume);
+    private void toNetwork(RegistryFriendlyByteBuf buffer, HarmoniousChangeRecipe recipe) {
+        buffer.writeVarInt(recipe.getIngredients().size());
+        buffer.writeVarInt(recipe.getResults().size());
+        for (Ingredient ingredient : recipe.getIngredients()) {
+            Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
+        }
+
+        for (ItemStack stack : recipe.getExcepts()) {
+            ItemStack.STREAM_CODEC.encode(buffer, stack);
+        }
+
+        for (ItemStack stack : recipe.getResults()) {
+            ItemStack.STREAM_CODEC.encode(buffer, stack);
+        }
+
+        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.getMetaphysicas());
+        buffer.writeVarInt(recipe.getTime());
+        buffer.writeBoolean(recipe.isConsume());
     }
 
 }

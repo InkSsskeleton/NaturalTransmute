@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:short_grass"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_swamp_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:vine"
+    }
+  ],
+  "time": 160
+}

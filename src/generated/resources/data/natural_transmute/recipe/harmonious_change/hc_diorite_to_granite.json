@@ -1,0 +1,35 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:diorite"
+      },
+      {
+        "item": "minecraft:diorite_stairs"
+      },
+      {
+        "item": "minecraft:diorite_slab"
+      },
+      {
+        "item": "minecraft:diorite_wall"
+      },
+      {
+        "item": "minecraft:polished_diorite"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_mountains_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_meadow_metaphysica"
+    }
+  ],
+  "new": "minecraft:granite",
+  "old": "minecraft:diorite"
+}

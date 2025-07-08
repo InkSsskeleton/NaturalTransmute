@@ -1,10 +1,12 @@
 package com.zg.natural_transmute.common.items.crafting;
 
 import com.zg.natural_transmute.common.blocks.entity.HarmoniousChangeStoveBlockEntity;
-import com.zg.natural_transmute.registry.NTBlocks;
+import com.zg.natural_transmute.registry.NTDataComponents;
+import com.zg.natural_transmute.registry.NTRecipeSerializers;
 import com.zg.natural_transmute.registry.NTRecipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -12,105 +14,110 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class HarmoniousChangeRecipe implements Recipe<HarmoniousChangeRecipeInput> {
 
-    public final Ingredient input1;
-    public final Ingredient input2;
-    public final Ingredient input3;
-    public final Ingredient fuXiang;
-    public final Ingredient results;
-    public final int amount;
-    public final int time;
-    public final boolean shouldConsume;
+    protected final NonNullList<Ingredient> ingredients;
+    private final NonNullList<ItemStack> excepts;
+    private final NonNullList<ItemStack> results;
+    private final Ingredient metaphysica;
+    private final int time;
+    private final boolean consume;
 
     public HarmoniousChangeRecipe(
-            Ingredient input1, Ingredient input2, Ingredient input3,
-            Ingredient fuXiang, Ingredient results,
-            int amount, int time, boolean shouldConsume) {
-        this.input1 = input1;
-        this.input2 = input2;
-        this.input3 = input3;
-        this.fuXiang = fuXiang;
+            NonNullList<Ingredient> ingredients,
+            NonNullList<ItemStack> excepts,
+            NonNullList<ItemStack> results,
+            Ingredient metaphysica,
+            int time, boolean consume) {
+        this.ingredients = ingredients;
+        this.excepts = excepts;
         this.results = results;
-        this.amount = amount;
+        this.metaphysica = metaphysica;
         this.time = time;
-        this.shouldConsume = shouldConsume;
+        this.consume = consume;
+    }
+
+    public HarmoniousChangeRecipe(NonNullList<Ingredient> ingredients, NonNullList<ItemStack> results, Ingredient metaphysica) {
+        this(ingredients, NonNullList.create(), results, metaphysica, 160, Boolean.TRUE);
+    }
+
+    protected boolean extraMatches(HarmoniousChangeRecipeInput input) {
+        return input.size() == 1 && this.getIngredients().size() == 1
+                ? this.getIngredients().getFirst().test(input.getItem(0))
+                : input.stackedContents().canCraft(this, (null));
     }
 
     @Override
     public boolean matches(HarmoniousChangeRecipeInput input, Level level) {
-        boolean flagA = false, b1 = false, b2 = false, b3 = false;
-        List<ItemStack> items = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            ItemStack item = input.getItem(i);
-            if (!item.isEmpty()) {
-                items.add(item);
-            }
-
-            if (this.input1.test(item)) {
-                b1 = true;
-            } else if (this.input2.test(item)) {
-                b2 = true;
-            } else if (this.input3.test(item)) {
-                b3 = true;
-            }
+        if (input.ingredientCount() != this.getIngredients().size()) {
+            return false;
+        } else {
+            Item item = input.getItem(4).getItem();
+            boolean flag1 = HarmoniousChangeStoveBlockEntity.getFuel().containsKey(input.getItem(3).getItem());
+            boolean flag2 = this.getMetaphysicas().test(input.getItem(4));
+            boolean flag3 = item.components().has(NTDataComponents.ASSOCIATED_BIOMES.get());
+            return flag1 && flag2 && flag3 && this.extraMatches(input);
         }
-
-        if (items.size() == 1) {
-            ItemStack item = items.getFirst();
-            if (this.input1.test(item) || this.input2.test(item) || this.input3.test(item)) {
-                flagA = true;
-            }
-        }
-
-        boolean flagB = b1 && b2 && b3;
-        boolean hasFuel = HarmoniousChangeStoveBlockEntity.getFuel()
-                .containsKey(input.getItem(3).getItem());
-        return this.fuXiang.test(input.getItem(4)) && hasFuel && (flagA || flagB);
     }
 
     @Override
     public ItemStack assemble(HarmoniousChangeRecipeInput input, HolderLookup.Provider registries) {
-        return this.results.getItems()[0].copy();
-    }
-
-    @Override
-    public boolean isSpecial() {
-        return true;
-    }
-
-    public Ingredient getInput2() {
-        return this.input2;
-    }
-
-    public NonNullList<ItemStack> getResultItemList() {
-        NonNullList<ItemStack> nonNullList = NonNullList.create();
-        nonNullList.addAll(Arrays.stream(this.results.getItems()).toList());
-        return nonNullList;
+        return this.getResultItem(registries).copy();
     }
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return true;
+        return width > this.getIngredients().size();
     }
 
     @Override
     public ItemStack getResultItem(HolderLookup.Provider registries) {
-        return this.getResultItemList().getFirst();
+        return this.getResults().getFirst();
     }
 
     @Override
-    public ItemStack getToastSymbol() {
-        return new ItemStack(NTBlocks.HARMONIOUS_CHANGE_STOVE.get());
+    public NonNullList<Ingredient> getIngredients() {
+        if (!this.excepts.isEmpty()) {
+            NonNullList<Ingredient> newIngredients = NonNullList.create();
+            for (Ingredient ingredient : this.ingredients) {
+                ItemStack[] items = ingredient.getItems();
+                List<ItemStack> list = Arrays.asList(items);
+                list.removeAll(this.excepts);
+                newIngredients.add(Ingredient.of(list.stream()));
+            }
+
+            return newIngredients;
+        } else {
+            return this.ingredients;
+        }
+    }
+
+    public NonNullList<ItemStack> getExcepts() {
+        return this.excepts;
+    }
+
+    public NonNullList<ItemStack> getResults() {
+        return this.results;
+    }
+
+    public Ingredient getMetaphysicas() {
+        return this.metaphysica;
+    }
+
+    public int getTime() {
+        return this.time;
+    }
+
+    public boolean isConsume() {
+        return this.consume;
     }
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return NTRecipes.HARMONIOUS_CHANGE_SERIALIZER.get();
+        return NTRecipeSerializers.HARMONIOUS_CHANGE_SERIALIZER.get();
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:jungle_sapling"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_jungle_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:plantain"
+    }
+  ],
+  "time": 160
+}

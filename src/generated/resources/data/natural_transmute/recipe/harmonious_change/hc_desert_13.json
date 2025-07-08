@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "c:foods/cooked_fish"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_desert_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:cat_food_persian"
+    }
+  ],
+  "time": 160
+}

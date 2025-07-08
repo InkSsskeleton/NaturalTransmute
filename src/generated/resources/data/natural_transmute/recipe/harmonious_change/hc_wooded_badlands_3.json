@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "minecraft:short_grass"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_wooded_badlands_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:grass_block"
+    }
+  ],
+  "time": 160
+}

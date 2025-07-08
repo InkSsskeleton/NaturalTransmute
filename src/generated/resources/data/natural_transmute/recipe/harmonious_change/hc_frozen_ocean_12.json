@@ -1,0 +1,28 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": false,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    [
+      {
+        "item": "minecraft:soul_sand"
+      },
+      {
+        "item": "minecraft:soul_soil"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_frozen_ocean_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:basalt"
+    }
+  ],
+  "time": 160
+}

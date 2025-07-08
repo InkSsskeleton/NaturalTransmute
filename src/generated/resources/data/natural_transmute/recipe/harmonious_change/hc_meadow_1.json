@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:raw_iron"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_meadow_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:amethyst_shard"
+    }
+  ],
+  "time": 160
+}

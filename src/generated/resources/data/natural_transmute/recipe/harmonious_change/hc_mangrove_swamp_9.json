@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:glow_lichen"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:moss_carpet"
+    }
+  ],
+  "time": 160
+}

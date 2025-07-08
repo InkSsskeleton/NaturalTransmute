@@ -1,0 +1,27 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "type": "neoforge:block_tag",
+      "tag": "c:skulls"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_dark_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:totem_of_undying"
+    }
+  ],
+  "time": 160
+}

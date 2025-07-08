@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": {
+    "item": "minecraft:end_stone"
+  },
+  "input2": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_end_highlands_metaphysica"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "natural_transmute:hc_copper_oxidation",
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_swamp_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_jungle_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_river_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_ocean_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_frozen_ocean_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_beach_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_stone_shore_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_warm_ocean_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_lush_cave_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_dripstone_caves_metaphysica"
+    }
+  ]
+}

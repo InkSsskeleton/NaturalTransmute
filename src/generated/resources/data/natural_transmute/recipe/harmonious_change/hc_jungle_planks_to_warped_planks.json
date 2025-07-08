@@ -1,0 +1,45 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:jungle_door"
+      },
+      {
+        "item": "minecraft:jungle_slab"
+      },
+      {
+        "item": "minecraft:jungle_trapdoor"
+      },
+      {
+        "item": "minecraft:jungle_sign"
+      },
+      {
+        "item": "minecraft:jungle_pressure_plate"
+      },
+      {
+        "item": "minecraft:jungle_sign"
+      },
+      {
+        "item": "minecraft:jungle_fence"
+      },
+      {
+        "item": "minecraft:jungle_stairs"
+      },
+      {
+        "item": "minecraft:jungle_planks"
+      },
+      {
+        "item": "minecraft:jungle_button"
+      },
+      {
+        "item": "minecraft:jungle_fence_gate"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_warped_forest_metaphysica"
+  },
+  "new": "minecraft:warped_planks",
+  "old": "minecraft:jungle_planks"
+}

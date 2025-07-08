@@ -1,0 +1,24 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:deepslate_tile_wall"
+      },
+      {
+        "item": "minecraft:deepslate_tile_stairs"
+      },
+      {
+        "item": "minecraft:deepslate_tiles"
+      },
+      {
+        "item": "minecraft:deepslate_tile_slab"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_windswept_metaphysica"
+  },
+  "new": "minecraft:tuff_bricks",
+  "old": "minecraft:deepslate_tiles"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "c:raw_materials"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_warm_ocean_metaphysica"
+  },
+  "results": [
+    {
+      "count": 8,
+      "id": "minecraft:prismarine_shard"
+    }
+  ],
+  "time": 160
+}

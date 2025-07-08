@@ -1,0 +1,35 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:mossy_cobblestone_slab"
+      },
+      {
+        "item": "minecraft:mossy_cobblestone_stairs"
+      },
+      {
+        "item": "minecraft:mossy_cobblestone"
+      },
+      {
+        "item": "minecraft:mossy_cobblestone_wall"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_desert_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_badlands_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_ice_spikes_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+    }
+  ],
+  "new": "minecraft:cobblestone",
+  "old": "minecraft:mossy_cobblestone"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [
+    {
+      "count": 1,
+      "id": "minecraft:mangrove_leaves"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:barrier"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:mangrove_leaves"
+    }
+  ],
+  "time": 160
+}

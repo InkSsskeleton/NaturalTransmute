@@ -3,6 +3,7 @@ package com.zg.natural_transmute.compat.jei.categories;
 import com.zg.natural_transmute.NaturalTransmute;
 import com.zg.natural_transmute.common.blocks.entity.HarmoniousChangeStoveBlockEntity;
 import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeRecipe;
+import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeRecipeInput;
 import com.zg.natural_transmute.registry.NTBlocks;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -19,6 +20,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -63,26 +65,31 @@ public class HarmoniousChangeCategory implements IRecipeCategory<HarmoniousChang
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, HarmoniousChangeRecipe recipe, IFocusGroup focuses) {
-        NonNullList<ItemStack> resultItemList = recipe.getResultItemList();
+        NonNullList<Ingredient> ingredients = recipe.getIngredients();
+        NonNullList<ItemStack> results = recipe.getResults();
         Set<Item> items = HarmoniousChangeStoveBlockEntity.getFuel().keySet();
+        List<ItemStack> inputList = List.of(ingredients.getFirst().getItems());
         List<ItemStack> fuelList = new ArrayList<>(items.stream().map(ItemStack::new).toList());
-        builder.addSlot(RecipeIngredientRole.INPUT, 5, 12).addIngredients(recipe.input1);
-        builder.addSlot(RecipeIngredientRole.INPUT, 23, 12).addIngredients(recipe.getInput2());
-        builder.addSlot(RecipeIngredientRole.INPUT, 41, 12).addIngredients(recipe.input3);
+        builder.addSlot(RecipeIngredientRole.INPUT, 5, 12).addIngredients(ingredients.getFirst());
+        builder.addSlot(RecipeIngredientRole.INPUT, 23, 12).addIngredients(ingredients.get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 41, 12).addIngredients(ingredients.get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 42).addItemStacks(fuelList);
-        builder.addSlot(RecipeIngredientRole.INPUT, 65, 19).addIngredients(recipe.fuXiang);
-        if (resultItemList.size() == 1) {
+        builder.addSlot(RecipeIngredientRole.INPUT, 65, 19).addIngredients(recipe.getMetaphysicas());
+        HarmoniousChangeRecipeInput input = new HarmoniousChangeRecipeInput(inputList, ItemStack.EMPTY, ItemStack.EMPTY);
+        if (results.size() == 1) {
             ClientLevel level = Minecraft.getInstance().level;
-            ItemStack resultItem = level != null ? recipe.getResultItem(level.registryAccess()) : resultItemList.getFirst();
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 102, 38).addItemStack(resultItem);
+            if (level != null) {
+                ItemStack resultItem = recipe.assemble(input, level.registryAccess());
+                builder.addSlot(RecipeIngredientRole.OUTPUT, 102, 38).addItemStack(resultItem);
+            }
         }
 
-        if (resultItemList.size() == 2) {
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 38).addItemStack(resultItemList.get(1));
+        if (results.size() == 2) {
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 38).addItemStack(results.get(1));
         }
 
-        if (resultItemList.size() == 3) {
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 138, 38).addItemStack(resultItemList.get(2));
+        if (results.size() == 3) {
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 138, 38).addItemStack(results.get(2));
         }
     }
 

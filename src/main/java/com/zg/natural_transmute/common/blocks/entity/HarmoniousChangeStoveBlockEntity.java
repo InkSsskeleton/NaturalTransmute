@@ -34,6 +34,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.ObjIntConsumer;
@@ -93,17 +95,17 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         }
 
         ++this.time;
-        this.totalTime = recipe.time;
+        this.totalTime = recipe.getTime();
         if (this.time < this.totalTime) {
             return false;
         }
 
         this.time = 0;
-        ItemStack resultStack = recipe.getResultItem(this.level.registryAccess());
+        ItemStack resultStack = recipe.assemble(this.getRecipeInput(), this.level.registryAccess());
         ItemStack outStack = this.handler.getStackInSlot(5);
         ItemStack extraStack = this.handler.getStackInSlot(6);
-        ItemStack resultExtraStack = recipe.getResultItemList().size() > 1 ?
-                recipe.getResultItemList().get(1) : ItemStack.EMPTY;
+        ItemStack resultExtraStack = recipe.getResults().size() > 1 ?
+                recipe.getResults().get(1) : ItemStack.EMPTY;
         if (outStack.isEmpty()) {
             this.handler.setStackInSlot(5, resultStack.copy());
         } else if (ItemStack.isSameItemSameComponents(outStack, resultStack)) {
@@ -118,7 +120,7 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
             }
         }
 
-        if (recipe.shouldConsume) {
+        if (recipe.isConsume()) {
             NTCommonUtils.consumeIngredients(this);
         }
 
@@ -140,8 +142,10 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         ItemStack input2 = this.getItem(1);
         ItemStack input3 = this.getItem(2);
         ItemStack fuel = this.getItem(3);
-        ItemStack fuXiang = this.getItem(4);
-        return new HarmoniousChangeRecipeInput(input1, input2, input3, fuel, fuXiang);
+        ItemStack metaphysica = this.getItem(4);
+        List<ItemStack> ingredients = Arrays.asList(input1, input2, input3);
+        ingredients.removeIf(ItemStack::isEmpty);
+        return new HarmoniousChangeRecipeInput(ingredients, fuel, metaphysica);
     }
 
     private boolean isLit() {
@@ -162,9 +166,9 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
     }
 
     protected boolean canWork(HarmoniousChangeRecipe recipe) {
-        if (this.hasInput()) {
+        if (this.level != null && recipe.matches(this.getRecipeInput(), this.level)) {
             boolean checkExtra;
-            ItemStack resultStack = recipe.getResultItemList().getFirst();
+            ItemStack resultStack = recipe.getResults().getFirst();
             if (resultStack.isEmpty()) {
                 return false;
             } else {
@@ -177,7 +181,7 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
                     checkExtra = outStack.getCount() + resultStack.getCount() <= resultStack.getMaxStackSize();
                 }
 
-                ItemStack resultExtraStack1 = recipe.getResultItemList().size() > 1 ? recipe.getResultItemList().get(1) : ItemStack.EMPTY;
+                ItemStack resultExtraStack1 = recipe.getResults().size() > 1 ? recipe.getResults().get(1) : ItemStack.EMPTY;
                 if (resultExtraStack1.isEmpty()) {
                     return checkExtra;
                 } else {
@@ -190,7 +194,7 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
                         checkExtra = extraStack1.getCount() + resultExtraStack1.getCount() <= resultExtraStack1.getMaxStackSize();
                     }
 
-                    ItemStack resultExtraStack2 = recipe.getResultItemList().size() > 2 ? recipe.getResultItemList().get(2) : ItemStack.EMPTY;
+                    ItemStack resultExtraStack2 = recipe.getResults().size() > 2 ? recipe.getResults().get(2) : ItemStack.EMPTY;
                     if (resultExtraStack2.isEmpty()) {
                         return checkExtra;
                     } else if (checkExtra) {

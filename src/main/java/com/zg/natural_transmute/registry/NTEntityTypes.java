@@ -4,10 +4,7 @@ import com.zg.natural_transmute.NaturalTransmute;
 import com.zg.natural_transmute.common.entities.animal.Duck;
 import com.zg.natural_transmute.common.entities.animal.LavaAxolotl;
 import com.zg.natural_transmute.common.entities.animal.MooBloom;
-import com.zg.natural_transmute.common.entities.projectile.BreezeArrowEntity;
-import com.zg.natural_transmute.common.entities.projectile.RefrigeratedRocketEntity;
-import com.zg.natural_transmute.common.entities.projectile.SilverfishPupaEntity;
-import com.zg.natural_transmute.common.entities.projectile.ThrownDuckEggEntity;
+import com.zg.natural_transmute.common.entities.projectile.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -30,6 +27,9 @@ public class NTEntityTypes {
                     .clientTrackingRange((4)).updateInterval((10)).fireImmune().build("refrigerated_rocket"));
     public static final DeferredHolder<EntityType<?>, EntityType<ThrownDuckEggEntity>> DUCK_EGG = ENTITY_TYPES.register("duck_egg",
             () -> EntityType.Builder.<ThrownDuckEggEntity>of(ThrownDuckEggEntity::new, MobCategory.MISC).sized(0.25F, 0.25F)
+                    .clientTrackingRange((4)).updateInterval((10)).build("duck_egg"));
+    public static final DeferredHolder<EntityType<?>, EntityType<ThrownPetard>> PETARD = ENTITY_TYPES.register("petard",
+            () -> EntityType.Builder.<ThrownPetard>of(ThrownPetard::new, MobCategory.MISC).sized(0.25F, 0.25F)
                     .clientTrackingRange((4)).updateInterval((10)).build("duck_egg"));
     // Animal
     public static final DeferredHolder<EntityType<?>, EntityType<LavaAxolotl>> LAVA_AXOLOTL = ENTITY_TYPES.register("lava_axolotl",

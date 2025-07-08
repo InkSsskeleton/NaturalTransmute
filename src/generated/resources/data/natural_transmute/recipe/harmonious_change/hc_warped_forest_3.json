@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:obsidian"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_warped_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:crying_obsidian"
+    }
+  ],
+  "time": 160
+}

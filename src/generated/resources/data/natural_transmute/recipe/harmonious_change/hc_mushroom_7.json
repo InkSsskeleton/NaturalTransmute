@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "tag": "minecraft:planks"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_mushroom_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:brown_mushroom_block"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_metaphysica": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#natural_transmute:metaphysica"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natural_transmute:hc_stone_to_mossy_cobblestone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_metaphysica"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natural_transmute:hc_stone_to_mossy_cobblestone"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "minecraft:flowers"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_cherry_grove_metaphysica"
+  },
+  "results": [
+    {
+      "count": 4,
+      "id": "minecraft:pink_petals"
+    }
+  ],
+  "time": 160
+}

@@ -1,5 +1,6 @@
 package com.zg.natural_transmute.common.items.crafting;
 
+import com.zg.natural_transmute.registry.NTRecipeSerializers;
 import com.zg.natural_transmute.registry.NTRecipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
@@ -50,7 +51,7 @@ public class GatheringRecipe implements Recipe<GatheringRecipeInput> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return NTRecipes.GATHERING_SERIALIZER.get();
+        return NTRecipeSerializers.GATHERING_SERIALIZER.get();
     }
 
     @Override

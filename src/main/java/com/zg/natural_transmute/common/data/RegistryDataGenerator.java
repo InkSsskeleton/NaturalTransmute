@@ -3,6 +3,7 @@ package com.zg.natural_transmute.common.data;
 import com.zg.natural_transmute.NaturalTransmute;
 import com.zg.natural_transmute.registry.NTBiomeModifiers;
 import com.zg.natural_transmute.registry.NTConfiguredFeatures;
+import com.zg.natural_transmute.registry.NTEnchantments;
 import com.zg.natural_transmute.registry.NTPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -17,6 +18,7 @@ import java.util.concurrent.CompletableFuture;
 public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.ENCHANTMENT, NTEnchantments::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, NTConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, NTPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, NTBiomeModifiers::bootstrap);

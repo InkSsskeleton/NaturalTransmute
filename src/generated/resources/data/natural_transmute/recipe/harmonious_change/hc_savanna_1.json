@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    },
+    {
+      "item": "minecraft:mutton"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_savanna_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:leather"
+    }
+  ],
+  "time": 160
+}

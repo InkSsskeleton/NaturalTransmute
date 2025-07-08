@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:polished_blackstone_stairs"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_deepslate_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:polished_blackstone"
+    }
+  ],
+  "time": 160
+}

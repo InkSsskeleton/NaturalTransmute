@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": [
+    {
+      "item": "minecraft:cherry_sapling"
+    },
+    {
+      "item": "minecraft:cherry_leaves"
+    },
+    {
+      "item": "minecraft:cherry_log"
+    }
+  ],
+  "input2": [
+    {
+      "item": "minecraft:cherry_sapling"
+    },
+    {
+      "item": "minecraft:cherry_leaves"
+    },
+    {
+      "item": "minecraft:cherry_log"
+    }
+  ],
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_cherry_grove_metaphysica"
+  }
+}

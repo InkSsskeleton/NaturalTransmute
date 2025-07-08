@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": {
+    "tag": "minecraft:villager_plantable_seeds"
+  },
+  "input2": {
+    "item": "minecraft:dirt"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_plains_metaphysica"
+  }
+}

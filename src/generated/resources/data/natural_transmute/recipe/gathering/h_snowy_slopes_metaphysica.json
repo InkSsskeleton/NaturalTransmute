@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:h_mountains_metaphysica"
+  },
+  "gathering_time": 320,
+  "input1": {
+    "item": "minecraft:blue_ice"
+  },
+  "input2": {
+    "item": "minecraft:powder_snow_bucket"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_snowy_slopes_metaphysica"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:iron_sword"
+    },
+    {
+      "item": "minecraft:cherry_sapling"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_cherry_grove_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:katana"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_taiga_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:beetroot"
+    }
+  ],
+  "time": 160
+}

@@ -14,7 +14,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class GatheringPlatformScreen extends AbstractContainerScreen<GatheringPlatformMenu> {
 
-    private static final String PATH = "textures/gui/gathering_platform_";
     private static final ResourceLocation PROGRESS_BAR = NaturalTransmute.prefix("gathering_bar");
 
     public GatheringPlatformScreen(GatheringPlatformMenu menu, Inventory inventory, Component title) {
@@ -33,7 +32,7 @@ public class GatheringPlatformScreen extends AbstractContainerScreen<GatheringPl
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
         int time = Mth.ceil(this.menu.getGatheringTime() * 27.0F);
-        ResourceLocation texture = NaturalTransmute.prefix(PATH + this.menu.getCurrentState() + ".png");
+        ResourceLocation texture = NaturalTransmute.prefix("textures/gui/gathering_platform.png");
         guiGraphics.blit(texture, i, j, 0, 0, this.imageWidth, this.imageHeight);
         guiGraphics.blitSprite(PROGRESS_BAR, (27), (3), (0), (0), i + 76, j + 27, time, (3));
     }

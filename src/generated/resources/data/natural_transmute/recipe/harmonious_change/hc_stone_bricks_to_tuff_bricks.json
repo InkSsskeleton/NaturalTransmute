@@ -1,0 +1,27 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:chiseled_stone_bricks"
+      },
+      {
+        "item": "minecraft:stone_brick_wall"
+      },
+      {
+        "item": "minecraft:stone_bricks"
+      },
+      {
+        "item": "minecraft:stone_brick_slab"
+      },
+      {
+        "item": "minecraft:stone_brick_stairs"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_windswept_metaphysica"
+  },
+  "new": "minecraft:tuff_bricks",
+  "old": "minecraft:stone_bricks"
+}

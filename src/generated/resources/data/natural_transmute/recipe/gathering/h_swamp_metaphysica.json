@@ -1,0 +1,18 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:heterogeneous_stone"
+  },
+  "gathering_time": 160,
+  "input1": {
+    "item": "minecraft:slime_ball"
+  },
+  "input2": {
+    "item": "minecraft:slime_ball"
+  },
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_swamp_metaphysica"
+  }
+}

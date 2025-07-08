@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:h_forest_metaphysica"
+  },
+  "gathering_time": 320,
+  "input1": [
+    {
+      "item": "minecraft:dark_oak_sapling"
+    },
+    {
+      "item": "minecraft:dark_oak_leaves"
+    },
+    {
+      "item": "minecraft:dark_oak_log"
+    }
+  ],
+  "input2": [
+    {
+      "item": "minecraft:dark_oak_sapling"
+    },
+    {
+      "item": "minecraft:dark_oak_leaves"
+    },
+    {
+      "item": "minecraft:dark_oak_log"
+    }
+  ],
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_dark_forest_metaphysica"
+  }
+}

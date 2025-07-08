@@ -1,0 +1,45 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:dark_oak_sign"
+      },
+      {
+        "item": "minecraft:dark_oak_door"
+      },
+      {
+        "item": "minecraft:dark_oak_fence_gate"
+      },
+      {
+        "item": "minecraft:dark_oak_stairs"
+      },
+      {
+        "item": "minecraft:dark_oak_slab"
+      },
+      {
+        "item": "minecraft:dark_oak_fence"
+      },
+      {
+        "item": "minecraft:dark_oak_pressure_plate"
+      },
+      {
+        "item": "minecraft:dark_oak_sign"
+      },
+      {
+        "item": "minecraft:dark_oak_trapdoor"
+      },
+      {
+        "item": "minecraft:dark_oak_button"
+      },
+      {
+        "item": "minecraft:dark_oak_planks"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_crimson_forest_metaphysica"
+  },
+  "new": "minecraft:crimson_planks",
+  "old": "minecraft:dark_oak_planks"
+}

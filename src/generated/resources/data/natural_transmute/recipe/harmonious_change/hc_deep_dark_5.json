@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:sculk"
+    },
+    {
+      "item": "minecraft:goat_horn"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_deep_dark_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:sculk_shrieker"
+    }
+  ],
+  "time": 160
+}

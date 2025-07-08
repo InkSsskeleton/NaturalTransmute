@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:ice"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_ice_spikes_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:packed_ice"
+    }
+  ],
+  "time": 160
+}

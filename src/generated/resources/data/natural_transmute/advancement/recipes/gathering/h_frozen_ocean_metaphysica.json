@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_h_ocean_metaphysica": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natural_transmute:h_ocean_metaphysica"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natural_transmute:h_frozen_ocean_metaphysica"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_h_ocean_metaphysica"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natural_transmute:h_frozen_ocean_metaphysica"
+    ]
+  }
+}

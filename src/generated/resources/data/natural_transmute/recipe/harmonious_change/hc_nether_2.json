@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_block"
+    },
+    {
+      "item": "minecraft:magma_block"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_nether_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:glowstone"
+    }
+  ],
+  "time": 160
+}

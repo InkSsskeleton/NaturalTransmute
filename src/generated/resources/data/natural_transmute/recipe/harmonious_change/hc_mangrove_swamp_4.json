@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:ochre_froglight"
+    }
+  ],
+  "time": 160
+}

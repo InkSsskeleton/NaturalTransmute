@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:chiseled_stone_bricks"
+      },
+      {
+        "item": "minecraft:chiseled_deepslate"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_cherry_grove_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:chiseled_tuff"
+    }
+  ],
+  "time": 160
+}

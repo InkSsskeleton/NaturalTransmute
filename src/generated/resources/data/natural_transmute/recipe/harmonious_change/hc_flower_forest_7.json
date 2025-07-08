@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "tag": "natural_transmute:vegetable"
+      },
+      {
+        "tag": "natural_transmute:fruit"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_flower_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:apple"
+    }
+  ],
+  "time": 160
+}

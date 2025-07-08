@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:heartbreak_pottery_sherd"
+    },
+    {
+      "item": "minecraft:brick"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_old_growth_taiga_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:heartbreak_pottery_sherd"
+    }
+  ],
+  "time": 160
+}

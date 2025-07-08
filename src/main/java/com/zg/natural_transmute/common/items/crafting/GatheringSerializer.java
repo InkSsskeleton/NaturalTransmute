@@ -21,7 +21,7 @@ public class GatheringSerializer<T extends GatheringRecipe> implements RecipeSer
                 Ingredient.CODEC_NONEMPTY.fieldOf("input1").forGetter(recipe -> recipe.input1),
                 Ingredient.CODEC_NONEMPTY.fieldOf("input2").forGetter(recipe -> recipe.input2),
                 ItemStack.CODEC.fieldOf("core").forGetter(recipe -> recipe.core),
-                ItemStack.CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
+                ItemStack.CODEC.fieldOf("results").forGetter(recipe -> recipe.result),
                 Codec.INT.fieldOf("gathering_time").forGetter(recipe -> recipe.gatheringTime)
         ).apply(instance, factory::create));
         this.streamCodec = StreamCodec.of(this::toNetwork, this::fromNetwork);

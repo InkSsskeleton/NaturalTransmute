@@ -1,0 +1,37 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:cobblestone"
+      },
+      {
+        "item": "minecraft:cobblestone_stairs"
+      },
+      {
+        "item": "minecraft:cobblestone_slab"
+      },
+      {
+        "item": "minecraft:cobblestone_wall"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:kelp"
+      },
+      {
+        "item": "minecraft:seagrass"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_beach_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_stone_shore_metaphysica"
+    }
+  ],
+  "new": "minecraft:mossy_cobblestone",
+  "old": "minecraft:cobblestone"
+}

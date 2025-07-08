@@ -1,0 +1,31 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    [
+      {
+        "item": "minecraft:potion"
+      },
+      {
+        "item": "minecraft:splash_potion"
+      },
+      {
+        "item": "minecraft:lingering_potion"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_frozen_ocean_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "natural_transmute:honey_wine"
+    }
+  ],
+  "time": 160
+}

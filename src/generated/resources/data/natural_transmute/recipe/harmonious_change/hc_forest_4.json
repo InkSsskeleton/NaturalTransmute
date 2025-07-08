@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:oak_leaves"
+    },
+    {
+      "item": "minecraft:birch_sapling"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:birch_leaves"
+    }
+  ],
+  "time": 160
+}

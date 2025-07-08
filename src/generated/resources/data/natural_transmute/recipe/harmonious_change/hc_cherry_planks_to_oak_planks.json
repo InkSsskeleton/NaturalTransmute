@@ -1,0 +1,56 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:cherry_fence_gate"
+      },
+      {
+        "item": "minecraft:cherry_stairs"
+      },
+      {
+        "item": "minecraft:cherry_pressure_plate"
+      },
+      {
+        "item": "minecraft:cherry_planks"
+      },
+      {
+        "item": "minecraft:cherry_trapdoor"
+      },
+      {
+        "item": "minecraft:cherry_sign"
+      },
+      {
+        "item": "minecraft:cherry_slab"
+      },
+      {
+        "item": "minecraft:cherry_sign"
+      },
+      {
+        "item": "minecraft:cherry_button"
+      },
+      {
+        "item": "minecraft:cherry_fence"
+      },
+      {
+        "item": "minecraft:cherry_door"
+      }
+    ]
+  ],
+  "metaphysicas": [
+    {
+      "item": "natural_transmute:h_forest_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_flower_forest_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_swamp_metaphysica"
+    },
+    {
+      "item": "natural_transmute:h_lush_cave_metaphysica"
+    }
+  ],
+  "new": "minecraft:oak_planks",
+  "old": "minecraft:cherry_planks"
+}

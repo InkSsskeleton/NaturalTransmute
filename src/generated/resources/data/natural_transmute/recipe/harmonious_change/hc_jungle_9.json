@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:sheaf_pottery_sherd"
+    },
+    {
+      "item": "minecraft:brick"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_jungle_metaphysica"
+  },
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:sheaf_pottery_sherd"
+    }
+  ],
+  "time": 160
+}

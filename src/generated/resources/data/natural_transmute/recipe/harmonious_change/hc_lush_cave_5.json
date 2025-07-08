@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "natural_transmute:blueberries"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_lush_cave_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:glow_berries"
+    }
+  ],
+  "time": 160
+}

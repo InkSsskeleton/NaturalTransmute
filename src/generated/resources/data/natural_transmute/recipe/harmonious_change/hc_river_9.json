@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_river_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:duck_egg"
+    }
+  ],
+  "time": 160
+}

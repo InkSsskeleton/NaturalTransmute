@@ -1,0 +1,45 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:birch_sign"
+      },
+      {
+        "item": "minecraft:birch_fence"
+      },
+      {
+        "item": "minecraft:birch_slab"
+      },
+      {
+        "item": "minecraft:birch_trapdoor"
+      },
+      {
+        "item": "minecraft:birch_stairs"
+      },
+      {
+        "item": "minecraft:birch_door"
+      },
+      {
+        "item": "minecraft:birch_sign"
+      },
+      {
+        "item": "minecraft:birch_planks"
+      },
+      {
+        "item": "minecraft:birch_button"
+      },
+      {
+        "item": "minecraft:birch_pressure_plate"
+      },
+      {
+        "item": "minecraft:birch_fence_gate"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_crimson_forest_metaphysica"
+  },
+  "new": "minecraft:crimson_planks",
+  "old": "minecraft:birch_planks"
+}

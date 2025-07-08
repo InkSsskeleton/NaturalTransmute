@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:skeleton_skull"
+    },
+    {
+      "item": "natural_transmute:wither_bone"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_warped_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:wither_skeleton_skull"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:gathering",
+  "core": {
+    "count": 1,
+    "id": "natural_transmute:h_swamp_metaphysica"
+  },
+  "gathering_time": 320,
+  "input1": [
+    {
+      "item": "minecraft:mangrove_propagule"
+    },
+    {
+      "item": "minecraft:mangrove_leaves"
+    },
+    {
+      "item": "minecraft:mangrove_log"
+    }
+  ],
+  "input2": [
+    {
+      "item": "minecraft:mangrove_propagule"
+    },
+    {
+      "item": "minecraft:mangrove_leaves"
+    },
+    {
+      "item": "minecraft:mangrove_log"
+    }
+  ],
+  "results": {
+    "count": 1,
+    "id": "natural_transmute:h_mangrove_swamp_metaphysica"
+  }
+}

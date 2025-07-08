@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:sandstone"
+      },
+      {
+        "item": "minecraft:stone"
+      },
+      {
+        "item": "minecraft:cobblestone"
+      },
+      {
+        "item": "minecraft:deepslate"
+      },
+      {
+        "item": "minecraft:cobbled_deepslate"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_badlands_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:red_sandstone"
+    }
+  ],
+  "time": 160
+}

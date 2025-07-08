@@ -1,0 +1,32 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:axolotl_bucket"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    },
+    {
+      "item": "minecraft:heart_of_the_sea"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_lush_cave_metaphysica"
+  },
+  "results": [
+    {
+      "components": {
+        "minecraft:bucket_entity_data": {
+          "Age": -24000,
+          "Variant": 4
+        }
+      },
+      "count": 1,
+      "id": "minecraft:axolotl_bucket"
+    }
+  ],
+  "time": 160
+}

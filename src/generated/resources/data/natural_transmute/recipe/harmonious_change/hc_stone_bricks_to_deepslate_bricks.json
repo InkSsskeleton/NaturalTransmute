@@ -1,0 +1,27 @@
+{
+  "type": "natural_transmute:hc_block_family_transfer",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:stone_bricks"
+      },
+      {
+        "item": "minecraft:cracked_stone_bricks"
+      },
+      {
+        "item": "minecraft:stone_brick_slab"
+      },
+      {
+        "item": "minecraft:stone_brick_stairs"
+      },
+      {
+        "item": "minecraft:stone_brick_wall"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_deepslate_metaphysica"
+  },
+  "new": "minecraft:deepslate_bricks",
+  "old": "minecraft:stone_bricks"
+}

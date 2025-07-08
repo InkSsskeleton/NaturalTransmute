@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_meadow_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:honey_bottle"
+    }
+  ],
+  "time": 160
+}

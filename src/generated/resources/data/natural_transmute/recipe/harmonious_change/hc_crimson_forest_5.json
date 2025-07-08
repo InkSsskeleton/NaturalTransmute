@@ -1,0 +1,31 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:short_grass"
+      },
+      {
+        "item": "minecraft:tall_grass"
+      },
+      {
+        "item": "minecraft:fern"
+      },
+      {
+        "item": "minecraft:large_fern"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_crimson_forest_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:crimson_roots"
+    }
+  ],
+  "time": 160
+}

@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:vine"
+      },
+      {
+        "item": "minecraft:moss_carpet"
+      }
+    ]
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_mushroom_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:glow_lichen"
+    }
+  ],
+  "time": 160
+}

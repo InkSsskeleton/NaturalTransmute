@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "minecraft:banners"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_river_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:white_banner"
+    }
+  ],
+  "time": 160
+}

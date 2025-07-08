@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "item": "minecraft:beef"
+    }
+  ],
+  "metaphysicas": {
+    "item": "natural_transmute:h_frozen_ocean_metaphysica"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:whale_bone"
+    }
+  ],
+  "time": 160
+}
