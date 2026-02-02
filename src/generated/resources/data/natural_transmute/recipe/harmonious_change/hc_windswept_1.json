@@ -7,8 +7,8 @@
       "item": "minecraft:string"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_windswept_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_windswept_biome_catalyst"
   },
   "results": [
     {

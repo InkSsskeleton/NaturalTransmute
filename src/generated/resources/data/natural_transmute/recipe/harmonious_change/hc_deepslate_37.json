@@ -7,8 +7,8 @@
       "item": "minecraft:polished_granite"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_deepslate_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_deepslate_biome_catalyst"
   },
   "results": [
     {

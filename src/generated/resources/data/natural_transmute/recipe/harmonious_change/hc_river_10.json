@@ -7,8 +7,8 @@
       "item": "minecraft:chicken"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_river_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_river_biome_catalyst"
   },
   "results": [
     {

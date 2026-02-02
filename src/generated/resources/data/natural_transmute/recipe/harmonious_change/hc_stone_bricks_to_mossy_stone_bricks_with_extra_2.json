@@ -19,8 +19,8 @@
       "item": "minecraft:seagrass"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_river_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_river_biome_catalyst"
   },
   "new": "minecraft:mossy_stone_bricks",
   "old": "minecraft:stone_bricks"

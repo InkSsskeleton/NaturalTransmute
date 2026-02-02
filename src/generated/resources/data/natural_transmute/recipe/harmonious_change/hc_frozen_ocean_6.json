@@ -12,8 +12,8 @@
       }
     ]
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_frozen_ocean_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_frozen_ocean_biome_catalyst"
   },
   "results": [
     {

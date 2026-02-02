@@ -44,7 +44,7 @@ public class NTItemTagProvider extends ItemTagsProvider {
         NTCommonUtils.getKnownItems().forEach(item -> {
             ItemStack stack = item.getDefaultInstance();
             if (stack.has(NTDataComponents.ASSOCIATED_BIOMES)) {
-                this.tag(NTItemTags.METAPHYSICA).add(item);
+                this.tag(NTItemTags.BIOME_CATALYST).add(item);
             }
 
             if (stack.has(NTDataComponents.CAT_FOODS)) {

@@ -27,17 +27,17 @@ public class HarmoniousChangeRecipeBuilder implements RecipeBuilder {
     public final NonNullList<ItemStack> excepts = NonNullList.create();
     public final NonNullList<ItemStack> results = NonNullList.create();
     public final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
-    public final Ingredient metaphysica;
+    public final Ingredient biome_catalyst;
     public int time = 160;
     public boolean consume = true;
     public String name = StringUtils.EMPTY;
 
-    private HarmoniousChangeRecipeBuilder(ItemLike... metaphysica) {
-        this.metaphysica = Ingredient.of(metaphysica);
+    private HarmoniousChangeRecipeBuilder(ItemLike... biome_catalyst) {
+        this.biome_catalyst = Ingredient.of(biome_catalyst);
     }
 
-    public static HarmoniousChangeRecipeBuilder addRecipe(ItemLike... metaphysica) {
-        return new HarmoniousChangeRecipeBuilder(metaphysica);
+    public static HarmoniousChangeRecipeBuilder addRecipe(ItemLike... biome_catalyst) {
+        return new HarmoniousChangeRecipeBuilder(biome_catalyst);
     }
 
     public HarmoniousChangeRecipeBuilder requires(TagKey<Item> tag) {
@@ -138,7 +138,7 @@ public class HarmoniousChangeRecipeBuilder implements RecipeBuilder {
                 .rewards(AdvancementRewards.Builder.recipe(id))
                 .requirements(AdvancementRequirements.Strategy.OR);
         this.criteria.forEach(builder::addCriterion);
-        HarmoniousChangeRecipe recipe = new HarmoniousChangeRecipe(this.ingredients, this.excepts, this.results, this.metaphysica, this.time, this.consume);
+        HarmoniousChangeRecipe recipe = new HarmoniousChangeRecipe(this.ingredients, this.excepts, this.results, this.biome_catalyst, this.time, this.consume);
         recipeOutput.accept(id.withPrefix("harmonious_change/"), recipe, builder.build(id.withPrefix("recipes/harmonious_change/")));
     }
 

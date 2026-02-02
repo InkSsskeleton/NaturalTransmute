@@ -16,8 +16,8 @@
       }
     ]
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_windswept_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_windswept_biome_catalyst"
   },
   "new": "minecraft:tuff_bricks",
   "old": "minecraft:deepslate_bricks"

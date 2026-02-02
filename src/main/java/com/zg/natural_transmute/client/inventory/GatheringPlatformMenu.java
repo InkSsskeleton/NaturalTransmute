@@ -34,10 +34,10 @@ public class GatheringPlatformMenu extends AbstractSimpleMenu {
         super(NTMenus.GATHERING_PLATFORM.get(), containerId, inventory, access);
         checkContainerSize(inventory, 4);
         this.containerData = containerData;
-        this.addSlot(new SlotItemHandler(itemHandler, 0, 31, 23));
-        this.addSlot(new SlotItemHandler(itemHandler, 1, 131, 23));
-        this.addSlot(new SlotItemHandler(itemHandler, 2, 81, 5));
-        this.addSlot(new NTResultSlot(itemHandler, 3, 81, 35));
+        this.addSlot(new SlotItemHandler(itemHandler, 0, 26, 19));
+        this.addSlot(new SlotItemHandler(itemHandler, 1, 133, 19));
+        this.addSlot(new SlotItemHandler(itemHandler, 2, 80, 53));
+        this.addSlot(new NTResultSlot(itemHandler, 3, 80, 19));
         this.addDataSlots(containerData);
     }
 
@@ -65,7 +65,7 @@ public class GatheringPlatformMenu extends AbstractSimpleMenu {
 
                 slot.onQuickCraft(sourceStack, copyOfSourceStack);
             } else if (index < 36) {
-                if (sourceStack.is(NTItems.HETEROGENEOUS_STONE) || sourceStack.is(NTItemTags.METAPHYSICA)) {
+                if (sourceStack.is(NTItems.HETEROGENEOUS_STONE) || sourceStack.is(NTItemTags.BIOME_CATALYST)) {
                     if (!this.moveItemStackTo(sourceStack, 38, 39, Boolean.FALSE)) {
                         return ItemStack.EMPTY;
                     }

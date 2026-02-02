@@ -13,8 +13,8 @@
       "item": "minecraft:cut_sandstone"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_desert_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_desert_biome_catalyst"
   },
   "results": [
     {

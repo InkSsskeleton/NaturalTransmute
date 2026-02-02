@@ -10,8 +10,8 @@
       "item": "minecraft:light_gray_dye"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_meadow_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_meadow_biome_catalyst"
   },
   "results": [
     {

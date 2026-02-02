@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_jungle_metaphysica"
+    "layer0": "natural_transmute:item/h_jungle_biome_catalyst"
   }
 }

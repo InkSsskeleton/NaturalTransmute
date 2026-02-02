@@ -1357,10 +1357,10 @@ public class NTRecipeProvider extends RecipeProvider {
     }
 
     private static void harmoniousChange(RecipeOutput recipeOutput, HarmoniousChangeRecipeBuilder builder, int index) {
-        String path = BuiltInRegistries.ITEM.getKey(builder.metaphysica.getItems()[0].getItem()).getPath();
-        path = path.replaceFirst("h_", StringUtils.EMPTY).replaceFirst("_metaphysica", StringUtils.EMPTY);
+        String path = BuiltInRegistries.ITEM.getKey(builder.biome_catalyst.getItems()[0].getItem()).getPath();
+        path = path.replaceFirst("h_", StringUtils.EMPTY).replaceFirst("_biome_catalyst", StringUtils.EMPTY);
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_%d", path, index));
-        builder.unlockedBy("has_metaphysica", has(NTItemTags.METAPHYSICA)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
     }
 
     private static void harmoniousChangeWithCustomName(RecipeOutput recipeOutput, HarmoniousChangeRecipeBuilder builder) {
@@ -1371,7 +1371,7 @@ public class NTRecipeProvider extends RecipeProvider {
         builder.results.forEach(itemStack -> outputJoiner.add(getItemName(itemStack.getItem())));
         String input = builder.name.isEmpty() ? inputJoiner.toString() : builder.name;
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s", input, outputJoiner));
-        builder.unlockedBy("has_metaphysica", has(NTItemTags.METAPHYSICA)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
     }
 
     private static void harmoniousChangeOfCopyIngredient(RecipeOutput recipeOutput, HarmoniousChangeRecipeBuilder builder, ItemLike mainStack) {
@@ -1379,21 +1379,21 @@ public class NTRecipeProvider extends RecipeProvider {
         builder.requires(mainStack).results(mainStack, 2).save(recipeOutput, id);
     }
 
-    private static void harmoniousChange(RecipeOutput recipeOutput, ItemLike metaphysica, ItemLike require, ItemLike result, int index) {
-        harmoniousChange(recipeOutput, HarmoniousChangeRecipeBuilder.addRecipe(metaphysica).requires(require).results(result), index);
+    private static void harmoniousChange(RecipeOutput recipeOutput, ItemLike biome_catalyst, ItemLike require, ItemLike result, int index) {
+        harmoniousChange(recipeOutput, HarmoniousChangeRecipeBuilder.addRecipe(biome_catalyst).requires(require).results(result), index);
     }
 
-    private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, ItemLike... metaphysica) {
-        HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, Ingredient.of(metaphysica));
+    private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, ItemLike... biome_catalyst) {
+        HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, Ingredient.of(biome_catalyst));
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s", getItemName(oldBaseBlock), getItemName(newBaseBlock)));
-        builder.unlockedBy("has_metaphysica", has(NTItemTags.METAPHYSICA)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
     }
 
-    private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, Ingredient metaphysica, int index, Ingredient... extra) {
-        HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, metaphysica);
+    private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, Ingredient biome_catalyst, int index, Ingredient... extra) {
+        HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, biome_catalyst);
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s_with_extra_%d", getItemName(oldBaseBlock), getItemName(newBaseBlock), index));
         Arrays.stream(extra).toList().forEach(builder::requires);
-        builder.unlockedBy("has_metaphysica", has(NTItemTags.METAPHYSICA)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
     }
 
     private static void harmoniousChangeSpecial(RecipeOutput recipeOutput, Recipe<?> recipe) {
@@ -1405,9 +1405,9 @@ public class NTRecipeProvider extends RecipeProvider {
         }
     }
 
-    private static void harmoniousChange(RecipeOutput recipeOutput, BlockFamily targetFamily, ItemLike... metaphysica) {
+    private static void harmoniousChange(RecipeOutput recipeOutput, BlockFamily targetFamily, ItemLike... biome_catalyst) {
         WOOD_BLOCK_FAMILIES.stream().filter(blockFamily -> blockFamily != targetFamily).forEach(blockFamily ->
-                harmoniousChangeOfBlockFamily(recipeOutput, blockFamily.getBaseBlock(), targetFamily.getBaseBlock(), metaphysica));
+                harmoniousChangeOfBlockFamily(recipeOutput, blockFamily.getBaseBlock(), targetFamily.getBaseBlock(), biome_catalyst));
     }
 
     private static void waterWaxRecipes(RecipeOutput recipeOutput) {

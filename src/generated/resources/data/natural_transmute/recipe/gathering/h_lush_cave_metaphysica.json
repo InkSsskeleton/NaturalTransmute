@@ -2,7 +2,7 @@
   "type": "natural_transmute:gathering",
   "core": {
     "count": 1,
-    "id": "natural_transmute:h_deepslate_metaphysica"
+    "id": "natural_transmute:h_deepslate_biome_catalyst"
   },
   "gathering_time": 320,
   "input1": {
@@ -13,6 +13,6 @@
   },
   "results": {
     "count": 1,
-    "id": "natural_transmute:h_lush_cave_metaphysica"
+    "id": "natural_transmute:h_lush_cave_biome_catalyst"
   }
 }

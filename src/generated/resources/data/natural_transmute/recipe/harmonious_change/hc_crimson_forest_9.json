@@ -13,8 +13,8 @@
       "item": "minecraft:redstone"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_crimson_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_crimson_forest_biome_catalyst"
   },
   "results": [
     {

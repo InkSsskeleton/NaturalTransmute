@@ -10,8 +10,8 @@
       "item": "minecraft:snow_block"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_snowy_slopes_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
   },
   "results": [
     {

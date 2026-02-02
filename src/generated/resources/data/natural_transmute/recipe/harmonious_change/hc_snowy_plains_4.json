@@ -10,8 +10,8 @@
       "item": "minecraft:short_grass"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_snowy_plains_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_snowy_plains_biome_catalyst"
   },
   "results": [
     {

@@ -10,8 +10,8 @@
       "item": "minecraft:brick"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_warm_ocean_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_warm_ocean_biome_catalyst"
   },
   "results": [
     {

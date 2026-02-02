@@ -2,7 +2,7 @@
   "type": "natural_transmute:gathering",
   "core": {
     "count": 1,
-    "id": "natural_transmute:h_nether_metaphysica"
+    "id": "natural_transmute:h_nether_biome_catalyst"
   },
   "gathering_time": 320,
   "input1": {
@@ -13,6 +13,6 @@
   },
   "results": {
     "count": 1,
-    "id": "natural_transmute:h_warped_forest_metaphysica"
+    "id": "natural_transmute:h_warped_forest_biome_catalyst"
   }
 }

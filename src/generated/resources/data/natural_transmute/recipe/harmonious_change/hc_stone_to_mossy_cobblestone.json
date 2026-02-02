@@ -13,12 +13,12 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_warm_ocean_metaphysica"
+      "item": "natural_transmute:h_warm_ocean_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_dripstone_caves_metaphysica"
+      "item": "natural_transmute:h_dripstone_caves_biome_catalyst"
     }
   ],
   "new": "minecraft:mossy_cobblestone",

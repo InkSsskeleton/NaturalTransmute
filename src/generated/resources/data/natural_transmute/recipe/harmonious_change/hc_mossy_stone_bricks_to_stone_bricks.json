@@ -16,18 +16,18 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_desert_metaphysica"
+      "item": "natural_transmute:h_desert_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_badlands_metaphysica"
+      "item": "natural_transmute:h_badlands_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_ice_spikes_metaphysica"
+      "item": "natural_transmute:h_ice_spikes_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+      "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
     }
   ],
   "new": "minecraft:stone_bricks",

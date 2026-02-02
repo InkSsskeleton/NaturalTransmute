@@ -10,8 +10,8 @@
       "item": "minecraft:beef"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_savanna_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_savanna_biome_catalyst"
   },
   "results": [
     {

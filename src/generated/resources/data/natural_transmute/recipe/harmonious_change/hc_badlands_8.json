@@ -10,8 +10,8 @@
       "item": "minecraft:red_sand"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_badlands_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_badlands_biome_catalyst"
   },
   "results": [
     {

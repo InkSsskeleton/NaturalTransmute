@@ -13,8 +13,8 @@
       "item": "minecraft:stone"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_stone_shore_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_stone_shore_biome_catalyst"
   },
   "results": [
     {

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_flower_forest_metaphysica"
+    "layer0": "natural_transmute:item/h_flower_forest_biome_catalyst"
   }
 }

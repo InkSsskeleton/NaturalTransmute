@@ -22,7 +22,7 @@ public class NTDataMapProvider extends DataMapProvider {
     }
 
     @Override
-    protected void gather() {
+    protected void gather(HolderLookup.Provider provider) {
         this.addCompostable(0.65F, NTItems.WARPED_WART.get());
         Builder<HarmoniousChangeFuel, Item> hcFuels = this.builder(NTDataMaps.HARMONIOUS_CHANGE_FUELS);
         HarmoniousChangeStoveBlockEntity.buildFuels((value, amount) -> value

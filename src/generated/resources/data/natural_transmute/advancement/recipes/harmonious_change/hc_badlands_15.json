@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metaphysica": {
+    "has_biome_catalyst": {
       "conditions": {
         "items": [
           {
-            "items": "#natural_transmute:metaphysica"
+            "items": "#natural_transmute:biome_catalyst"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_metaphysica"
+      "has_biome_catalyst"
     ]
   ],
   "rewards": {

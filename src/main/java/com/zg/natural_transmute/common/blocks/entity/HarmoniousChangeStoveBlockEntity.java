@@ -71,6 +71,14 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
                 } else {
                     blockEntity.litTime = getFuel().get(blockEntity.getItem(3).getItem());
                     blockEntity.litDuration = blockEntity.litTime;
+                    if (blockEntity.litTime > 0 && !blockEntity.getItem(3).isEmpty()) {
+                        ItemStack fuelStack = blockEntity.getItem(3);
+                        if (!fuelStack.is(NTItems.HARMONIOUS_CHANGE_LAVA_BUCKET.get()) &&
+                                !fuelStack.is(NTItems.ETERNAL_HARMONIOUS_CHANGE_LAVA_BUCKET.get())) {
+                            fuelStack.shrink(1);
+                            didInventoryChange = true;
+                        }
+                    }
                 }
             } else {
                 blockEntity.time = 0;
@@ -80,14 +88,16 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
             blockEntity.time = 0;
         }
 
-        if (didInventoryChange) {
-            if (blockEntity.litTime > 0) {
-                blockEntity.litTime--;
-            }
+        if (blockEntity.litTime > 0) {
+            blockEntity.litTime--;
+            didInventoryChange = true;
+        }
 
+        if (didInventoryChange) {
             setChanged(level, pos, state);
         }
     }
+
 
     private boolean processRecipe(HarmoniousChangeRecipe recipe) {
         if (this.level == null) {
@@ -142,12 +152,14 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         ItemStack input2 = this.getItem(1);
         ItemStack input3 = this.getItem(2);
         ItemStack fuel = this.getItem(3);
-        ItemStack metaphysica = this.getItem(4);
-        List<ItemStack> ingredients = Arrays.asList(input1, input2, input3);
-        ingredients.removeIf(ItemStack::isEmpty);
-        return new HarmoniousChangeRecipeInput(ingredients, fuel, metaphysica);
-    }
+        ItemStack biome_catalyst = this.getItem(4);
 
+        List<ItemStack> ingredients = java.util.stream.Stream.of(input1, input2, input3)
+                .filter(stack -> !stack.isEmpty())
+                .collect(java.util.stream.Collectors.toList());
+
+        return new HarmoniousChangeRecipeInput(ingredients, fuel, biome_catalyst);
+    }
     private boolean isLit() {
         ItemStack fuel = this.getItem(3);
         boolean b1 = fuel.is(NTItems.HARMONIOUS_CHANGE_LAVA_BUCKET);
@@ -277,9 +289,9 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
     }
 
     public static void buildFuels(ObjIntConsumer<Either<Item, TagKey<Item>>> map) {
-        add(map, Items.AMETHYST_SHARD, 2);
-        add(map, Items.LAPIS_LAZULI, 4);
-        add(map, NTItems.HARMONIOUS_CHANGE_FUEL.get(), 8);
+        add(map, Items.AMETHYST_SHARD, 200);
+        add(map, Items.LAPIS_LAZULI, 400);
+        add(map, NTItems.HARMONIOUS_CHANGE_FUEL.get(), 800);
     }
 
     private static void add(Map<Item, Integer> map, TagKey<Item> itemTag, int amount) {

@@ -15,8 +15,8 @@
       "item": "minecraft:ghast_tear"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_nether_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_nether_biome_catalyst"
   },
   "results": [
     {

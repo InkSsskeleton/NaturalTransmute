@@ -37,8 +37,8 @@
       }
     ]
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_flower_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_flower_forest_biome_catalyst"
   },
   "new": "minecraft:birch_planks",
   "old": "minecraft:oak_planks"

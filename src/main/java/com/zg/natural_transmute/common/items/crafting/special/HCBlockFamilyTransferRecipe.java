@@ -25,13 +25,13 @@ public class HCBlockFamilyTransferRecipe extends HarmoniousChangeRecipe {
 
     private final BlockFamily oldFamily;
     private final BlockFamily newFamily;
-    private final Ingredient metaphysicas;
+    private final Ingredient biome_catalysts;
 
-    public HCBlockFamilyTransferRecipe(Block oldBaseBlock, Block newBaseBlock, NonNullList<Ingredient> ingredients, Ingredient metaphysicas) {
+    public HCBlockFamilyTransferRecipe(Block oldBaseBlock, Block newBaseBlock, NonNullList<Ingredient> ingredients, Ingredient biome_catalysts) {
         super(ingredients, NonNullList.create(), Ingredient.EMPTY);
         this.oldFamily = BlockFamilies.MAP.containsKey(oldBaseBlock) ? BlockFamilies.MAP.get(oldBaseBlock) : NTBlockFamilies.MAP.get(oldBaseBlock);
         this.newFamily = BlockFamilies.MAP.containsKey(newBaseBlock) ? BlockFamilies.MAP.get(newBaseBlock) : NTBlockFamilies.MAP.get(newBaseBlock);
-        this.metaphysicas = metaphysicas;
+        this.biome_catalysts = biome_catalysts;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class HCBlockFamilyTransferRecipe extends HarmoniousChangeRecipe {
             return false;
         } else {
             boolean hasFuel = HarmoniousChangeStoveBlockEntity.getFuel().containsKey(input.getItem(3).getItem());
-            return hasFuel && this.metaphysicas.test(input.getItem(4)) && this.extraMatches(input);
+            return hasFuel && this.biome_catalysts.test(input.getItem(4)) && this.extraMatches(input);
         }
     }
 
@@ -73,7 +73,7 @@ public class HCBlockFamilyTransferRecipe extends HarmoniousChangeRecipe {
     }
 
     public Ingredient getMetaphysicas() {
-        return this.metaphysicas;
+        return this.biome_catalysts;
     }
 
     private Map<ItemStack, ItemStack> getRecipes() {

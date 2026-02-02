@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_h_ocean_metaphysica": {
+    "has_h_ocean_biome_catalyst": {
       "conditions": {
         "items": [
           {
-            "items": "natural_transmute:h_ocean_metaphysica"
+            "items": "natural_transmute:h_ocean_biome_catalyst"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "natural_transmute:h_beach_metaphysica"
+        "recipe": "natural_transmute:h_beach_biome_catalyst"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_h_ocean_metaphysica"
+      "has_h_ocean_biome_catalyst"
     ]
   ],
   "rewards": {
     "recipes": [
-      "natural_transmute:h_beach_metaphysica"
+      "natural_transmute:h_beach_biome_catalyst"
     ]
   }
 }

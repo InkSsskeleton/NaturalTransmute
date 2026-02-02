@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_ice_spikes_metaphysica"
+    "layer0": "natural_transmute:item/h_ice_spikes_biome_catalyst"
   }
 }

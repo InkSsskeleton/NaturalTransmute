@@ -13,8 +13,8 @@
       "item": "minecraft:sugar"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_mushroom_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_mushroom_biome_catalyst"
   },
   "results": [
     {

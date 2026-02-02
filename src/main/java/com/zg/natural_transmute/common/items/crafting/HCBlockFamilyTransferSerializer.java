@@ -27,7 +27,7 @@ public class HCBlockFamilyTransferSerializer implements RecipeSerializer<HCBlock
                         Ingredient[] ingredients = list.toArray(Ingredient[]::new);
                         return DataResult.success(NonNullList.of(Ingredient.EMPTY, ingredients));
                         }, DataResult::success).forGetter(HCBlockFamilyTransferRecipe::getExtraIngredients),
-                    Ingredient.CODEC_NONEMPTY.fieldOf("metaphysicas").forGetter(HCBlockFamilyTransferRecipe::getMetaphysicas)
+                    Ingredient.CODEC_NONEMPTY.fieldOf("biome_catalysts").forGetter(HCBlockFamilyTransferRecipe::getMetaphysicas)
             ).apply(instance, HCBlockFamilyTransferRecipe::new));
 
     @Override
@@ -43,19 +43,29 @@ public class HCBlockFamilyTransferSerializer implements RecipeSerializer<HCBlock
     private HCBlockFamilyTransferRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
         Block oldBlock = BLOCK_STREAM_CODEC.decode(buffer);
         Block newBlock = BLOCK_STREAM_CODEC.decode(buffer);
-        NonNullList<Ingredient> ingredients = NonNullList.withSize(buffer.readVarInt(), Ingredient.EMPTY);
-        ingredients.replaceAll(ingredient -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
-        Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-        return new HCBlockFamilyTransferRecipe(oldBlock, newBlock, ingredients, ingredient);
+        int size = buffer.readVarInt();
+        NonNullList<Ingredient> ingredients = NonNullList.withSize(size, Ingredient.EMPTY);
+
+        for (int i = 0; i < size; i++) {
+            try {
+                Ingredient decoded = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+                ingredients.set(i, decoded.isEmpty() ? Ingredient.EMPTY : decoded);
+            } catch (Exception e) {
+                ingredients.set(i, Ingredient.EMPTY);
+            }
+        }
+
+        Ingredient biome_catalysts = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+        return new HCBlockFamilyTransferRecipe(oldBlock, newBlock, ingredients, biome_catalysts);
     }
 
     private void toNetwork(RegistryFriendlyByteBuf buffer, HCBlockFamilyTransferRecipe recipe) {
         BLOCK_STREAM_CODEC.encode(buffer, recipe.getOldBaseBlock());
         BLOCK_STREAM_CODEC.encode(buffer, recipe.getNewBaseBlock());
-        for (Ingredient ingredient : recipe.getIngredients()) {
+        buffer.writeVarInt(recipe.getExtraIngredients().size()); // 添加这一行
+        for (Ingredient ingredient : recipe.getExtraIngredients()) {
             Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
         }
-
         Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.getMetaphysicas());
     }
 

@@ -37,8 +37,8 @@
       }
     ]
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_cherry_grove_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_cherry_grove_biome_catalyst"
   },
   "new": "minecraft:cherry_planks",
   "old": "minecraft:crimson_planks"

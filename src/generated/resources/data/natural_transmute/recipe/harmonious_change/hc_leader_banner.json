@@ -1,6 +1,6 @@
 {
   "type": "natural_transmute:hc_leader_banner",
-  "metaphysicas": {
-    "item": "natural_transmute:h_dark_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_dark_forest_biome_catalyst"
   }
 }

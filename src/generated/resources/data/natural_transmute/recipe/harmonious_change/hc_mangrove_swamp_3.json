@@ -10,8 +10,8 @@
       "item": "minecraft:bamboo"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_mangrove_swamp_biome_catalyst"
   },
   "results": [
     {

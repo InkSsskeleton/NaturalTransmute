@@ -219,53 +219,53 @@ public class NTItems {
                             .component(NTDataComponents.CAN_SPAWN_DRAGON_BREATHE, Boolean.TRUE)
                             .component(NTDataComponents.SIMPLE_MODEL, Unit.INSTANCE)));
     // 缚相
-    public static final DeferredHolder<Item, Item> H_BADLANDS = fx("h_badlands_metaphysica", List.of(Biomes.BADLANDS));
-    public static final DeferredHolder<Item, Item> H_BASALT_DELTAS = fx("h_basalt_deltas_metaphysica", List.of(Biomes.BASALT_DELTAS));
-    public static final DeferredHolder<Item, Item> H_BEACH = fx("h_beach_metaphysica", List.of(Biomes.BEACH));
-    public static final DeferredHolder<Item, Item> H_BIRCH_FOREST = fx("h_birch_forest_metaphysica",
+    public static final DeferredHolder<Item, Item> H_BADLANDS = fx("h_badlands_biome_catalyst", List.of(Biomes.BADLANDS));
+    public static final DeferredHolder<Item, Item> H_BASALT_DELTAS = fx("h_basalt_deltas_biome_catalyst", List.of(Biomes.BASALT_DELTAS));
+    public static final DeferredHolder<Item, Item> H_BEACH = fx("h_beach_biome_catalyst", List.of(Biomes.BEACH));
+    public static final DeferredHolder<Item, Item> H_BIRCH_FOREST = fx("h_birch_forest_biome_catalyst",
             List.of(Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST));
-    public static final DeferredHolder<Item, Item> H_CHERRY_GROVE = fx("h_cherry_grove_metaphysica", List.of(Biomes.CHERRY_GROVE));
-    public static final DeferredHolder<Item, Item> H_CRIMSON_FOREST = fx("h_crimson_forest_metaphysica", List.of(Biomes.CRIMSON_FOREST));
-    public static final DeferredHolder<Item, Item> H_DARK_FOREST = fx("h_dark_forest_metaphysica", List.of(Biomes.DARK_FOREST));
-    public static final DeferredHolder<Item, Item> H_DEEPSLATE = fx("h_deepslate_metaphysica", List.of());
-    public static final DeferredHolder<Item, Item> H_DEEP_DARK = fx("h_deep_dark_metaphysica", List.of(Biomes.DEEP_DARK));
-    public static final DeferredHolder<Item, Item> H_DESERT = fx("h_desert_metaphysica", List.of(Biomes.DESERT));
-    public static final DeferredHolder<Item, Item> H_DRIPSTONE_CAVES = fx("h_dripstone_caves_metaphysica", List.of(Biomes.DRIPSTONE_CAVES));
-    public static final DeferredHolder<Item, Item> H_END = fx("h_end_metaphysica", List.of(Biomes.THE_END));
-    public static final DeferredHolder<Item, Item> H_END_HIGHLANDS = fx("h_end_highlands_metaphysica",
+    public static final DeferredHolder<Item, Item> H_CHERRY_GROVE = fx("h_cherry_grove_biome_catalyst", List.of(Biomes.CHERRY_GROVE));
+    public static final DeferredHolder<Item, Item> H_CRIMSON_FOREST = fx("h_crimson_forest_biome_catalyst", List.of(Biomes.CRIMSON_FOREST));
+    public static final DeferredHolder<Item, Item> H_DARK_FOREST = fx("h_dark_forest_biome_catalyst", List.of(Biomes.DARK_FOREST));
+    public static final DeferredHolder<Item, Item> H_DEEPSLATE = fx("h_deepslate_biome_catalyst", List.of());
+    public static final DeferredHolder<Item, Item> H_DEEP_DARK = fx("h_deep_dark_biome_catalyst", List.of(Biomes.DEEP_DARK));
+    public static final DeferredHolder<Item, Item> H_DESERT = fx("h_desert_biome_catalyst", List.of(Biomes.DESERT));
+    public static final DeferredHolder<Item, Item> H_DRIPSTONE_CAVES = fx("h_dripstone_caves_biome_catalyst", List.of(Biomes.DRIPSTONE_CAVES));
+    public static final DeferredHolder<Item, Item> H_END = fx("h_end_biome_catalyst", List.of(Biomes.THE_END));
+    public static final DeferredHolder<Item, Item> H_END_HIGHLANDS = fx("h_end_highlands_biome_catalyst",
             List.of(Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_MIDLANDS, Biomes.END_HIGHLANDS));
-    public static final DeferredHolder<Item, Item> H_FLOWER_FOREST = fx("h_flower_forest_metaphysica", List.of(Biomes.FLOWER_FOREST));
-    public static final DeferredHolder<Item, Item> H_FOREST = fx("h_forest_metaphysica", List.of(Biomes.FOREST));
-    public static final DeferredHolder<Item, Item> H_FROZEN_OCEAN = fx("h_frozen_ocean_metaphysica",
+    public static final DeferredHolder<Item, Item> H_FLOWER_FOREST = fx("h_flower_forest_biome_catalyst", List.of(Biomes.FLOWER_FOREST));
+    public static final DeferredHolder<Item, Item> H_FOREST = fx("h_forest_biome_catalyst", List.of(Biomes.FOREST));
+    public static final DeferredHolder<Item, Item> H_FROZEN_OCEAN = fx("h_frozen_ocean_biome_catalyst",
             List.of(Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN));
-    public static final DeferredHolder<Item, Item> H_OLD_GROWTH_TAIGA = fx("h_old_growth_taiga_metaphysica",
+    public static final DeferredHolder<Item, Item> H_OLD_GROWTH_TAIGA = fx("h_old_growth_taiga_biome_catalyst",
             List.of(Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA));
-    public static final DeferredHolder<Item, Item> H_ICE_SPIKES = fx("h_ice_spikes_metaphysica", List.of(Biomes.ICE_SPIKES));
-    public static final DeferredHolder<Item, Item> H_JUNGLE = fx("h_jungle_metaphysica",
+    public static final DeferredHolder<Item, Item> H_ICE_SPIKES = fx("h_ice_spikes_biome_catalyst", List.of(Biomes.ICE_SPIKES));
+    public static final DeferredHolder<Item, Item> H_JUNGLE = fx("h_jungle_biome_catalyst",
             List.of(Biomes.JUNGLE, Biomes.SPARSE_JUNGLE, Biomes.BAMBOO_JUNGLE));
-    public static final DeferredHolder<Item, Item> H_LUSH_CAVE = fx("h_lush_cave_metaphysica", List.of(Biomes.LUSH_CAVES));
-    public static final DeferredHolder<Item, Item> H_MANGROVE_SWAMP = fx("h_mangrove_swamp_metaphysica", List.of(Biomes.MANGROVE_SWAMP));
-    public static final DeferredHolder<Item, Item> H_MEADOW = fx("h_meadow_metaphysica", List.of(Biomes.MEADOW));
-    public static final DeferredHolder<Item, Item> H_MOUNTAINS = fx("h_mountains_metaphysica", List.of(Biomes.STONY_PEAKS));
-    public static final DeferredHolder<Item, Item> H_MUSHROOM = fx("h_mushroom_metaphysica", List.of(Biomes.MUSHROOM_FIELDS));
-    public static final DeferredHolder<Item, Item> H_NETHER = fx("h_nether_metaphysica", List.of(Biomes.NETHER_WASTES));
-    public static final DeferredHolder<Item, Item> H_OCEAN = fx("h_ocean_metaphysica",
+    public static final DeferredHolder<Item, Item> H_LUSH_CAVE = fx("h_lush_cave_biome_catalyst", List.of(Biomes.LUSH_CAVES));
+    public static final DeferredHolder<Item, Item> H_MANGROVE_SWAMP = fx("h_mangrove_swamp_biome_catalyst", List.of(Biomes.MANGROVE_SWAMP));
+    public static final DeferredHolder<Item, Item> H_MEADOW = fx("h_meadow_biome_catalyst", List.of(Biomes.MEADOW));
+    public static final DeferredHolder<Item, Item> H_MOUNTAINS = fx("h_mountains_biome_catalyst", List.of(Biomes.STONY_PEAKS));
+    public static final DeferredHolder<Item, Item> H_MUSHROOM = fx("h_mushroom_biome_catalyst", List.of(Biomes.MUSHROOM_FIELDS));
+    public static final DeferredHolder<Item, Item> H_NETHER = fx("h_nether_biome_catalyst", List.of(Biomes.NETHER_WASTES));
+    public static final DeferredHolder<Item, Item> H_OCEAN = fx("h_ocean_biome_catalyst",
             List.of(Biomes.OCEAN, Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN));
-    public static final DeferredHolder<Item, Item> H_PLAINS = fx("h_plains_metaphysica", List.of(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS));
-    public static final DeferredHolder<Item, Item> H_RIVER = fx("h_river_metaphysica", List.of(Biomes.RIVER, Biomes.FROZEN_RIVER));
-    public static final DeferredHolder<Item, Item> H_SAVANNA = fx("h_savanna_metaphysica", List.of(Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU));
-    public static final DeferredHolder<Item, Item> H_SNOWY_SLOPES = fx("h_snowy_slopes_metaphysica",
+    public static final DeferredHolder<Item, Item> H_PLAINS = fx("h_plains_biome_catalyst", List.of(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS));
+    public static final DeferredHolder<Item, Item> H_RIVER = fx("h_river_biome_catalyst", List.of(Biomes.RIVER, Biomes.FROZEN_RIVER));
+    public static final DeferredHolder<Item, Item> H_SAVANNA = fx("h_savanna_biome_catalyst", List.of(Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU));
+    public static final DeferredHolder<Item, Item> H_SNOWY_SLOPES = fx("h_snowy_slopes_biome_catalyst",
             List.of(Biomes.SNOWY_SLOPES, Biomes.JAGGED_PEAKS, Biomes.FROZEN_PEAKS));
-    public static final DeferredHolder<Item, Item> H_SNOWY_PLAINS = fx("h_snowy_plains_metaphysica", List.of(Biomes.SNOWY_PLAINS));
-    public static final DeferredHolder<Item, Item> H_SOUL_SAND_VALLEY = fx("h_soul_sand_valley_metaphysica", List.of(Biomes.SOUL_SAND_VALLEY));
-    public static final DeferredHolder<Item, Item> H_STONE_SHORE = fx("h_stone_shore_metaphysica", List.of(Biomes.STONY_SHORE));
-    public static final DeferredHolder<Item, Item> H_SWAMP = fx("h_swamp_metaphysica", List.of(Biomes.SWAMP));
-    public static final DeferredHolder<Item, Item> H_TAIGA = fx("h_taiga_metaphysica", List.of(Biomes.TAIGA, Biomes.SNOWY_TAIGA));
-    public static final DeferredHolder<Item, Item> H_WARM_OCEAN = fx("h_warm_ocean_metaphysica", List.of(Biomes.WARM_OCEAN));
-    public static final DeferredHolder<Item, Item> H_WARPED_FOREST = fx("h_warped_forest_metaphysica", List.of(Biomes.WARPED_FOREST));
-    public static final DeferredHolder<Item, Item> H_WINDSWEPT = fx("h_windswept_metaphysica",
+    public static final DeferredHolder<Item, Item> H_SNOWY_PLAINS = fx("h_snowy_plains_biome_catalyst", List.of(Biomes.SNOWY_PLAINS));
+    public static final DeferredHolder<Item, Item> H_SOUL_SAND_VALLEY = fx("h_soul_sand_valley_biome_catalyst", List.of(Biomes.SOUL_SAND_VALLEY));
+    public static final DeferredHolder<Item, Item> H_STONE_SHORE = fx("h_stone_shore_biome_catalyst", List.of(Biomes.STONY_SHORE));
+    public static final DeferredHolder<Item, Item> H_SWAMP = fx("h_swamp_biome_catalyst", List.of(Biomes.SWAMP));
+    public static final DeferredHolder<Item, Item> H_TAIGA = fx("h_taiga_biome_catalyst", List.of(Biomes.TAIGA, Biomes.SNOWY_TAIGA));
+    public static final DeferredHolder<Item, Item> H_WARM_OCEAN = fx("h_warm_ocean_biome_catalyst", List.of(Biomes.WARM_OCEAN));
+    public static final DeferredHolder<Item, Item> H_WARPED_FOREST = fx("h_warped_forest_biome_catalyst", List.of(Biomes.WARPED_FOREST));
+    public static final DeferredHolder<Item, Item> H_WINDSWEPT = fx("h_windswept_biome_catalyst",
             List.of(Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_SAVANNA, Biomes.WINDSWEPT_GRAVELLY_HILLS));
-    public static final DeferredHolder<Item, Item> H_WOODED_BADLANDS = fx("h_wooded_badlands_metaphysica", List.of(Biomes.WOODED_BADLANDS));
+    public static final DeferredHolder<Item, Item> H_WOODED_BADLANDS = fx("h_wooded_badlands_biome_catalyst", List.of(Biomes.WOODED_BADLANDS));
     //刷怪蛋
     public static final DeferredHolder<Item, Item> LAVA_AXOLOTL_SPAWN_EGG = spawnEgg("lava_axolotl", NTEntityTypes.LAVA_AXOLOTL, 0x533a37, 0x7d2d00);
     public static final DeferredHolder<Item, Item> MOO_BLOOM_SPAWN_EGG = spawnEgg("moo_bloom", NTEntityTypes.MOO_BLOOM, 0xfaca00, 0xf7edc1);

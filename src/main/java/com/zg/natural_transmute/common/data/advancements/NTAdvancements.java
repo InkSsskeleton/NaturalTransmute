@@ -35,7 +35,7 @@ public class NTAdvancements implements AdvancementSubProvider {
                         text("fu_xiang", "description"),
                         (null), AdvancementType.TASK, Boolean.TRUE, Boolean.TRUE, Boolean.FALSE)
                 .addCriterion("fu_xiang", InventoryChangeTrigger.TriggerInstance
-                        .hasItems(ItemPredicate.Builder.item().of(NTItemTags.METAPHYSICA)))
+                        .hasItems(ItemPredicate.Builder.item().of(NTItemTags.BIOME_CATALYST)))
                 .save(writer, NaturalTransmute.prefix("fu_xiang").toString());
         Advancement.Builder.advancement().display(NTItems.HARMONIOUS_CHANGE_CORE.get(),
                         text("harmonious_change", "title"),

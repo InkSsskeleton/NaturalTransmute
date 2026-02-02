@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_soul_sand_valley_metaphysica"
+    "layer0": "natural_transmute:item/h_soul_sand_valley_biome_catalyst"
   }
 }

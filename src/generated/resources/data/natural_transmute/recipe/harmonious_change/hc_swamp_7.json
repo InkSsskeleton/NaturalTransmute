@@ -7,8 +7,8 @@
       "item": "minecraft:honey_block"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_swamp_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_swamp_biome_catalyst"
   },
   "results": [
     {

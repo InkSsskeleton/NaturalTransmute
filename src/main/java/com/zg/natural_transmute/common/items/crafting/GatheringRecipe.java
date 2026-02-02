@@ -29,6 +29,7 @@ public class GatheringRecipe implements Recipe<GatheringRecipeInput> {
     public boolean matches(GatheringRecipeInput input, Level level) {
         ItemStack item1 = input.getItem(0);
         ItemStack item2 = input.getItem(1);
+
         boolean flag1 = this.input1.test(item1) && this.input2.test(item2);
         boolean flag2 = this.input1.test(item2) && this.input2.test(item1);
         return (flag1 || flag2) && this.core.is(input.getItem(2).getItem());

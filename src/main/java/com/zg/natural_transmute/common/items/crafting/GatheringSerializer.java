@@ -33,6 +33,9 @@ public class GatheringSerializer<T extends GatheringRecipe> implements RecipeSer
         ItemStack core = ItemStack.STREAM_CODEC.decode(buffer);
         ItemStack result = ItemStack.STREAM_CODEC.decode(buffer);
         int gatheringTime = buffer.readVarInt();
+
+        if (gatheringTime < 0) gatheringTime = 0;
+
         return this.factory.create(input1, input2, core, result, gatheringTime);
     }
 

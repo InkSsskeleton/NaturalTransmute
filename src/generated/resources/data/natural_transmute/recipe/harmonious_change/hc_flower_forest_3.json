@@ -7,8 +7,8 @@
       "item": "minecraft:birch_sapling"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_flower_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_flower_forest_biome_catalyst"
   },
   "results": [
     {

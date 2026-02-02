@@ -15,7 +15,7 @@ public class HCMetaphysicaOnlySerializer<T extends HarmoniousChangeRecipe> imple
     public HCMetaphysicaOnlySerializer(Factory<T> factory) {
         this.factory = factory;
         this.codec = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Ingredient.CODEC_NONEMPTY.fieldOf("metaphysicas")
+                Ingredient.CODEC_NONEMPTY.fieldOf("biome_catalysts")
                         .forGetter(HarmoniousChangeRecipe::getMetaphysicas)
         ).apply(instance, factory::create));
     }
@@ -40,7 +40,7 @@ public class HCMetaphysicaOnlySerializer<T extends HarmoniousChangeRecipe> imple
 
     public interface Factory<T extends HarmoniousChangeRecipe> {
 
-        T create(Ingredient metaphysicas);
+        T create(Ingredient biome_catalysts);
 
     }
 

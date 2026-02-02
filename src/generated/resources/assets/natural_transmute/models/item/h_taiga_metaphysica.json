@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_taiga_metaphysica"
+    "layer0": "natural_transmute:item/h_taiga_biome_catalyst"
   }
 }

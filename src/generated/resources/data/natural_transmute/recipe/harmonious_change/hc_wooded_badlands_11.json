@@ -7,8 +7,8 @@
       "item": "minecraft:iron_nugget"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_wooded_badlands_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_wooded_badlands_biome_catalyst"
   },
   "results": [
     {

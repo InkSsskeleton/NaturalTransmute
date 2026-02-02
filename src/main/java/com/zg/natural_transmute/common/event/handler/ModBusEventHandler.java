@@ -94,6 +94,7 @@ public class ModBusEventHandler {
         event.registerEntityRenderer(NTEntityTypes.LAVA_AXOLOTL.get(), LavaAxolotlRenderer::new);
         event.registerEntityRenderer(NTEntityTypes.MOO_BLOOM.get(), MooBloomRenderer::new);
         event.registerEntityRenderer(NTEntityTypes.DUCK.get(), DuckRenderer::new);
+        event.registerEntityRenderer(NTEntityTypes.DUCK_EGG.get(), ThrownItemRenderer::new);
     }
 
     @OnlyIn(Dist.CLIENT)

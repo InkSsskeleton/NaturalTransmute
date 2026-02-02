@@ -19,15 +19,15 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_mountains_metaphysica"
+      "item": "natural_transmute:h_mountains_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+      "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_meadow_metaphysica"
+      "item": "natural_transmute:h_meadow_biome_catalyst"
     }
   ],
   "new": "minecraft:granite",

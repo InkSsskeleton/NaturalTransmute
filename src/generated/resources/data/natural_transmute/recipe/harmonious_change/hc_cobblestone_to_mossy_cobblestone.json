@@ -16,42 +16,42 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_meadow_metaphysica"
+      "item": "natural_transmute:h_meadow_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_forest_metaphysica"
+      "item": "natural_transmute:h_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_flower_forest_metaphysica"
+      "item": "natural_transmute:h_flower_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_dark_forest_metaphysica"
+      "item": "natural_transmute:h_dark_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_birch_forest_metaphysica"
+      "item": "natural_transmute:h_birch_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_swamp_metaphysica"
+      "item": "natural_transmute:h_swamp_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_mangrove_swamp_metaphysica"
+      "item": "natural_transmute:h_mangrove_swamp_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_jungle_metaphysica"
+      "item": "natural_transmute:h_jungle_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_warm_ocean_metaphysica"
+      "item": "natural_transmute:h_warm_ocean_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_lush_cave_metaphysica"
+      "item": "natural_transmute:h_lush_cave_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_taiga_metaphysica"
+      "item": "natural_transmute:h_taiga_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_cherry_grove_metaphysica"
+      "item": "natural_transmute:h_cherry_grove_biome_catalyst"
     }
   ],
   "new": "minecraft:mossy_cobblestone",

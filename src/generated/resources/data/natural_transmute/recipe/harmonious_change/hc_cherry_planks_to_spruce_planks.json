@@ -37,12 +37,12 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_mountains_metaphysica"
+      "item": "natural_transmute:h_mountains_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_taiga_metaphysica"
+      "item": "natural_transmute:h_taiga_biome_catalyst"
     }
   ],
   "new": "minecraft:spruce_planks",

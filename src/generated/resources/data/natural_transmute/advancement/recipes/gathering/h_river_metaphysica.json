@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "natural_transmute:h_river_metaphysica"
+        "recipe": "natural_transmute:h_river_biome_catalyst"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "natural_transmute:h_river_metaphysica"
+      "natural_transmute:h_river_biome_catalyst"
     ]
   }
 }

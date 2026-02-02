@@ -24,18 +24,18 @@ public class HCBlockFamilyTransferRecipeBuilder implements RecipeBuilder {
 
     private final Block oldBaseBlock;
     private final Block newBaseBlock;
-    private final Ingredient metaphysicas;
+    private final Ingredient biome_catalysts;
     private final NonNullList<Ingredient> ingredients = NonNullList.create();
     private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-    private HCBlockFamilyTransferRecipeBuilder(Block oldBaseBlock, Block newBaseBlock, Ingredient metaphysicas) {
+    private HCBlockFamilyTransferRecipeBuilder(Block oldBaseBlock, Block newBaseBlock, Ingredient biome_catalysts) {
         this.oldBaseBlock = oldBaseBlock;
         this.newBaseBlock = newBaseBlock;
-        this.metaphysicas = metaphysicas;
+        this.biome_catalysts = biome_catalysts;
     }
 
-    public static HCBlockFamilyTransferRecipeBuilder addRecipe(Block oldBaseBlock, Block newBaseBlock, Ingredient metaphysicas) {
-        return new HCBlockFamilyTransferRecipeBuilder(oldBaseBlock, newBaseBlock, metaphysicas);
+    public static HCBlockFamilyTransferRecipeBuilder addRecipe(Block oldBaseBlock, Block newBaseBlock, Ingredient biome_catalysts) {
+        return new HCBlockFamilyTransferRecipeBuilder(oldBaseBlock, newBaseBlock, biome_catalysts);
     }
 
     public HCBlockFamilyTransferRecipeBuilder requires(TagKey<Item> tag) {
@@ -90,7 +90,7 @@ public class HCBlockFamilyTransferRecipeBuilder implements RecipeBuilder {
                 .rewards(AdvancementRewards.Builder.recipe(id))
                 .requirements(AdvancementRequirements.Strategy.OR);
         this.criteria.forEach(builder::addCriterion);
-        HCBlockFamilyTransferRecipe recipe = new HCBlockFamilyTransferRecipe(this.oldBaseBlock, this.newBaseBlock, this.ingredients, this.metaphysicas);
+        HCBlockFamilyTransferRecipe recipe = new HCBlockFamilyTransferRecipe(this.oldBaseBlock, this.newBaseBlock, this.ingredients, this.biome_catalysts);
         recipeOutput.accept(id.withPrefix("harmonious_change/"), recipe, builder.build(id.withPrefix("recipes/harmonious_change/")));
     }
 

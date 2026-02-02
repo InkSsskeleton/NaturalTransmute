@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "natural_transmute:item/h_snowy_slopes_metaphysica"
+    "layer0": "natural_transmute:item/h_snowy_slopes_biome_catalyst"
   }
 }

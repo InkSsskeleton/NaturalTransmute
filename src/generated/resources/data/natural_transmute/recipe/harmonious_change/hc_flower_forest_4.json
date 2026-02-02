@@ -7,8 +7,8 @@
       "item": "minecraft:oak_leaves"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_flower_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_flower_forest_biome_catalyst"
   },
   "results": [
     {

@@ -13,8 +13,8 @@
       "item": "minecraft:oak_sapling"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_forest_biome_catalyst"
   },
   "results": [
     {

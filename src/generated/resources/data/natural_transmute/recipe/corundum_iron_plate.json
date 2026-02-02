@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    [
+
       {
         "item": "natural_transmute:corundum"
       },
       {
         "item": "minecraft:iron_ingot"
       }
-    ]
+
   ],
   "result": {
     "count": 1,

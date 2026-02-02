@@ -13,8 +13,8 @@
       "item": "minecraft:carved_pumpkin"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_ice_spikes_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_ice_spikes_biome_catalyst"
   },
   "results": [
     {

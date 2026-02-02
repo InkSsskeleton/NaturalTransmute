@@ -86,7 +86,7 @@ public class HarmoniousChangeStoveMenu extends AbstractSimpleMenu {
                     if (!this.moveItemStackTo(sourceStack, 39, 40, Boolean.FALSE)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (sourceStack.is(NTItemTags.METAPHYSICA)) {
+                } else if (sourceStack.is(NTItemTags.BIOME_CATALYST)) {
                     if (!this.moveItemStackTo(sourceStack, 40, 41, Boolean.FALSE)) {
                         return ItemStack.EMPTY;
                     }

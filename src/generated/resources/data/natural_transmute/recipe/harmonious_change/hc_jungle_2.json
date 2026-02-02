@@ -12,8 +12,8 @@
       "item": "minecraft:barrier"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_jungle_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_jungle_biome_catalyst"
   },
   "results": [
     {

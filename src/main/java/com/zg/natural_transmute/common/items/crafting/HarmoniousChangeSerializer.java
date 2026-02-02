@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
+import java.util.AbstractList;
+
 public class HarmoniousChangeSerializer implements RecipeSerializer<HarmoniousChangeRecipe> {
 
     private static final MapCodec<HarmoniousChangeRecipe> CODEC =
@@ -33,7 +35,7 @@ public class HarmoniousChangeSerializer implements RecipeSerializer<HarmoniousCh
                                 return DataResult.success(NonNullList.of(ItemStack.EMPTY, itemStacks));
                             }, DataResult::success)
                             .forGetter(HarmoniousChangeRecipe::getResults),
-                    Ingredient.CODEC_NONEMPTY.fieldOf("metaphysicas").forGetter(HarmoniousChangeRecipe::getMetaphysicas),
+                    Ingredient.CODEC_NONEMPTY.fieldOf("biome_catalysts").forGetter(HarmoniousChangeRecipe::getMetaphysicas),
                     Codec.INT.fieldOf("time").forGetter(HarmoniousChangeRecipe::getTime),
                     Codec.BOOL.fieldOf("consume").forGetter(HarmoniousChangeRecipe::isConsume)
             ).apply(instance, HarmoniousChangeRecipe::new));
@@ -49,19 +51,54 @@ public class HarmoniousChangeSerializer implements RecipeSerializer<HarmoniousCh
     }
 
     private HarmoniousChangeRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
-        NonNullList<Ingredient> ingredients = NonNullList.withSize(buffer.readVarInt(), Ingredient.EMPTY);
-        NonNullList<ItemStack> excepts = NonNullList.withSize(buffer.readVarInt(), ItemStack.EMPTY);
-        NonNullList<ItemStack> results = NonNullList.withSize(buffer.readVarInt(), ItemStack.EMPTY);
-        ingredients.replaceAll(ingredient -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
-        excepts.replaceAll(itemStack -> ItemStack.STREAM_CODEC.decode(buffer));
-        results.replaceAll(itemStack -> ItemStack.STREAM_CODEC.decode(buffer));
-        Ingredient metaphysica = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+        int ingredientsSize = buffer.readVarInt();
+        int exceptsSize = buffer.readVarInt();
+        int resultsSize = buffer.readVarInt();
+
+        NonNullList<Ingredient> ingredients = NonNullList.withSize(ingredientsSize, Ingredient.EMPTY);
+        NonNullList<ItemStack> excepts = NonNullList.withSize(exceptsSize, ItemStack.EMPTY);
+        NonNullList<ItemStack> results = NonNullList.withSize(resultsSize, ItemStack.EMPTY);
+
+        for (int i = 0; i < ingredientsSize; i++) {
+            try {
+                Ingredient decoded = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+                ingredients.set(i, decoded.isEmpty() ? Ingredient.EMPTY : decoded);
+            } catch (Exception e) {
+                ingredients.set(i, Ingredient.EMPTY);
+            }
+        }
+
+        for (int i = 0; i < exceptsSize; i++) {
+            try {
+                ItemStack decoded = ItemStack.STREAM_CODEC.decode(buffer);
+                excepts.set(i, decoded.isEmpty() ? ItemStack.EMPTY : decoded);
+            } catch (Exception e) {
+                excepts.set(i, ItemStack.EMPTY);
+            }
+        }
+
+        for (int i = 0; i < resultsSize; i++) {
+            try {
+                ItemStack decoded = ItemStack.STREAM_CODEC.decode(buffer);
+                results.set(i, decoded.isEmpty() ? ItemStack.EMPTY : decoded);
+            } catch (Exception e) {
+                results.set(i, ItemStack.EMPTY);
+            }
+        }
+
+        Ingredient biome_catalyst = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+        if (biome_catalyst.isEmpty()) {
+            biome_catalyst = Ingredient.EMPTY;
+        }
+
         return new HarmoniousChangeRecipe(ingredients, excepts, results,
-                metaphysica, buffer.readVarInt(), buffer.readBoolean());
+                biome_catalyst, buffer.readVarInt(), buffer.readBoolean());
     }
+
 
     private void toNetwork(RegistryFriendlyByteBuf buffer, HarmoniousChangeRecipe recipe) {
         buffer.writeVarInt(recipe.getIngredients().size());
+        buffer.writeVarInt(recipe.getExcepts().size());
         buffer.writeVarInt(recipe.getResults().size());
         for (Ingredient ingredient : recipe.getIngredients()) {
             Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);

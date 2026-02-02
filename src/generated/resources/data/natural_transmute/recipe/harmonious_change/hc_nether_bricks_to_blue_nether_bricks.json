@@ -16,8 +16,8 @@
       }
     ]
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_warped_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_warped_forest_biome_catalyst"
   },
   "new": "natural_transmute:blue_nether_bricks",
   "old": "minecraft:nether_bricks"

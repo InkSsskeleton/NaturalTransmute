@@ -1,17 +1,17 @@
 {
   "type": "natural_transmute:hc_recycle_infested_block",
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_mountains_metaphysica"
+      "item": "natural_transmute:h_mountains_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_snowy_slopes_metaphysica"
+      "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_meadow_metaphysica"
+      "item": "natural_transmute:h_meadow_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_cherry_grove_metaphysica"
+      "item": "natural_transmute:h_cherry_grove_biome_catalyst"
     }
   ]
 }

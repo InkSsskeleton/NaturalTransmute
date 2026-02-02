@@ -7,8 +7,8 @@
       "tag": "c:foods/cooked_fish"
     }
   ],
-  "metaphysicas": {
-    "item": "natural_transmute:h_birch_forest_metaphysica"
+  "biome_catalysts": {
+    "item": "natural_transmute:h_birch_forest_biome_catalyst"
   },
   "results": [
     {

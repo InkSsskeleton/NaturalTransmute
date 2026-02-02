@@ -37,18 +37,18 @@
       }
     ]
   ],
-  "metaphysicas": [
+  "biome_catalysts": [
     {
-      "item": "natural_transmute:h_forest_metaphysica"
+      "item": "natural_transmute:h_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_flower_forest_metaphysica"
+      "item": "natural_transmute:h_flower_forest_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_swamp_metaphysica"
+      "item": "natural_transmute:h_swamp_biome_catalyst"
     },
     {
-      "item": "natural_transmute:h_lush_cave_metaphysica"
+      "item": "natural_transmute:h_lush_cave_biome_catalyst"
     }
   ],
   "new": "minecraft:oak_planks",
