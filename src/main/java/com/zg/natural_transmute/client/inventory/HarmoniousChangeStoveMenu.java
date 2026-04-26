@@ -31,7 +31,7 @@ public class HarmoniousChangeStoveMenu extends AbstractSimpleMenu {
     }
 
     public HarmoniousChangeStoveMenu(int containerId, Inventory inventory, ContainerLevelAccess access) {
-        this(containerId, inventory, access, new ItemStackHandler(8), new SimpleContainerData(5));
+        this(containerId, inventory, access, new ItemStackHandler(8), new SimpleContainerData(HarmoniousChangeStoveBlockEntity.Data.COUNT));
     }
 
     public HarmoniousChangeStoveMenu(int containerId, Inventory inventory, ContainerLevelAccess access, IItemHandler itemHandler, ContainerData containerData) {
