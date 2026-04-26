@@ -43,7 +43,6 @@ public class ModBusEventHandler {
 
     @SubscribeEvent
     public static void registerDataMapTypes(RegisterDataMapTypesEvent event) {
-        event.register(NTDataMaps.HARMONIOUS_CHANGE_FUELS);
     }
 
     @SubscribeEvent
