@@ -40,7 +40,7 @@ public class HarmoniousChangeStoveScreen extends AbstractContainerScreen<Harmoni
         guiGraphics.blitSprite(PROGRESS_BAR_0, (51), (21), (0), (0), getGuiLeft() + 47, getGuiTop() + 35, time, (21));
 
         var remaining = 49;
-        if (!this.menu.hasEternalFuel()) {
+        if (!this.menu.hasFuelBucket()) {
             var now = Mth.clamp(this.menu.getFuelRemain(), 0, 8);
             if (now == 0) {
                 remaining = 0;

@@ -55,6 +55,14 @@ public class NTItemTagProvider extends ItemTagsProvider {
                 this.tag(ItemTags.WOLF_FOOD).add(item);
             }
         });
+
+        tag(NTItemTags.HARMONIOUS_CHANGE_FUEL)
+                .addTag(NTItemTags.HARMONIOUS_CHANGE_FUEL_BUCKET)
+                .addTag(NTItemTags.HARMONIOUS_CHANGE_FUEL_COAL)
+                .addTag(NTItemTags.HARMONIOUS_CHANGE_ETERNAL_FUEL);
+        tag(NTItemTags.HARMONIOUS_CHANGE_FUEL_BUCKET).add(NTItems.HARMONIOUS_CHANGE_LAVA_BUCKET.get());
+        tag(NTItemTags.HARMONIOUS_CHANGE_FUEL_COAL).add(NTItems.HARMONIOUS_CHANGE_FUEL.get());
+        tag(NTItemTags.HARMONIOUS_CHANGE_ETERNAL_FUEL).add(NTItems.ETERNAL_HARMONIOUS_CHANGE_LAVA_BUCKET.get());
     }
 
 }

@@ -32,11 +32,6 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 public class MiscEventHandler {
 
     @SubscribeEvent
-    public static void onTagsUpdated(TagsUpdatedEvent event) {
-        HarmoniousChangeFuelUtils.rebuildFuels();
-    }
-
-    @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent.Pre event) {
         LivingEntity entity = event.getEntity();
         Holder<MobEffect> effect = NTMobEffects.VULNERABLE;

@@ -1,7 +1,6 @@
 package com.zg.natural_transmute.client.inventory;
 
 import com.zg.natural_transmute.common.blocks.entity.HarmoniousChangeStoveBlockEntity;
-import com.zg.natural_transmute.common.data.tags.NTItemTags;
 import com.zg.natural_transmute.registry.NTBlocks;
 import com.zg.natural_transmute.registry.NTDataComponents;
 import com.zg.natural_transmute.registry.NTMenus;
@@ -63,12 +62,8 @@ public class HarmoniousChangeStoveMenu extends AbstractSimpleMenu {
         return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.FUEL_REMAIN);
     }
 
-    public int getMaxFuelDuration() {
-        return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.MAX_FUEL_DURATION);
-    }
-
-    public boolean hasEternalFuel() {
-        return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.HAS_ETERNAL_FUEL) == HarmoniousChangeStoveBlockEntity.Data.TRUE;
+    public boolean hasFuelBucket() {
+        return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.HAS_FUEL_BUCKET) == HarmoniousChangeStoveBlockEntity.Data.TRUE;
     }
 
     @Override

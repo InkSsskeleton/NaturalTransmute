@@ -1,65 +1,34 @@
 package com.zg.natural_transmute.utils;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.zg.natural_transmute.registry.NTItems;
-import net.minecraft.tags.TagKey;
+import com.zg.natural_transmute.common.data.tags.NTItemTags;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 
 import java.util.*;
-import java.util.function.Predicate;
+import java.util.stream.StreamSupport;
 
 public class HarmoniousChangeFuelUtils {
-    private static final Set<Predicate<ItemStack>> fuels = new HashSet<>();
-    private static final List<Item> fuelsItemView = new ArrayList<>();
-
-    public static Set<Predicate<ItemStack>> getFuels() {
-        return ImmutableSet.copyOf(fuels);
-    }
-
     public static List<Item> getFuelsItemView() {
-        return ImmutableList.copyOf(fuelsItemView);
+        return StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(NTItemTags.HARMONIOUS_CHANGE_FUEL).spliterator(), false)
+                .map(Holder::value)
+                .toList();
     }
 
     public static boolean isFuel(ItemStack stack) {
-        for (var entry : fuels) {
-            if (entry.test(stack)) {
-                return true;
-            }
-        }
-        return false;
+        return stack.is(NTItemTags.HARMONIOUS_CHANGE_FUEL);
     }
 
-    static {
-        rebuildFuels();
+    public static boolean isCoalFuel(ItemStack stack) {
+        return stack.is(NTItemTags.HARMONIOUS_CHANGE_FUEL_COAL);
     }
 
-    public static void rebuildFuels() {
-        fuels.clear();
-        fuelsItemView.clear();
-
-        add(NTItems.HARMONIOUS_CHANGE_FUEL.get());
-        add(NTItems.ETERNAL_HARMONIOUS_CHANGE_LAVA_BUCKET.get());
-    }
-
-    private static void add(ItemLike itemLike) {
-        var item = itemLike.asItem();
-        add(stack -> stack.is(item));
-        fuelsItemView.add(item);
-    }
-
-    private static void add(TagKey<Item> tag) {
-        add(stack -> stack.is(tag));
-        // Todo: add all items in tag to fuelsItemView
-    }
-
-    private static void add(Predicate<ItemStack> predicate) {
-        fuels.add(predicate);
+    public static boolean isBucketFuel(ItemStack stack) {
+        return stack.is(NTItemTags.HARMONIOUS_CHANGE_FUEL_BUCKET);
     }
 
     public static boolean isEternalFuel(ItemStack stack) {
-        return stack.is(NTItems.ETERNAL_HARMONIOUS_CHANGE_LAVA_BUCKET.get());
+        return stack.is(NTItemTags.HARMONIOUS_CHANGE_ETERNAL_FUEL);
     }
 }
