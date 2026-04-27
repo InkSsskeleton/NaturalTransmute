@@ -73,53 +73,39 @@ public class HarmoniousChangeStoveMenu extends AbstractSimpleMenu {
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
-        ItemStack copyOfSourceStack = ItemStack.EMPTY;
+        var result = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if (slot.hasItem()) {
-            ItemStack sourceStack = slot.getItem();
-            copyOfSourceStack = sourceStack.copy();
-            if (index >= 41 && index <= 43) {
-                if (!this.moveItemStackTo(sourceStack, 0, 35, Boolean.TRUE)) {
+            ItemStack slotItem = slot.getItem();
+            result = slotItem.copy();
+            if (index < 36) {
+                if (HarmoniousChangeFuelUtils.isFuel(slotItem)) {
+                    if (!this.moveItemStackTo(slotItem, 39, 40, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (slotItem.has(NTDataComponents.ASSOCIATED_BIOMES)) {
+                    if (!this.moveItemStackTo(slotItem, 40, 41, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else {
+                    if (!this.moveItemStackTo(slotItem, 36, 39, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+            } else {
+                if (!this.moveItemStackTo(slotItem, 0, 36, false)) {
                     return ItemStack.EMPTY;
                 }
-
-                slot.onQuickCraft(sourceStack, copyOfSourceStack);
-            } else if (index < 41) {
-                if (HarmoniousChangeFuelUtils.isFuel(sourceStack)) {
-                    if (!this.moveItemStackTo(sourceStack, 39, 40, Boolean.FALSE)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else if (sourceStack.is(NTItemTags.BIOME_CATALYST)) {
-                    if (!this.moveItemStackTo(sourceStack, 40, 41, Boolean.FALSE)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else if (!this.moveItemStackTo(sourceStack, 36, 38, Boolean.FALSE)) {
-                    return ItemStack.EMPTY;
-                }  else if (index >= 0 && index < 27) {
-                    if (!this.moveItemStackTo(sourceStack, 26, 35, Boolean.FALSE)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else if (index >= 27 && index < 36 && !this.moveItemStackTo(sourceStack, 0, 27, Boolean.FALSE)) {
-                    return ItemStack.EMPTY;
-                }
-            } else if (!this.moveItemStackTo(sourceStack, 0, 35, Boolean.FALSE)) {
-                return ItemStack.EMPTY;
             }
 
-            if (sourceStack.isEmpty()) {
+            if (slotItem.isEmpty()) {
                 slot.setByPlayer(ItemStack.EMPTY);
             } else {
                 slot.setChanged();
             }
-
-            if (sourceStack.getCount() == copyOfSourceStack.getCount()) {
-                return ItemStack.EMPTY;
-            }
-
-            slot.onTake(player, sourceStack);
         }
 
-        return copyOfSourceStack;
+        return result;
     }
 
     @Override
