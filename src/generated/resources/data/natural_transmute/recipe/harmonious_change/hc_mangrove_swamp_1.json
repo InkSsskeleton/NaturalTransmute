@@ -1,5 +1,8 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_mangrove_swamp_biome_catalyst"
+  },
   "consume": true,
   "excepts": [
     {
@@ -17,9 +20,6 @@
       }
     ]
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_mangrove_swamp_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,

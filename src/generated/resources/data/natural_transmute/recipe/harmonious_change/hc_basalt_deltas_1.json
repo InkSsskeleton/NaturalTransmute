@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_basalt_deltas_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:raw_copper"
+      },
+      {
+        "item": "minecraft:raw_iron"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:raw_gold"
+    }
+  ],
+  "time": 160
+}

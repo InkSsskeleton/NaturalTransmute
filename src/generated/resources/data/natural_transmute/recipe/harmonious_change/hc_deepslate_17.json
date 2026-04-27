@@ -1,19 +1,19 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_deepslate_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_deepslate"
+      "item": "minecraft:granite_stairs"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_deepslate_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cobbled_deepslate"
+      "id": "minecraft:granite"
     }
   ],
   "time": 160

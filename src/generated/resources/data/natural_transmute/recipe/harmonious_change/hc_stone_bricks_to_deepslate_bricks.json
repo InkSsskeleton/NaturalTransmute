@@ -1,27 +1,9 @@
 {
   "type": "natural_transmute:hc_block_family_transfer",
-  "ingredients": [
-    [
-      {
-        "item": "minecraft:stone_bricks"
-      },
-      {
-        "item": "minecraft:cracked_stone_bricks"
-      },
-      {
-        "item": "minecraft:stone_brick_slab"
-      },
-      {
-        "item": "minecraft:stone_brick_stairs"
-      },
-      {
-        "item": "minecraft:stone_brick_wall"
-      }
-    ]
-  ],
   "biome_catalysts": {
     "item": "natural_transmute:h_deepslate_biome_catalyst"
   },
+  "ingredients": [],
   "new": "minecraft:deepslate_bricks",
   "old": "minecraft:stone_bricks"
 }

@@ -1,20 +1,14 @@
 {
   "type": "natural_transmute:hc_block_family_transfer",
+  "biome_catalysts": [
+    {
+      "item": "natural_transmute:h_beach_biome_catalyst"
+    },
+    {
+      "item": "natural_transmute:h_stone_shore_biome_catalyst"
+    }
+  ],
   "ingredients": [
-    [
-      {
-        "item": "minecraft:cobblestone"
-      },
-      {
-        "item": "minecraft:cobblestone_stairs"
-      },
-      {
-        "item": "minecraft:cobblestone_slab"
-      },
-      {
-        "item": "minecraft:cobblestone_wall"
-      }
-    ],
     [
       {
         "item": "minecraft:kelp"
@@ -23,14 +17,6 @@
         "item": "minecraft:seagrass"
       }
     ]
-  ],
-  "biome_catalysts": [
-    {
-      "item": "natural_transmute:h_beach_biome_catalyst"
-    },
-    {
-      "item": "natural_transmute:h_stone_shore_biome_catalyst"
-    }
   ],
   "new": "minecraft:mossy_cobblestone",
   "old": "minecraft:cobblestone"

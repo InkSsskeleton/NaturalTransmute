@@ -1,21 +1,5 @@
 {
   "type": "natural_transmute:hc_block_family_transfer",
-  "ingredients": [
-    [
-      {
-        "item": "minecraft:mossy_cobblestone_slab"
-      },
-      {
-        "item": "minecraft:mossy_cobblestone_stairs"
-      },
-      {
-        "item": "minecraft:mossy_cobblestone"
-      },
-      {
-        "item": "minecraft:mossy_cobblestone_wall"
-      }
-    ]
-  ],
   "biome_catalysts": [
     {
       "item": "natural_transmute:h_desert_biome_catalyst"
@@ -30,6 +14,7 @@
       "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
     }
   ],
+  "ingredients": [],
   "new": "minecraft:cobblestone",
   "old": "minecraft:mossy_cobblestone"
 }

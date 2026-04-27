@@ -1,5 +1,8 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_lush_cave_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
@@ -13,9 +16,6 @@
       "item": "minecraft:heart_of_the_sea"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_lush_cave_biome_catalyst"
-  },
   "results": [
     {
       "components": {

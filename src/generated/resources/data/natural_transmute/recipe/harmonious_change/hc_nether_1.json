@@ -1,22 +1,22 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_nether_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:skeleton_skull"
+      "item": "minecraft:amethyst_block"
     },
     {
-      "item": "natural_transmute:wither_bone"
+      "item": "minecraft:magma_block"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_nether_biome_catalyst"
-  },
   "results": [
     {
-      "count": 1,
-      "id": "minecraft:wither_skeleton_skull"
+      "count": 2,
+      "id": "minecraft:glowstone"
     }
   ],
   "time": 160

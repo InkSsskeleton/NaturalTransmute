@@ -130,8 +130,8 @@
   "item.natural_transmute.h_deepslate_biome_catalyst": "深岩缚相",
   "item.natural_transmute.h_desert_biome_catalyst": "燥热缚相",
   "item.natural_transmute.h_dripstone_caves_biome_catalyst": "岁月缚相",
-  "item.natural_transmute.h_end_highlands_biome_catalyst": "龙诀缚相",
   "item.natural_transmute.h_end_biome_catalyst": "终末缚相",
+  "item.natural_transmute.h_end_highlands_biome_catalyst": "龙诀缚相",
   "item.natural_transmute.h_flower_forest_biome_catalyst": "缤纷缚相",
   "item.natural_transmute.h_forest_biome_catalyst": "树海缚相",
   "item.natural_transmute.h_frozen_ocean_biome_catalyst": "冷翠缚相",
@@ -202,7 +202,5 @@
   "item.natural_transmute.whale_bone": "鲸骨",
   "item.natural_transmute.whale_bone_bow": "鲸骨弓",
   "item.natural_transmute.wither_bone": "凋灵骨",
-  "itemGroup.natural_transmute": "自然通路",
-  "advancements.natural_transmute.biome_catalyst.title": "万象之形",
-  "advancements.natural_transmute.biome_catalyst.description": "制作一份缚相，蕴含生物群系力量的精华"
+  "itemGroup.natural_transmute": "自然通路"
 }

@@ -1,21 +1,5 @@
 {
   "type": "natural_transmute:hc_block_family_transfer",
-  "ingredients": [
-    [
-      {
-        "item": "minecraft:mossy_stone_bricks"
-      },
-      {
-        "item": "minecraft:mossy_stone_brick_stairs"
-      },
-      {
-        "item": "minecraft:mossy_stone_brick_wall"
-      },
-      {
-        "item": "minecraft:mossy_stone_brick_slab"
-      }
-    ]
-  ],
   "biome_catalysts": [
     {
       "item": "natural_transmute:h_desert_biome_catalyst"
@@ -30,6 +14,7 @@
       "item": "natural_transmute:h_snowy_slopes_biome_catalyst"
     }
   ],
+  "ingredients": [],
   "new": "minecraft:stone_bricks",
   "old": "minecraft:mossy_stone_bricks"
 }

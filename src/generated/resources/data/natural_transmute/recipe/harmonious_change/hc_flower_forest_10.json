@@ -1,5 +1,8 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_flower_forest_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
@@ -10,9 +13,6 @@
       "item": "minecraft:yellow_dye"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_flower_forest_biome_catalyst"
-  },
   "results": [
     {
       "count": 2,

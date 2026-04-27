@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_end_highlands_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "tag": "minecraft:logs"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:purpur_block"
+    }
+  ],
+  "time": 160
+}

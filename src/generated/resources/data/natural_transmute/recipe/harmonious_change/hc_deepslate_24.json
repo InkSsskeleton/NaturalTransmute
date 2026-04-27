@@ -1,19 +1,19 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_deepslate_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:tuff_wall"
+      "item": "minecraft:diorite_slab"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_deepslate_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:tuff"
+      "id": "minecraft:diorite"
     }
   ],
   "time": 160

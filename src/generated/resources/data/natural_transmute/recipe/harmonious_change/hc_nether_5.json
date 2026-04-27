@@ -1,19 +1,27 @@
 {
   "type": "natural_transmute:harmonious_change",
-  "consume": true,
-  "excepts": [],
-  "ingredients": [
-    {
-      "item": "minecraft:glass"
-    }
-  ],
   "biome_catalysts": {
     "item": "natural_transmute:h_nether_biome_catalyst"
   },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      }
+    ],
+    {
+      "item": "minecraft:ghast_tear"
+    }
+  ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:quartz"
+      "id": "minecraft:nether_wart"
     }
   ],
   "time": 160

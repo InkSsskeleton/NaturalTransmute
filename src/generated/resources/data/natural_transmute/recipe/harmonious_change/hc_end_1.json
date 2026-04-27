@@ -1,0 +1,24 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_end_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "type": "neoforge:block_tag",
+      "tag": "c:skulls"
+    },
+    {
+      "item": "minecraft:end_crystal"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:dragon_head"
+    }
+  ],
+  "time": 160
+}

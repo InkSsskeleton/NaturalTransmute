@@ -1,25 +1,22 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_stone_shore_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:coast_armor_trim_smithing_template"
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": "minecraft:diamond"
-    },
-    {
-      "item": "minecraft:stone"
+      "item": "minecraft:spider_eye"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_stone_shore_biome_catalyst"
-  },
   "results": [
     {
-      "count": 2,
-      "id": "minecraft:coast_armor_trim_smithing_template"
+      "count": 1,
+      "id": "natural_transmute:goose_barnacle"
     }
   ],
   "time": 160

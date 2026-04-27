@@ -1,0 +1,34 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": [
+    {
+      "item": "natural_transmute:h_birch_forest_biome_catalyst"
+    },
+    {
+      "item": "natural_transmute:h_jungle_biome_catalyst"
+    },
+    {
+      "item": "natural_transmute:h_taiga_biome_catalyst"
+    },
+    {
+      "item": "natural_transmute:h_old_growth_taiga_biome_catalyst"
+    }
+  ],
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:brick"
+    },
+    {
+      "item": "minecraft:danger_pottery_sherd"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:danger_pottery_sherd"
+    }
+  ],
+  "time": 160
+}

@@ -1,5 +1,8 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_river_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
@@ -7,9 +10,6 @@
       "item": "minecraft:chicken"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_river_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,

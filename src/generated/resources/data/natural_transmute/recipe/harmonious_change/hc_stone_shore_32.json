@@ -1,19 +1,19 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_stone_shore_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:deepslate_tile_slab"
+      "item": "minecraft:polished_blackstone_brick_slab"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_stone_shore_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cracked_deepslate_tiles"
+      "id": "minecraft:cracked_polished_blackstone_bricks"
     }
   ],
   "time": 160

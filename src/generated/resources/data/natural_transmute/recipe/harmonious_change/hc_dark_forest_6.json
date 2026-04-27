@@ -1,24 +1,26 @@
 {
   "type": "natural_transmute:harmonious_change",
-  "consume": true,
-  "excepts": [],
-  "ingredients": [
-    [
-      {
-        "tag": "natural_transmute:vegetable"
-      },
-      {
-        "tag": "natural_transmute:fruit"
-      }
-    ]
-  ],
   "biome_catalysts": {
     "item": "natural_transmute:h_dark_forest_biome_catalyst"
   },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "type": "neoforge:block_tag",
+      "tag": "c:skulls"
+    }
+  ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:apple"
+      "id": "minecraft:totem_of_undying"
     }
   ],
   "time": 160

@@ -1,32 +1,18 @@
 {
   "type": "natural_transmute:harmonious_change",
-  "consume": true,
-  "excepts": [],
-  "ingredients": [
-    [
-      {
-        "item": "minecraft:red_sandstone"
-      },
-      {
-        "item": "minecraft:stone"
-      },
-      {
-        "item": "minecraft:cobblestone"
-      },
-      {
-        "item": "minecraft:deepslate"
-      },
-      {
-        "item": "minecraft:cobbled_deepslate"
-      }
-    ]
-  ],
   "biome_catalysts": {
     "item": "natural_transmute:h_desert_biome_catalyst"
   },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:sandstone"
+    }
+  ],
   "results": [
     {
-      "count": 1,
+      "count": 4,
       "id": "minecraft:sandstone"
     }
   ],

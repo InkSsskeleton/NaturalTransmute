@@ -1,19 +1,19 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_deepslate_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_blackstone"
+      "item": "minecraft:polished_blackstone_stairs"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_deepslate_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:blackstone"
+      "id": "minecraft:polished_blackstone"
     }
   ],
   "time": 160

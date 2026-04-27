@@ -1,0 +1,25 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_end_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:stone"
+      },
+      {
+        "item": "minecraft:deepslate"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:end_stone"
+    }
+  ],
+  "time": 160
+}

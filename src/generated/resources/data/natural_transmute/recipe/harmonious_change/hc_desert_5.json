@@ -1,19 +1,19 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_desert_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:mud"
+      "item": "minecraft:dirt"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_desert_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:dirt"
+      "id": "minecraft:coarse_dirt"
     }
   ],
   "time": 160

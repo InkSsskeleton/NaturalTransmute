@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_end_highlands_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "item": "minecraft:jungle_sapling"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:end_alsophila_sapling"
+    }
+  ],
+  "time": 160
+}

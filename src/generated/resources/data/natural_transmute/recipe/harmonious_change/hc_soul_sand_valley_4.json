@@ -1,0 +1,20 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_soul_sand_valley_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:lantern"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:soul_lantern"
+    }
+  ],
+  "time": 160
+}

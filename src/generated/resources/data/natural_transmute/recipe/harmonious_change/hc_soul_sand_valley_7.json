@@ -1,0 +1,23 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_soul_sand_valley_biome_catalyst"
+  },
+  "consume": false,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "minecraft:lava_bucket"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "minecraft:basalt"
+    }
+  ],
+  "time": 160
+}

@@ -1360,7 +1360,8 @@ public class NTRecipeProvider extends RecipeProvider {
         String path = BuiltInRegistries.ITEM.getKey(builder.biome_catalyst.getItems()[0].getItem()).getPath();
         path = path.replaceFirst("h_", StringUtils.EMPTY).replaceFirst("_biome_catalyst", StringUtils.EMPTY);
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_%d", path, index));
-        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST))
+                .save(recipeOutput, id);
     }
 
     private static void harmoniousChangeWithCustomName(RecipeOutput recipeOutput, HarmoniousChangeRecipeBuilder builder) {
@@ -1371,12 +1372,16 @@ public class NTRecipeProvider extends RecipeProvider {
         builder.results.forEach(itemStack -> outputJoiner.add(getItemName(itemStack.getItem())));
         String input = builder.name.isEmpty() ? inputJoiner.toString() : builder.name;
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s", input, outputJoiner));
-        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST))
+                .save(recipeOutput, id);
     }
 
     private static void harmoniousChangeOfCopyIngredient(RecipeOutput recipeOutput, HarmoniousChangeRecipeBuilder builder, ItemLike mainStack) {
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_copy_of_%s", getItemName(mainStack)));
-        builder.requires(mainStack).results(mainStack, 2).save(recipeOutput, id);
+        builder.requires(mainStack)
+                .results(mainStack, 2)
+                .unlockedBy("has_" + getItemName(mainStack), has(mainStack))
+                .save(recipeOutput, id);
     }
 
     private static void harmoniousChange(RecipeOutput recipeOutput, ItemLike biome_catalyst, ItemLike require, ItemLike result, int index) {
@@ -1386,14 +1391,16 @@ public class NTRecipeProvider extends RecipeProvider {
     private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, ItemLike... biome_catalyst) {
         HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, Ingredient.of(biome_catalyst));
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s", getItemName(oldBaseBlock), getItemName(newBaseBlock)));
-        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST))
+                .save(recipeOutput, id);
     }
 
     private static void harmoniousChangeOfBlockFamily(RecipeOutput recipeOutput, Block oldBaseBlock, Block newBaseBlock, Ingredient biome_catalyst, int index, Ingredient... extra) {
         HCBlockFamilyTransferRecipeBuilder builder = HCBlockFamilyTransferRecipeBuilder.addRecipe(oldBaseBlock, newBaseBlock, biome_catalyst);
         ResourceLocation id = NaturalTransmute.prefix(String.format("hc_%s_to_%s_with_extra_%d", getItemName(oldBaseBlock), getItemName(newBaseBlock), index));
         Arrays.stream(extra).toList().forEach(builder::requires);
-        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST)).save(recipeOutput, id);
+        builder.unlockedBy("has_biome_catalyst", has(NTItemTags.BIOME_CATALYST))
+                .save(recipeOutput, id);
     }
 
     private static void harmoniousChangeSpecial(RecipeOutput recipeOutput, Recipe<?> recipe) {
@@ -1412,13 +1419,15 @@ public class NTRecipeProvider extends RecipeProvider {
 
     private static void waterWaxRecipes(RecipeOutput recipeOutput) {
         HoneycombItem.WAXABLES.get().forEach((b1, b2) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, b2)
-                .requires(b1).requires(NTItems.WATER_WAX.get()).group(getItemName(b2)).unlockedBy(getHasName(b1), has(b1))
+                .requires(b1).requires(NTItems.WATER_WAX.get()).group(getItemName(b2))
+                .unlockedBy(getHasName(b1), has(b1))
                 .save(recipeOutput, NaturalTransmute.prefix("water_wax/" + getConversionRecipeName(b2, NTItems.WATER_WAX.get()))));
         WaterWax.CAN_USE_WATER_WAX.get().forEach((b1, b2) -> {
             if (!(b2 instanceof ActivatedCoralWallFan)) {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, b2)
                         .requires(b1).requires(NTItems.WATER_WAX.get())
-                        .group(getItemName(b2)).unlockedBy(getHasName(b1), has(b1))
+                        .group(getItemName(b2))
+                        .unlockedBy(getHasName(b1), has(b1))
                         .save(recipeOutput, NaturalTransmute.prefix("water_wax/" +
                                 getConversionRecipeName(b2, NTItems.WATER_WAX.get())));
             }
@@ -1430,16 +1439,20 @@ public class NTRecipeProvider extends RecipeProvider {
             ItemLike leggings, ItemLike boots, ItemLike material) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet)
                 .define('X', material).pattern("XXX").pattern("X X")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate)
                 .define('X', material).pattern("X X").pattern("XXX").pattern("XXX")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings)
                 .define('X', material).pattern("XXX").pattern("X X").pattern("X X")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots)
                 .define('X', material).pattern("X X").pattern("X X")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
     }
 
     private void buildBaseToolRecipes(
@@ -1448,23 +1461,28 @@ public class NTRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword)
                 .define('#', stick).define('X', material)
                 .pattern("X").pattern("X").pattern("#")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxe)
                 .define('#', stick).define('X', material)
                 .pattern("XXX").pattern(" # ").pattern(" # ")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovel)
                 .define('#', stick).define('X', material)
                 .pattern("X").pattern("#").pattern("#")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe)
                 .define('#', stick).define('X', material)
                 .pattern("XX").pattern("X#").pattern(" #")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe)
                 .define('#', stick).define('X', material)
                 .pattern("XX").pattern(" #").pattern(" #")
-                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
+                .unlockedBy(getHasName(material), has(material))
+                .save(recipeOutput);
     }
 
     @SuppressWarnings("removal")

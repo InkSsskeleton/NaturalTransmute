@@ -1,5 +1,8 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_meadow_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
@@ -10,9 +13,6 @@
       "item": "minecraft:light_gray_dye"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_meadow_biome_catalyst"
-  },
   "results": [
     {
       "count": 2,

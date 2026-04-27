@@ -1,0 +1,26 @@
+{
+  "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_end_biome_catalyst"
+  },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    {
+      "item": "natural_transmute:corundum_iron_plate"
+    },
+    {
+      "item": "minecraft:ancient_debris"
+    },
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "natural_transmute:dragoncast_steel_billet"
+    }
+  ],
+  "time": 160
+}

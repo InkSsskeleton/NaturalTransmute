@@ -1,24 +1,24 @@
 {
   "type": "natural_transmute:harmonious_change",
-  "consume": true,
-  "excepts": [
-    {
-      "count": 1,
-      "id": "minecraft:dark_oak_leaves"
-    }
-  ],
-  "ingredients": [
-    {
-      "item": "minecraft:barrier"
-    }
-  ],
   "biome_catalysts": {
     "item": "natural_transmute:h_dark_forest_biome_catalyst"
   },
+  "consume": true,
+  "excepts": [],
+  "ingredients": [
+    [
+      {
+        "tag": "natural_transmute:vegetable"
+      },
+      {
+        "tag": "natural_transmute:fruit"
+      }
+    ]
+  ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:dark_oak_leaves"
+      "id": "minecraft:apple"
     }
   ],
   "time": 160

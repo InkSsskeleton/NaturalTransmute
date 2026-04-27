@@ -1,27 +1,24 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_crimson_forest_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     [
       {
-        "item": "minecraft:glowstone"
+        "item": "minecraft:brown_mushroom"
       },
       {
-        "item": "minecraft:magma_block"
+        "item": "minecraft:red_mushroom"
       }
-    ],
-    {
-      "item": "minecraft:weeping_vines"
-    }
+    ]
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_crimson_forest_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
-      "id": "minecraft:shroomlight"
+      "id": "minecraft:crimson_fungus"
     }
   ],
   "time": 160

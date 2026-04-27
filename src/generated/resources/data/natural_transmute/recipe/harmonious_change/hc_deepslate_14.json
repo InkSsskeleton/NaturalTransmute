@@ -1,15 +1,15 @@
 {
   "type": "natural_transmute:harmonious_change",
+  "biome_catalysts": {
+    "item": "natural_transmute:h_deepslate_biome_catalyst"
+  },
   "consume": true,
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:cobbled_deepslate_stairs"
+      "item": "minecraft:polished_deepslate"
     }
   ],
-  "biome_catalysts": {
-    "item": "natural_transmute:h_deepslate_biome_catalyst"
-  },
   "results": [
     {
       "count": 1,
