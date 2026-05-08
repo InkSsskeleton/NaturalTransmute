@@ -76,7 +76,7 @@ public class HarmoniousChangeStove extends BaseEntityBlockWithState {
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide && player.isCreative()) {
+        if (!level.isClientSide) {
             var facing = state.getValue(FACING);
             var part = state.getValue(PART);
             var mainPos = pos.offset(part.getRelativeMainPos(facing));
