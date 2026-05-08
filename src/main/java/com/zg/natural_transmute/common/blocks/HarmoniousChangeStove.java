@@ -88,7 +88,7 @@ public class HarmoniousChangeStove extends BaseEntityBlockWithState {
                     if (be != null) {
                         be.setRemoved();
                     }
-                    level.destroyBlock(partPos, p.isMainBlock(), null);
+                    level.destroyBlock(partPos, p.isMainBlock() && !player.isCreative(), null);
                 }
             }
         }
