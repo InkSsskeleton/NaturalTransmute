@@ -62,10 +62,6 @@ public class HarmoniousChangeStoveMenu extends AbstractSimpleMenu {
         return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.FUEL_REMAIN);
     }
 
-    public boolean hasFuelBucket() {
-        return this.containerData.get(HarmoniousChangeStoveBlockEntity.Data.HAS_FUEL_BUCKET) == HarmoniousChangeStoveBlockEntity.Data.TRUE;
-    }
-
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
         var result = ItemStack.EMPTY;
