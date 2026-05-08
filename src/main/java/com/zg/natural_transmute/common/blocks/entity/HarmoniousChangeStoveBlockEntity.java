@@ -16,12 +16,15 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
@@ -69,29 +72,16 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         if (blockEntity.hasInput()) {
             HarmoniousChangeRecipe recipe = blockEntity.checkHarmoniousChangeRecipe();
             if (recipe != null && blockEntity.canWork(recipe)) {    // Tick working
-                if (!blockEntity.hasFuelRemain()) { // Consumes fuel
-                    var fuel = blockEntity.getItem(FUEL_SLOT);
-                    if (HarmoniousChangeFuelUtils.isFuel(fuel)) {
-                        if (HarmoniousChangeFuelUtils.isCoalFuel(fuel)) {
-                            fuel.shrink(1);
-                            blockEntity.fuelRemain = 8;
-                        }
-                    } else {    // Fail to lit, reset
-                        shouldReset = true;
-                    }
+                changed |= blockEntity.tryConsumeFuel();
+
+                if (!blockEntity.hasFuelRemain()) {
+                    shouldReset = true;
                 }
 
                 var isRecipeDone = blockEntity.processRecipe(recipe);
                 if (isRecipeDone) {
                     blockEntity.currentState = IDLING_STATE;
-                    if (!blockEntity.hasFuelBucket()) {
-                        blockEntity.fuelRemain -= 1;
-                    } else {
-                        var fuel = blockEntity.getItem(FUEL_SLOT);
-                        if (!HarmoniousChangeFuelUtils.isEternalFuel(fuel)) {
-                            fuel.hurtAndBreak(1, (ServerLevel) blockEntity.getLevel(), null, item -> {});
-                        }
-                    }
+                    blockEntity.fuelRemain -= 1;
                 } else {
                     blockEntity.currentState = WORKING_STATE;
                 }
@@ -113,6 +103,43 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
             setChanged(level, pos, state);
         }
     }
+
+    // region Fuel
+
+    private boolean tryConsumeFuel() {
+        if (level == null || level.isClientSide) {
+            return false;
+        }
+
+        var fuel = getItem(FUEL_SLOT);
+        if (HarmoniousChangeFuelUtils.isCoalFuel(fuel)) {
+            if (fuelRemain <= 0) {
+                fuel.shrink(1);
+                fuelRemain = maxFuelDuration;
+                return true;
+            }
+        } else if (HarmoniousChangeFuelUtils.isBucketFuel(fuel)) {
+            if (fuelRemain < maxFuelDuration) {
+                var fuelToConsume = maxFuelDuration - fuelRemain;
+                var bucketDurabilityRemain = fuel.getMaxDamage() - fuel.getDamageValue();
+                var actualConsume = Math.min(fuelToConsume, bucketDurabilityRemain);
+                fuel.hurtAndBreak(actualConsume, (ServerLevel) level, null, item -> {});
+                if (fuel.isEmpty()) {
+                    ItemStack newItem = fuel.transmuteCopyIgnoreEmpty(Items.BUCKET, 1);
+                    if (newItem.isDamageableItem()) {
+                        newItem.setDamageValue(0);
+                    }
+                    setItem(FUEL_SLOT, newItem);
+                }
+                fuelRemain += actualConsume;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // endregion
 
 
     /**
