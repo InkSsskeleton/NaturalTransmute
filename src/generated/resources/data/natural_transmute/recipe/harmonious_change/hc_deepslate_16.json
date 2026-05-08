@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:granite_slab"
+      "item": "minecraft:blackstone_wall"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:granite"
+      "id": "minecraft:blackstone"
     }
   ],
   "time": 160

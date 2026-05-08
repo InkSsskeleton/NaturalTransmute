@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:cracked_stone_bricks"
+      "item": "minecraft:deepslate_tile_slab"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cracked_stone_bricks"
+      "id": "minecraft:cracked_deepslate_tiles"
     }
   ],
   "time": 160

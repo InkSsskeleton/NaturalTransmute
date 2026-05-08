@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:granite_stairs"
+      "item": "minecraft:polished_blackstone"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:granite"
+      "id": "minecraft:blackstone"
     }
   ],
   "time": 160

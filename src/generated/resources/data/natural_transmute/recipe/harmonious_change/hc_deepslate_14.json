@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_deepslate"
+      "item": "minecraft:blackstone_stairs"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cobbled_deepslate"
+      "id": "minecraft:blackstone"
     }
   ],
   "time": 160

@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:nether_brick_stairs"
+      "item": "minecraft:deepslate_brick_slab"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cracked_nether_bricks"
+      "id": "minecraft:cracked_deepslate_bricks"
     }
   ],
   "time": 160

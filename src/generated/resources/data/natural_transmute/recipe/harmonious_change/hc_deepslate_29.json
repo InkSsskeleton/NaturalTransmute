@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:tuff_slab"
+      "item": "minecraft:polished_deepslate"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:tuff"
+      "id": "minecraft:cobbled_deepslate"
     }
   ],
   "time": 160

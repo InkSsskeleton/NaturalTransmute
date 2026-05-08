@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:diorite_wall"
+      "item": "minecraft:polished_blackstone_pressure_plate"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:diorite"
+      "id": "minecraft:polished_blackstone"
     }
   ],
   "time": 160

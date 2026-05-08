@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_blackstone"
+      "item": "minecraft:polished_blackstone_bricks"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:blackstone"
+      "id": "minecraft:polished_blackstone"
     }
   ],
   "time": 160

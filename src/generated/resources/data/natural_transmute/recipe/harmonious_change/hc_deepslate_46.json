@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_andesite"
+      "item": "minecraft:tuff_bricks"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:andesite"
+      "id": "minecraft:polished_tuff"
     }
   ],
   "time": 160

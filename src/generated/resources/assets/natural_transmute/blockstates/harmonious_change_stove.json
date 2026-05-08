@@ -1,242 +1,242 @@
 {
   "variants": {
-    "facing=east,half=lower,lit=false,stove_part=main": {
+    "facing=east,lit=false,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=lower,lit=false,stove_part=main_head": {
+    "facing=east,lit=false,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=lower,lit=false,stove_part=right": {
+    "facing=east,lit=false,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=lower,lit=false,stove_part=right_head": {
+    "facing=east,lit=false,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=lower,lit=true,stove_part=main": {
-      "model": "natural_transmute:block/harmonious_change_stove_on",
-      "y": 90
-    },
-    "facing=east,half=lower,lit=true,stove_part=main_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_on",
-      "y": 90
-    },
-    "facing=east,half=lower,lit=true,stove_part=right": {
-      "model": "natural_transmute:block/harmonious_change_stove_on",
-      "y": 90
-    },
-    "facing=east,half=lower,lit=true,stove_part=right_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_on",
-      "y": 90
-    },
-    "facing=east,half=upper,lit=false,stove_part=main": {
+    "facing=east,lit=false,part=x1y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=upper,lit=false,stove_part=main_head": {
+    "facing=east,lit=false,part=x1y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=upper,lit=false,stove_part=right": {
+    "facing=east,lit=false,part=x1y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=upper,lit=false,stove_part=right_head": {
+    "facing=east,lit=false,part=x1y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 90
     },
-    "facing=east,half=upper,lit=true,stove_part=main": {
+    "facing=east,lit=true,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 90
     },
-    "facing=east,half=upper,lit=true,stove_part=main_head": {
+    "facing=east,lit=true,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 90
     },
-    "facing=east,half=upper,lit=true,stove_part=right": {
+    "facing=east,lit=true,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 90
     },
-    "facing=east,half=upper,lit=true,stove_part=right_head": {
+    "facing=east,lit=true,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 90
     },
-    "facing=north,half=lower,lit=false,stove_part=main": {
+    "facing=east,lit=true,part=x1y0z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_on",
+      "y": 90
+    },
+    "facing=east,lit=true,part=x1y0z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_on",
+      "y": 90
+    },
+    "facing=east,lit=true,part=x1y1z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_on",
+      "y": 90
+    },
+    "facing=east,lit=true,part=x1y1z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_on",
+      "y": 90
+    },
+    "facing=north,lit=false,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=lower,lit=false,stove_part=main_head": {
+    "facing=north,lit=false,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=lower,lit=false,stove_part=right": {
+    "facing=north,lit=false,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=lower,lit=false,stove_part=right_head": {
+    "facing=north,lit=false,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=lower,lit=true,stove_part=main": {
-      "model": "natural_transmute:block/harmonious_change_stove_on"
-    },
-    "facing=north,half=lower,lit=true,stove_part=main_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_on"
-    },
-    "facing=north,half=lower,lit=true,stove_part=right": {
-      "model": "natural_transmute:block/harmonious_change_stove_on"
-    },
-    "facing=north,half=lower,lit=true,stove_part=right_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_on"
-    },
-    "facing=north,half=upper,lit=false,stove_part=main": {
+    "facing=north,lit=false,part=x1y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=upper,lit=false,stove_part=main_head": {
+    "facing=north,lit=false,part=x1y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=upper,lit=false,stove_part=right": {
+    "facing=north,lit=false,part=x1y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=upper,lit=false,stove_part=right_head": {
+    "facing=north,lit=false,part=x1y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off"
     },
-    "facing=north,half=upper,lit=true,stove_part=main": {
+    "facing=north,lit=true,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on"
     },
-    "facing=north,half=upper,lit=true,stove_part=main_head": {
+    "facing=north,lit=true,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on"
     },
-    "facing=north,half=upper,lit=true,stove_part=right": {
+    "facing=north,lit=true,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on"
     },
-    "facing=north,half=upper,lit=true,stove_part=right_head": {
+    "facing=north,lit=true,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on"
     },
-    "facing=south,half=lower,lit=false,stove_part=main": {
+    "facing=north,lit=true,part=x1y0z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_on"
+    },
+    "facing=north,lit=true,part=x1y0z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_on"
+    },
+    "facing=north,lit=true,part=x1y1z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_on"
+    },
+    "facing=north,lit=true,part=x1y1z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_on"
+    },
+    "facing=south,lit=false,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 180
     },
-    "facing=south,half=lower,lit=false,stove_part=main_head": {
+    "facing=south,lit=false,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 180
     },
-    "facing=south,half=lower,lit=false,stove_part=right": {
+    "facing=south,lit=false,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 180
     },
-    "facing=south,half=lower,lit=false,stove_part=right_head": {
+    "facing=south,lit=false,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 180
     },
-    "facing=south,half=lower,lit=true,stove_part=main": {
+    "facing=south,lit=false,part=x1y0z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 180
+    },
+    "facing=south,lit=false,part=x1y0z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 180
+    },
+    "facing=south,lit=false,part=x1y1z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 180
+    },
+    "facing=south,lit=false,part=x1y1z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 180
+    },
+    "facing=south,lit=true,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=lower,lit=true,stove_part=main_head": {
+    "facing=south,lit=true,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=lower,lit=true,stove_part=right": {
+    "facing=south,lit=true,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=lower,lit=true,stove_part=right_head": {
+    "facing=south,lit=true,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=upper,lit=false,stove_part=main": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 180
-    },
-    "facing=south,half=upper,lit=false,stove_part=main_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 180
-    },
-    "facing=south,half=upper,lit=false,stove_part=right": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 180
-    },
-    "facing=south,half=upper,lit=false,stove_part=right_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 180
-    },
-    "facing=south,half=upper,lit=true,stove_part=main": {
+    "facing=south,lit=true,part=x1y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=upper,lit=true,stove_part=main_head": {
+    "facing=south,lit=true,part=x1y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=upper,lit=true,stove_part=right": {
+    "facing=south,lit=true,part=x1y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=south,half=upper,lit=true,stove_part=right_head": {
+    "facing=south,lit=true,part=x1y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 180
     },
-    "facing=west,half=lower,lit=false,stove_part=main": {
+    "facing=west,lit=false,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 270
     },
-    "facing=west,half=lower,lit=false,stove_part=main_head": {
+    "facing=west,lit=false,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 270
     },
-    "facing=west,half=lower,lit=false,stove_part=right": {
+    "facing=west,lit=false,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 270
     },
-    "facing=west,half=lower,lit=false,stove_part=right_head": {
+    "facing=west,lit=false,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_off",
       "y": 270
     },
-    "facing=west,half=lower,lit=true,stove_part=main": {
+    "facing=west,lit=false,part=x1y0z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 270
+    },
+    "facing=west,lit=false,part=x1y0z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 270
+    },
+    "facing=west,lit=false,part=x1y1z0": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 270
+    },
+    "facing=west,lit=false,part=x1y1z1": {
+      "model": "natural_transmute:block/harmonious_change_stove_off",
+      "y": 270
+    },
+    "facing=west,lit=true,part=x0y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=lower,lit=true,stove_part=main_head": {
+    "facing=west,lit=true,part=x0y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=lower,lit=true,stove_part=right": {
+    "facing=west,lit=true,part=x0y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=lower,lit=true,stove_part=right_head": {
+    "facing=west,lit=true,part=x0y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=upper,lit=false,stove_part=main": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 270
-    },
-    "facing=west,half=upper,lit=false,stove_part=main_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 270
-    },
-    "facing=west,half=upper,lit=false,stove_part=right": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 270
-    },
-    "facing=west,half=upper,lit=false,stove_part=right_head": {
-      "model": "natural_transmute:block/harmonious_change_stove_off",
-      "y": 270
-    },
-    "facing=west,half=upper,lit=true,stove_part=main": {
+    "facing=west,lit=true,part=x1y0z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=upper,lit=true,stove_part=main_head": {
+    "facing=west,lit=true,part=x1y0z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=upper,lit=true,stove_part=right": {
+    "facing=west,lit=true,part=x1y1z0": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     },
-    "facing=west,half=upper,lit=true,stove_part=right_head": {
+    "facing=west,lit=true,part=x1y1z1": {
       "model": "natural_transmute:block/harmonious_change_stove_on",
       "y": 270
     }

@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:chiseled_nether_bricks"
+      "item": "minecraft:polished_blackstone_brick_stairs"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cracked_nether_bricks"
+      "id": "minecraft:cracked_polished_blackstone_bricks"
     }
   ],
   "time": 160

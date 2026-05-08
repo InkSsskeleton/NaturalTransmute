@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:chiseled_stone_bricks"
+      "item": "minecraft:deepslate_brick_wall"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:cracked_stone_bricks"
+      "id": "minecraft:cracked_deepslate_bricks"
     }
   ],
   "time": 160

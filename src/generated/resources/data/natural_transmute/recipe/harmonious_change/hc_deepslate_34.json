@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_tuff_stairs"
+      "item": "minecraft:andesite_stairs"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:polished_tuff"
+      "id": "minecraft:andesite"
     }
   ],
   "time": 160
