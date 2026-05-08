@@ -90,8 +90,7 @@ public class NTBlockLoot extends VanillaBlockLoot {
                 this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties()
-                                        .hasProperty(HarmoniousChangeStove.PART, HCStovePart.MAIN)
-                                        .hasProperty(HarmoniousChangeStove.HALF, DoubleBlockHalf.LOWER)))))));
+                                        .hasProperty(HarmoniousChangeStove.PART, HCStovePart.MAIN_BLOCK)))))));
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         this.add(NTBlocks.REED.get(), block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         this.add(NTBlocks.ALGAL_END_STONE.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.END_STONE));

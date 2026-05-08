@@ -74,7 +74,7 @@ public class NTBlockStateProvider extends BlockStateProvider {
         this.registerPapyrusStates(NTBlocks.PAPYRUS.get());
         this.simpleBlock(NTBlocks.MINE_WATER.get(),
                 this.models().getBuilder(NTBlocks.MINE_WATER.getId().getPath())
-                .texture("particle", this.mcLoc("block/water_still")));
+                        .texture("particle", this.mcLoc("block/water_still")));
         this.simpleBlock(NTBlocks.PEAT_MOSS.get(),
                 this.models().carpet(this.name(NTBlocks.PEAT_MOSS.get()),
                         this.blockTexture(NTBlocks.PEAT_MOSS.get())));
@@ -205,21 +205,19 @@ public class NTBlockStateProvider extends BlockStateProvider {
     private void registerHarmoniousChangeStoveStates(Block block) {
         VariantBlockStateBuilder builder = this.getVariantBuilder(block);
         for (HCStovePart part : HarmoniousChangeStove.PART.getPossibleValues()) {
-            for (DoubleBlockHalf half : HarmoniousChangeStove.HALF.getPossibleValues()) {
-                for (Direction direction : HarmoniousChangeStove.FACING.getPossibleValues()) {
-                    for (Boolean lit : HarmoniousChangeStove.LIT.getPossibleValues()) {
-                        String name = "harmonious_change_stove_" + (lit ? "on" : "off");
-                        ResourceLocation parent = this.modLoc("block/harmonious_change_stove");
-                        ResourceLocation texture = this.modLoc("block/" + name);
-                        ModelFile modelFile = this.models().withExistingParent(name, parent)
-                                .texture("0", texture).texture("particle", texture).renderType(CUTOUT);
-                        builder.partialState().with(HarmoniousChangeStove.PART, part)
-                                .with(HarmoniousChangeStove.HALF, half)
-                                .with(HarmoniousChangeStove.FACING, direction)
-                                .with(HarmoniousChangeStove.LIT, lit).modelForState()
-                                .rotationY(DIRECTION_WITH_ROTATION.get(direction))
-                                .modelFile(modelFile).addModel();
-                    }
+            for (Direction direction : HarmoniousChangeStove.FACING.getPossibleValues()) {
+                for (Boolean lit : HarmoniousChangeStove.LIT.getPossibleValues()) {
+                    String name = "harmonious_change_stove_" + (lit ? "on" : "off");
+                    ResourceLocation parent = this.modLoc("block/harmonious_change_stove");
+                    ResourceLocation texture = this.modLoc("block/" + name);
+                    ModelFile modelFile = this.models().withExistingParent(name, parent)
+                            .texture("0", texture).texture("particle", texture).renderType(CUTOUT);
+                    builder.partialState()
+                            .with(HarmoniousChangeStove.PART, part)
+                            .with(HarmoniousChangeStove.FACING, direction)
+                            .with(HarmoniousChangeStove.LIT, lit).modelForState()
+                            .rotationY(DIRECTION_WITH_ROTATION.get(direction))
+                            .modelFile(modelFile).addModel();
                 }
             }
         }
