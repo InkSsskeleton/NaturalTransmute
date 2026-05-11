@@ -1,7 +1,6 @@
 package com.zg.natural_transmute.common.blocks.entity;
 
 import com.zg.natural_transmute.client.inventory.HarmoniousChangeStoveMenu;
-import com.zg.natural_transmute.common.data.tags.NTItemTags;
 import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeRecipe;
 import com.zg.natural_transmute.common.items.crafting.HarmoniousChangeRecipeInput;
 import com.zg.natural_transmute.registry.NTBlockEntityTypes;
@@ -16,9 +15,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
@@ -35,14 +32,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity {
-    public static final int INPUT_A_SLOT = 0;
-    public static final int INPUT_B_SLOT = 1;
-    public static final int INPUT_C_SLOT = 2;
-    public static final int FUEL_SLOT = 3;
-    public static final int BIOME_CATALYST_SLOT = 4;
-    public static final int OUTPUT_A_SLOT = 5;
-    public static final int OUTPUT_B_SLOT = 6;
-    public static final int OUTPUT_C_SLOT = 7;
+    private static final int INPUT_A_SLOT = 0;
+    private static final int INPUT_B_SLOT = 1;
+    private static final int INPUT_C_SLOT = 2;
+    private static final int FUEL_SLOT = 3;
+    private static final int BIOME_CATALYST_SLOT = 4;
+    private static final int OUTPUT_A_SLOT = 5;
+    private static final int OUTPUT_B_SLOT = 6;
+    private static final int OUTPUT_C_SLOT = 7;
+
+    private static final int MAX_FUEL_DURATION = 8;    // Durin_Skeleton assumes max is always 8.
 
     public static final int IDLING_STATE = 0;
     public static final int WORKING_STATE = 1;
@@ -52,7 +51,6 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
     private int currentState;
 
     private int fuelRemain = 0;
-    private final int maxFuelDuration = 8;    // Durin_Skeleton assumes max is always 8.
 
     @Nullable
     public BlockPos mainPos;
@@ -69,11 +67,11 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         boolean shouldReset = false;
         boolean changed = false;
 
+        changed |= blockEntity.tryConsumeFuel();
+
         if (blockEntity.hasInput()) {
             HarmoniousChangeRecipe recipe = blockEntity.checkHarmoniousChangeRecipe();
             if (recipe != null && blockEntity.canWork(recipe)) {    // Tick working
-                changed |= blockEntity.tryConsumeFuel();
-
                 if (!blockEntity.hasFuelRemain()) {
                     shouldReset = true;
                 }
@@ -115,12 +113,12 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         if (HarmoniousChangeFuelUtils.isCoalFuel(fuel)) {
             if (fuelRemain <= 0) {
                 fuel.shrink(1);
-                fuelRemain = maxFuelDuration;
+                fuelRemain = MAX_FUEL_DURATION;
                 return true;
             }
         } else if (HarmoniousChangeFuelUtils.isBucketFuel(fuel)) {
-            if (fuelRemain < maxFuelDuration) {
-                var fuelToConsume = maxFuelDuration - fuelRemain;
+            if (fuelRemain < MAX_FUEL_DURATION) {
+                var fuelToConsume = MAX_FUEL_DURATION - fuelRemain;
                 var bucketDurabilityRemain = fuel.getMaxDamage() - fuel.getDamageValue();
                 var actualConsume = Math.min(fuelToConsume, bucketDurabilityRemain);
                 fuel.hurtAndBreak(actualConsume, (ServerLevel) level, null, item -> {});
@@ -210,12 +208,7 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
     }
 
     private boolean hasFuelRemain() {
-        return hasFuelBucket() || fuelRemain > 0;
-    }
-
-    private boolean hasFuelBucket() {
-        var fuelItem = getItem(FUEL_SLOT);
-        return fuelItem.is(NTItemTags.HARMONIOUS_CHANGE_FUEL_BUCKET) || fuelItem.is(NTItemTags.HARMONIOUS_CHANGE_ETERNAL_FUEL);
+        return fuelRemain > 0;
     }
 
     private boolean hasInput() {
@@ -317,13 +310,8 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
         public static final int TOTAL_TIME = 1;
         public static final int CURRENT_STATE = 2;
         public static final int FUEL_REMAIN = 3;
-        public static final int MAX_FUEL_DURATION = 4;
-        public static final int HAS_FUEL_BUCKET = 5;
 
-        public static final int TRUE = 1;
-        public static final int FALSE = 0;
-
-        public static final int COUNT = 6;
+        public static final int COUNT = 4;
 
         @Override
         public int get(int index) {
@@ -335,10 +323,6 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
                 return currentState;
             } else if (index == FUEL_REMAIN) {
                 return fuelRemain;
-            } else if (index == MAX_FUEL_DURATION) {
-                return maxFuelDuration;
-            } else if (index == HAS_FUEL_BUCKET) {
-                return hasFuelBucket() ? TRUE : FALSE;
             } else {
                 return 0;
             }
@@ -353,11 +337,7 @@ public class HarmoniousChangeStoveBlockEntity extends SimpleContainerBlockEntity
             } else if (index == CURRENT_STATE) {
                 currentState = value;
             } else if (index == FUEL_REMAIN) {
-                fuelRemain = Mth.clamp(value, 0, maxFuelDuration);
-            } else if (index == MAX_FUEL_DURATION) {
-                // No-op
-            } else if (index == HAS_FUEL_BUCKET) {
-                // No-op
+                fuelRemain = Mth.clamp(value, 0, MAX_FUEL_DURATION);
             }
         }
 
