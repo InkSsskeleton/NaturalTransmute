@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_tuff_stairs"
+      "item": "minecraft:diorite_slab"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:polished_tuff"
+      "id": "minecraft:diorite"
     }
   ],
   "time": 160
