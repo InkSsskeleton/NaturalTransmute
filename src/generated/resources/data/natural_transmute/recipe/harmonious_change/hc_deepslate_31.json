@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:diorite_slab"
+      "item": "minecraft:chiseled_tuff"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:diorite"
+      "id": "minecraft:tuff"
     }
   ],
   "time": 160

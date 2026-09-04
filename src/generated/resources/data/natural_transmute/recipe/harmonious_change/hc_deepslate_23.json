@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:polished_blackstone_pressure_plate"
+      "item": "minecraft:andesite_wall"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:polished_blackstone"
+      "id": "minecraft:andesite"
     }
   ],
   "time": 160

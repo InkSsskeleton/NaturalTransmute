@@ -7,13 +7,13 @@
   "excepts": [],
   "ingredients": [
     {
-      "item": "minecraft:tuff_stairs"
+      "item": "minecraft:tuff_bricks"
     }
   ],
   "results": [
     {
       "count": 1,
-      "id": "minecraft:tuff"
+      "id": "minecraft:polished_tuff"
     }
   ],
   "time": 160
